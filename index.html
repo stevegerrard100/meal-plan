@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steve's Kitchen — Week of 28 April</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+    --page-bg: #F7F6F3;
+    --card-bg: #FFFFFF;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border: #EBEBEB;
+    --accent: #111111;
+    --transition: 0.22s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── SITE HEADER ─────────────────────────────────────────────────── */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 28px;
+    height: 56px;
+  }
+  .site-logo {
+    font-size: 15px; font-weight: 700; letter-spacing: -0.3px;
+    color: var(--text-primary);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .site-logo span { color: var(--text-muted); font-weight: 400; }
+  .site-meta { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+  /* ── TAB BAR ─────────────────────────────────────────────────────── */
+  .tab-bar {
+    position: sticky; top: 56px; z-index: 99;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    display: flex; overflow-x: auto;
+    scrollbar-width: none; -ms-overflow-style: none;
+    padding: 0 20px;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+
+  .tab {
+    flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 12px 20px 10px;
+    cursor: pointer;
+    border-bottom: 2.5px solid transparent;
+    transition: border-color var(--transition), color var(--transition);
+    user-select: none;
+    position: relative;
+  }
+  .tab:hover .tab-day { color: var(--text-primary); }
+  .tab-day {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    transition: color var(--transition);
+    margin-bottom: 2px;
+  }
+  .tab-name {
+    font-size: 12px; font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    transition: color var(--transition);
+    max-width: 130px;
+    overflow: hidden; text-overflow: ellipsis;
+  }
+  .tab.active .tab-day { color: var(--tab-accent, #111); }
+  .tab.active .tab-name { color: var(--tab-accent, #111); font-weight: 600; }
+  .tab.active { border-bottom-color: var(--tab-accent, #111); }
+
+  /* ── CONTENT PANELS ──────────────────────────────────────────────── */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── HERO ────────────────────────────────────────────────────────── */
+  .hero {
+    width: 100%; height: 280px;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: var(--hero-gradient);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+  }
+  .hero-emoji {
+    position: absolute; right: 48px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px; opacity: 0.12;
+    filter: grayscale(0.2);
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 36px 28px;
+  }
+  .cuisine-pill {
+    display: inline-flex; align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(4px);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 32px; font-weight: 800; line-height: 1.15;
+    color: #fff; letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+  .hero-subtitle {
+    font-size: 14px; color: rgba(255,255,255,0.75);
+    font-style: italic; font-weight: 400;
+  }
+
+  /* Meta strip */
+  .meta-strip {
+    background: #fff;
+    display: flex; gap: 0;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .meta-strip::-webkit-scrollbar { display: none; }
+  .meta-item {
+    flex: 1; min-width: 100px;
+    display: flex; flex-direction: column; align-items: center;
+    padding: 14px 16px;
+    border-right: 1px solid var(--border);
+  }
+  .meta-item:last-child { border-right: none; }
+  .meta-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+  .meta-value { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+
+  /* ── MAIN CONTENT ────────────────────────────────────────────────── */
+  .content {
+    max-width: 1100px; margin: 0 auto;
+    padding: 32px 24px 60px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  @media (max-width: 780px) {
+    .content { grid-template-columns: 1fr; padding: 20px 16px 48px; gap: 16px; }
+    .hero { height: 220px; }
+    .hero-title { font-size: 24px; }
+    .hero-emoji { font-size: 80px; right: 20px; }
+    .hero-content { padding: 0 20px 20px; }
+  }
+
+  /* ── CARDS ───────────────────────────────────────────────────────── */
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card-header-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .card-header-accent {
+    width: 20px; height: 3px; border-radius: 2px;
+    background: var(--meal-accent);
+    margin-left: auto;
+  }
+
+  /* Ingredients */
+  .ingredients-list { padding: 8px 0; }
+  .ingredient-row {
+    display: flex; align-items: baseline;
+    padding: 8px 20px;
+    gap: 12px;
+    border-bottom: 1px solid #F4F4F4;
+    transition: background var(--transition);
+  }
+  .ingredient-row:last-child { border-bottom: none; }
+  .ingredient-row:hover { background: #FAFAFA; }
+  .ing-qty {
+    font-size: 12px; font-weight: 700;
+    color: var(--text-primary);
+    min-width: 62px; flex-shrink: 0;
+  }
+  .ing-name { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
+
+  /* Method steps */
+  .steps-list { padding: 4px 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 0 14px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #F4F4F4;
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--meal-accent);
+    color: #fff;
+    font-size: 12px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .step-body {}
+  .step-head-row {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 5px; flex-wrap: wrap;
+  }
+  .step-heading { font-size: 13px; font-weight: 700; color: var(--text-primary); }
+  .time-badge {
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px;
+    background: var(--meal-accent-light);
+    color: var(--meal-accent);
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+  }
+  .step-text {
+    font-size: 13px; color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* Tip card */
+  .tip-card {
+    grid-column: 1 / -1;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--meal-accent);
+    padding: 16px 20px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .tip-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: var(--meal-accent); margin-bottom: 3px; }
+  .tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Sunday prep */
+  .prep-card {
+    grid-column: 1 / -1;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .prep-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 20px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--transition);
+  }
+  .prep-toggle.open { border-bottom-color: var(--border); }
+  .prep-toggle-left { display: flex; align-items: center; gap: 10px; }
+  .prep-tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+    background: #F0F0F0; color: var(--text-muted);
+    padding: 3px 8px; border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .prep-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+  .prep-chevron {
+    width: 20px; height: 20px; color: var(--text-muted);
+    transition: transform var(--transition);
+    flex-shrink: 0;
+  }
+  .prep-chevron.open { transform: rotate(180deg); }
+  .prep-body { display: none; padding: 16px 20px; }
+  .prep-body.open { display: block; }
+  .prep-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 7px 0;
+    font-size: 13px; color: var(--text-secondary);
+    line-height: 1.55;
+    border-bottom: 1px solid #F4F4F4;
+  }
+  .prep-item:last-child { border-bottom: none; }
+  .prep-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--meal-accent); flex-shrink: 0; margin-top: 7px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────────────────────── */
+  .site-footer {
+    text-align: center; padding: 24px;
+    font-size: 12px; color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    background: #fff;
+  }
+
+  /* ── PAGE TRANSITION ─────────────────────────────────────────────── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .panel.active { animation: fadeIn 0.2s ease forwards; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-logo">Steve's Kitchen <span>/ Meal Plan</span></div>
+  <div class="site-meta">Week of 28 April 2026</div>
+</header>
+
+<nav class="tab-bar" id="tabBar"></nav>
+<main id="mainContent"></main>
+
+<footer class="site-footer">
+  Virtual Steve Chef &nbsp;·&nbsp; All recipes serve 2–3
+</footer>
+
+<script>
+const MEALS = [
+  {
+    day: 'Monday', shortDay: 'MON', date: '28 April',
+    name: 'Korean Gochujang Beef Stir-fry',
+    subtitle: 'with Egg Noodles & Bamboo Shoots',
+    cuisine: 'Korean', serves: '2–3', time: '25 min', method: 'Wok — high heat',
+    emoji: '🍜',
+    gradient: 'linear-gradient(135deg, #1a0606 0%, #5C1010 45%, #9B2020 100%)',
+    accent: '#B5443F',
+    accentLight: '#FDF0EF',
+    ingredients: [
+      ['400g','Beef stir-fry strips'],['125g','Egg noodles (dried)'],
+      ['1 tin','Bamboo shoots, drained'],['4','Spring onions, sliced'],
+      ['3 cloves','Garlic, minced'],['2 tbsp','Gochujang'],
+      ['2 tbsp','Dark soy sauce'],['1 tbsp','Light soy sauce'],
+      ['1 tbsp','Sesame oil'],['1 tbsp','Honey'],
+      ['1 tbsp','Ginger paste'],['1 tbsp','Cornflour'],
+      ['1 tbsp','Rice vinegar'],['1 tsp','Chilli flakes'],['1 tbsp','Vegetable oil'],
+    ],
+    steps: [
+      ['3 min','Cook the noodles','Boil in well-salted water 2–3 min until just under al dente. Drain, rinse cold immediately, toss in a drop of sesame oil to stop clumping. Set aside — they finish in the wok.'],
+      ['2 min','Coat the beef','Toss strips with cornflour and a pinch of salt. The cornflour locks moisture in during the sear and binds sauce to every piece. Don\'t skip it.'],
+      ['1 min','Make the sauce','Whisk gochujang, both soy sauces, honey and rice vinegar with 2 tbsp water. Taste: deeply savoury, bold, pleasantly sweet. Adjust honey if needed.'],
+      ['5 min','Sear the beef — the critical step','Heat HexClad wok on maximum gas for 90 seconds before adding oil. Add vegetable oil — it should shimmer and just smoke. Lay beef in a single layer. Hold 60–90 sec without moving until a dark crust forms. Toss once. Work in 2–3 batches. Crowding the pan drops the temperature and steams instead of searing.'],
+      ['2 min','Build the aromatics','Without lowering heat, add garlic, ginger paste and chilli flakes. Stir constantly 30 sec. Add bamboo shoots; toss 60 sec.'],
+      ['2 min','Combine and sauce','Return all beef. Pour sauce over and toss aggressively on maximum heat 60–90 sec until it coats everything. Add noodles and toss until glossed through.'],
+      ['30 sec','Finish','Off heat — drizzle raw sesame oil over the top (cooking it kills the fragrance). Serve immediately with spring onions piled on.'],
+    ],
+    tip: 'Maximum heat is non-negotiable. The HexClad wok can handle it — let it get properly hot before the beef goes in. That loud, aggressive sizzle the moment it hits the pan is exactly what you want.',
+    sundayPrep: [
+      'Mix the stir-fry sauce (gochujang, soy sauces, honey, rice vinegar) in a jar — refrigerate.',
+      'Slice beef into strips, toss in cornflour, cover and refrigerate.',
+      'Drain bamboo shoots. Mince garlic. Slice spring onions.',
+    ],
+  },
+  {
+    day: 'Tuesday', shortDay: 'TUE', date: '29 April',
+    name: 'Harissa Lamb Meatballs',
+    subtitle: 'on Red Lentil Dahl — batch-friendly',
+    cuisine: 'North African', serves: '2–3 + leftovers', time: '40 min', method: 'Pan',
+    emoji: '🫕',
+    gradient: 'linear-gradient(135deg, #110a00 0%, #5C3000 45%, #9B6020 100%)',
+    accent: '#B87333',
+    accentLight: '#FDF4EC',
+    ingredients: [
+      ['500g','Lamb mince'],['200g','Red lentils, dried'],
+      ['1 tin','Chopped tomatoes'],['2 tbsp','Harissa paste'],
+      ['1 tbsp','Ginger paste'],['3 cloves','Garlic, minced'],
+      ['1 large','Onion, finely diced'],['1 tsp','Cumin, ground'],
+      ['1 tsp','Coriander, ground'],['½ tsp','Cinnamon, ground'],
+      ['½ tsp','Chilli flakes'],['1 tbsp','Tomato purée'],
+      ['2 tbsp','EVOO'],['to serve','Greek yogurt'],['to garnish','Fresh coriander'],
+    ],
+    steps: [
+      ['5 min','Form the meatballs','Combine lamb with 1 tbsp harissa, half the garlic, cumin, cinnamon, salt and pepper. Mix just until combined — overworking makes them dense. Roll into 16 even golf-ball sized balls. Wet hands to stop sticking.'],
+      ['6 min','Brown the meatballs','Heat EVOO in HexClad pan on medium-high (7/10 on gas). Give it 60 sec to reach temperature. Brown in 2 batches, turning every 90 sec until deeply coloured. They don\'t need to be cooked through — they finish in the dahl. Remove to a plate.'],
+      ['7 min','Build the dahl base','Same pan — don\'t clean it. Fry onion on medium 5–6 min until genuinely soft and pale golden. Add remaining garlic and ginger paste; stir 60 sec.'],
+      ['90 sec','Bloom the spices','Stir in coriander, remaining harissa and tomato purée. Cook 90 sec — the paste darkens, spices toast, the base deepens. Keep it moving so it doesn\'t catch.'],
+      ['20 min','Simmer to finish','Add lentils, chopped tomatoes and 400ml water. Bring to a gentle simmer. Nestle meatballs in. Cook uncovered 18–20 min, stirring every 5 min. Done when lentils are completely soft and sauce has thickened to a spoonable consistency.'],
+      ['1 min','Serve','Taste and adjust salt. Squeeze of lemon if it needs lifting. Deep bowls, generous yogurt dollop, coriander scattered over.'],
+    ],
+    tip: 'Dahl thickens significantly overnight. When reheating for lunch, add 3–4 tbsp water and stir over medium heat — it comes back perfectly.',
+    sundayPrep: [
+      'Mix and roll all 16 meatballs. Lay on a lined tray, cover with cling film and refrigerate.',
+      'Finely dice the onion and store in a container.',
+      'Weigh out 200g lentils. Mince the garlic.',
+    ],
+  },
+  {
+    day: 'Wednesday', shortDay: 'WED', date: '30 April',
+    name: 'Jerk Chicken Thighs',
+    subtitle: 'with Rice & Kidney Beans',
+    cuisine: 'Caribbean', serves: '2–3', time: '30 min + marinade', method: 'Air fryer',
+    emoji: '🍗',
+    gradient: 'linear-gradient(135deg, #071208 0%, #1A4D24 45%, #2E7A3A 100%)',
+    accent: '#3D7A52',
+    accentLight: '#EDF7F1',
+    ingredients: [
+      ['4 large','Chicken thighs, bone-in'],['1 tin','Kidney beans, drained'],
+      ['250g','Basmati rice'],['1½ tsp','Allspice, ground'],
+      ['1 tsp','Thyme, dried'],['1 tsp','Chilli flakes'],
+      ['1 tbsp','Dark soy sauce'],['1 tbsp','Honey'],
+      ['1 tbsp','Ginger paste'],['3 cloves','Garlic, minced'],
+      ['1','Lime, juiced'],['1 tbsp','EVOO'],['to taste','Salt & black pepper'],
+    ],
+    steps: [
+      ['5 min','Score and marinate','Using a sharp knife, cut 3–4 deep diagonal slashes through the skin right down to the bone — the marinade can only penetrate what it physically touches. Mix all marinade ingredients. Work it firmly into the cuts. Cover and refrigerate. Sunday overnight is ideal.'],
+      ['3 min','Preheat air fryer','Set Ninja to 200°C, preheat 3 minutes. Place thighs skin-side up in a single layer — no overlapping, or the skin won\'t crisp. Don\'t line the basket.'],
+      ['25 min','Cook','Air fry 200°C for 22–25 min. Don\'t open the drawer in the first 15 min. At 22 min: skin should be deep mahogany, set and firm. Pierce the thickest part — juices must run completely clear. If skin needs more colour, give it 3 more minutes.'],
+      ['15 min','Rice and beans (start with the chicken)','Rinse rice until water runs mostly clear. Add to rice cooker with 300ml water. With 5 min left on the chicken, stir in drained kidney beans — they warm through in the residual steam.'],
+      ['5 min','Rest and serve','Rest chicken 5 min on a board — cutting too early sends the juices straight onto the board. Serve over rice and beans. Squeeze remaining lime over.'],
+    ],
+    tip: 'A good one to cook with your son — he can mix the marinade and score the chicken. The scoring technique is the key skill here; shallow cuts make no difference to flavour penetration.',
+    sundayPrep: [
+      'Score the chicken thighs deeply — 3–4 cuts per thigh, right down to the bone.',
+      'Mix the marinade, coat chicken generously, refrigerate overnight. Sunday night is ideal.',
+      'Drain and rinse the kidney beans, store in a container.',
+    ],
+  },
+  {
+    day: 'Thursday', shortDay: 'THU', date: '1 May',
+    name: 'Chicken Saag',
+    subtitle: 'with Basmati Rice',
+    cuisine: 'Indian', serves: '2–3', time: '35 min', method: 'Pan',
+    emoji: '🥘',
+    gradient: 'linear-gradient(135deg, #110c00 0%, #5C4000 45%, #9B7020 100%)',
+    accent: '#C08B28',
+    accentLight: '#FDF8EC',
+    ingredients: [
+      ['4 boneless','Chicken thighs, cut into chunks'],['200g','Fresh spinach'],
+      ['1 tin','Chopped tomatoes'],['1 large','Onion, finely diced'],
+      ['3 cloves','Garlic, minced'],['1 tbsp','Ginger paste'],
+      ['1 tsp','Cumin, ground'],['1 tsp','Coriander, ground'],
+      ['1 tsp','Turmeric'],['1 tsp','Garam masala'],
+      ['200g','Basmati rice'],['2 tbsp','EVOO'],
+      ['to taste','Salt'],['optional','Greek yogurt to serve'],
+    ],
+    steps: [
+      ['10 min','Build the onion base — the foundation','Heat EVOO in HexClad pan, medium heat (5–6/10). Add onion with a pinch of salt. Stir every 60–90 sec. Go past translucent — you want pale golden, with light caramelisation at the edges. The full 8–10 min. Rushing gives you a thin, flat sauce.'],
+      ['2 min','Garlic, ginger and spices','Push onion to the side. Add garlic and ginger paste to the bare, hot pan centre. Stir 30 sec until fragrant. Add cumin, coriander and turmeric — stir everything together 60 sec. Spices should smell toasted and open, not raw.'],
+      ['5 min','Brown the chicken','Add chicken in a single layer. Increase heat to medium-high (7/10). Leave undisturbed 2 min to colour underneath, then turn and repeat. Season generously. It doesn\'t need to be fully cooked through yet.'],
+      ['15 min','Simmer','Pour in chopped tomatoes. Stir and scrape up the fond. Bring to a gentle simmer. Cook uncovered 12–15 min until chicken is cooked through and sauce has thickened and darkened.'],
+      ['2 min','Spinach and garam masala','Add spinach in 2–3 handfuls — each batch wilts in 30 sec before you add the next. Stir in garam masala right at the end to keep its aromatic brightness. Taste and adjust salt.'],
+      ['15 min','Rice','Rinse and start in the rice cooker when the simmer begins — done in sync with the curry.'],
+    ],
+    tip: 'The onion stage is where Indian curries are won or lost. Pale onions give you a weak, flat sauce. Properly golden onions — with that caramelised edge — give you real depth. Take the time.',
+    sundayPrep: [
+      'Finely dice the onion and refrigerate in a container.',
+      'Cut chicken thighs into even chunks and refrigerate.',
+      'Mince garlic — store covered in a small jar with a drop of oil.',
+    ],
+  },
+  {
+    day: 'Friday', shortDay: 'FRI', date: '2 May',
+    name: 'Coconut & Ginger Prawn Curry',
+    subtitle: 'with Basmati Rice',
+    cuisine: 'Thai', serves: '2–3', time: '25 min', method: 'Wok',
+    emoji: '🍤',
+    gradient: 'linear-gradient(135deg, #001410 0%, #0D4A40 45%, #1E7A6A 100%)',
+    accent: '#2E8B7A',
+    accentLight: '#EBF7F5',
+    ingredients: [
+      ['400g','Raw king prawns, peeled'],['1 tin','Coconut milk'],
+      ['200g','Basmati rice'],['1','Onion, finely sliced'],
+      ['3 cloves','Garlic, minced'],['1 tsp','Ginger paste'],
+      ['1 tbsp','Fish sauce'],['1 tbsp','Light soy sauce'],
+      ['1 tbsp','Sriracha'],['1 tsp','Rice vinegar'],
+      ['1','Lime — juice and zest'],['handful','Fresh coriander'],['1 tbsp','Oil'],
+    ],
+    steps: [
+      ['15 min','Start rice first','Rinse and start in the rice cooker with 240ml water before anything else. It takes 15 min and should finish just as the curry is done.'],
+      ['5 min','Build the base','Heat oil in HexClad wok medium-high. Add sliced onion 3–4 min until softened and just colouring at the edges. Add garlic and ginger paste; stir 30 sec until fragrant.'],
+      ['4 min','Build the sauce','Shake the coconut tin well — the cream settles. Add it with fish sauce, soy sauce, sriracha and rice vinegar. Stir and bring to a gentle simmer. Taste now: creamy, salty, warm heat. Adjust with more sriracha, fish sauce, or a pinch of sugar.'],
+      ['3 min','Cook the prawns — timing is everything','Add prawns in a single layer. Cook 2 min without stirring — they\'ll start turning pink from underneath. Turn gently; cook 1–2 min more. They\'re done the moment they\'re uniformly pink and in a loose C-shape. Remove from heat immediately. A tight O-shape means overcooked.'],
+      ['1 min','Finish','Squeeze in lime juice. Stir. Final taste. Serve over rice, topped with coriander, lime zest, and sriracha at the table.'],
+    ],
+    tip: 'Watch the prawns obsessively in those last 3 minutes. They go from raw to perfect to overcooked in 90 seconds. The moment they\'re pink all the way through — you\'re done. Off the heat.',
+    sundayPrep: [
+      'If using frozen prawns, move to fridge Sunday evening to thaw overnight.',
+      'Finely slice onion, mince garlic — store together.',
+      'Mix fish sauce, soy sauce, sriracha and rice vinegar in a jar.',
+    ],
+  },
+  {
+    day: 'Saturday', shortDay: 'SAT', date: '3 May',
+    name: 'Ribeye Steaks',
+    subtitle: 'with Peppercorn Sauce & Air Fryer Chips',
+    cuisine: 'Western', serves: '2–3', time: '40 min', method: 'Pan + Air fryer',
+    emoji: '🥩',
+    gradient: 'linear-gradient(135deg, #06080a 0%, #1C2830 45%, #384E5A 100%)',
+    accent: '#546E7A',
+    accentLight: '#EEF2F4',
+    ingredients: [
+      ['2–3 × 250g','Ribeye steaks'],['800g','Potatoes, cut into thick chips'],
+      ['2 tsp','Black pepper, coarsely cracked'],['150ml','Double cream'],
+      ['100ml','Beef stock'],['1 tbsp','Worcestershire sauce'],
+      ['2 tbsp','Butter'],['1','Shallot, finely diced'],
+      ['2 cloves','Garlic, minced'],['1 tbsp','EVOO'],['generous','Flaky salt'],
+    ],
+    steps: [
+      ['30 min','Chips — start here','Toss chip-cut potatoes in EVOO and flaky salt. Preheat Ninja to 200°C for 3 min. Add chips — don\'t overcrowd or they steam. Cook 28–30 min, shaking at halfway. Deep golden with crisp edges and fluffy centres. Add 3–5 min if needed.'],
+      ['20 min before','Temper and season the steak','Take steaks from the fridge 20–30 min before cooking. Cold steak in a hot pan cooks unevenly — outside overdone before the centre hits temperature. Season both sides heavily with flaky salt and cracked pepper. Press it in firmly.'],
+      ['5–7 min','Sear — the HexClad method','Heat HexClad pan on maximum gas for 90 seconds, no oil yet. Add a thin film of EVOO — it should shimmer and smoke immediately. Lay steaks away from you. Do not move. For a 2.5cm ribeye: 2.5 min per side for medium-rare, 3.5 min for medium. Last 60 sec: add 1 tbsp butter and baste continuously, tilting the pan and spooning foaming butter over. Hold the fat cap against the pan 30 sec.'],
+      ['5+ min','Rest — non-negotiable','Transfer to a warm board. Do not cut. Rest minimum 5 min — the fibres relax and reabsorb the juices. Cut too early and they pour onto the board, not your plate.'],
+      ['6 min','Peppercorn sauce — same pan','Don\'t clean the pan. The fond is the backbone of the sauce. Reduce to medium. Butter and shallot — 2 min. Garlic and cracked pepper — 30 sec. Add Worcestershire sauce and beef stock — sizzle hard, scrape the fond up. Reduce by half (~3 min). Add cream; simmer 2–3 min until it coats a spoon. Season.'],
+      ['1 min','Plate','Slice against the grain. Chips alongside. Sauce over or in a jug.'],
+    ],
+    tip: 'If the steak doesn\'t make a loud, aggressive sizzle the moment it hits the pan, it wasn\'t hot enough. Pull it out, heat the pan longer, and go again. No compromise on this.',
+    sundayPrep: [
+      'Cut potatoes into even thick chip shapes. Store in cold water in the fridge to prevent browning.',
+      'Finely dice shallot and mince garlic — store together in a container.',
+      'Crack black pepper coarsely using a mortar or the base of a heavy pan.',
+    ],
+  },
+];
+
+// ── RENDER ──────────────────────────────────────────────────────────────────
+
+function buildTabs() {
+  const bar = document.getElementById('tabBar');
+  MEALS.forEach((m, i) => {
+    const tab = document.createElement('div');
+    tab.className = 'tab' + (i === 0 ? ' active' : '');
+    tab.style.setProperty('--tab-accent', m.accent);
+    tab.dataset.index = i;
+    tab.innerHTML = `<div class="tab-day">${m.shortDay}</div><div class="tab-name">${m.name.split(' ').slice(0,3).join(' ')}</div>`;
+    tab.addEventListener('click', () => activateTab(i));
+    bar.appendChild(tab);
+  });
+}
+
+function buildPanels() {
+  const main = document.getElementById('mainContent');
+  MEALS.forEach((m, i) => {
+    const panel = document.createElement('div');
+    panel.className = 'panel' + (i === 0 ? ' active' : '');
+    panel.dataset.index = i;
+    panel.style.setProperty('--meal-accent', m.accent);
+    panel.style.setProperty('--meal-accent-light', m.accentLight);
+
+    const ings = m.ingredients.map(([qty, name]) =>
+      `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`
+    ).join('');
+
+    const steps = m.steps.map(([time, head, body], idx) =>
+      `<div class="step">
+        <div class="step-num">${idx + 1}</div>
+        <div class="step-body">
+          <div class="step-head-row">
+            <span class="step-heading">${head}</span>
+            <span class="time-badge">${time}</span>
+          </div>
+          <p class="step-text">${body}</p>
+        </div>
+      </div>`
+    ).join('');
+
+    const prepItems = m.sundayPrep.map(p =>
+      `<div class="prep-item"><div class="prep-dot"></div><div>${p}</div></div>`
+    ).join('');
+
+    panel.innerHTML = `
+      <div class="hero" style="--hero-gradient: ${m.gradient}">
+        <div class="hero-bg"></div>
+        <div class="hero-emoji">${m.emoji}</div>
+        <div class="hero-content">
+          <div class="cuisine-pill">${m.cuisine}</div>
+          <div class="hero-title">${m.name}</div>
+          <div class="hero-subtitle">${m.subtitle}</div>
+        </div>
+      </div>
+      <div class="meta-strip">
+        <div class="meta-item"><div class="meta-label">Day</div><div class="meta-value">${m.day} · ${m.date}</div></div>
+        <div class="meta-item"><div class="meta-label">Serves</div><div class="meta-value">${m.serves}</div></div>
+        <div class="meta-item"><div class="meta-label">Active time</div><div class="meta-value">${m.time}</div></div>
+        <div class="meta-item"><div class="meta-label">Method</div><div class="meta-value">${m.method}</div></div>
+      </div>
+      <div class="content">
+        <div class="card" style="align-self:start">
+          <div class="card-header">
+            <span class="card-header-title">Ingredients</span>
+            <div class="card-header-accent"></div>
+          </div>
+          <div class="ingredients-list">${ings}</div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-header-title">Method</span>
+            <div class="card-header-accent"></div>
+          </div>
+          <div class="steps-list">${steps}</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">💡</div>
+          <div>
+            <div class="tip-label">Chef's Tip</div>
+            <div class="tip-text">${m.tip}</div>
+          </div>
+        </div>
+        <div class="prep-card">
+          <div class="prep-toggle" onclick="togglePrep(this)">
+            <div class="prep-toggle-left">
+              <span class="prep-tag">Sunday Prep</span>
+              <span class="prep-title">What to prep ahead for this meal</span>
+            </div>
+            <svg class="prep-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="prep-body">${prepItems}</div>
+        </div>
+      </div>
+    `;
+    main.appendChild(panel);
+  });
+}
+
+function activateTab(index) {
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+  document.querySelectorAll('.panel').forEach((p, i) => {
+    p.classList.toggle('active', i === index);
+  });
+  // Scroll tab into view
+  const tabs = document.querySelectorAll('.tab');
+  if (tabs[index]) tabs[index].scrollIntoView({ inline: 'center', behavior: 'smooth' });
+  // Scroll page to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function togglePrep(toggle) {
+  toggle.classList.toggle('open');
+  toggle.querySelector('.prep-chevron').classList.toggle('open');
+  toggle.nextElementSibling.classList.toggle('open');
+}
+
+buildTabs();
+buildPanels();
+</script>
+</body>
+</html>
