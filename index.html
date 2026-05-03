@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steve's Kitchen — Week of 28 April</title>
+<title>Steve's Kitchen — Week of 4 May</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -33,7 +33,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── SITE HEADER ─────────────────────────────────────────────────── */
   .site-header {
     position: sticky; top: 0; z-index: 100;
     background: #fff;
@@ -50,7 +49,6 @@
   .site-logo span { color: var(--text-muted); font-weight: 400; }
   .site-meta { font-size: 12px; color: var(--text-muted); font-weight: 500; }
 
-  /* ── TAB BAR ─────────────────────────────────────────────────────── */
   .tab-bar {
     position: sticky; top: 56px; z-index: 99;
     background: #fff;
@@ -69,7 +67,6 @@
     border-bottom: 2.5px solid transparent;
     transition: border-color var(--transition), color var(--transition);
     user-select: none;
-    position: relative;
   }
   .tab:hover .tab-day { color: var(--text-primary); }
   .tab-day {
@@ -91,11 +88,9 @@
   .tab.active .tab-name { color: var(--tab-accent, #111); font-weight: 600; }
   .tab.active { border-bottom-color: var(--tab-accent, #111); }
 
-  /* ── CONTENT PANELS ──────────────────────────────────────────────── */
   .panel { display: none; }
   .panel.active { display: block; }
 
-  /* ── HERO ────────────────────────────────────────────────────────── */
   .hero {
     width: 100%; height: 280px;
     position: relative; overflow: hidden;
@@ -144,7 +139,6 @@
     font-style: italic; font-weight: 400;
   }
 
-  /* Meta strip */
   .meta-strip {
     background: #fff;
     display: flex; gap: 0;
@@ -167,7 +161,6 @@
   }
   .meta-value { font-size: 13px; font-weight: 600; color: var(--text-primary); }
 
-  /* ── MAIN CONTENT ────────────────────────────────────────────────── */
   .content {
     max-width: 1100px; margin: 0 auto;
     padding: 32px 24px 60px;
@@ -184,7 +177,6 @@
     .hero-content { padding: 0 20px 20px; }
   }
 
-  /* ── CARDS ───────────────────────────────────────────────────────── */
   .card {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -206,7 +198,6 @@
     margin-left: auto;
   }
 
-  /* Ingredients */
   .ingredients-list { padding: 8px 0; }
   .ingredient-row {
     display: flex; align-items: baseline;
@@ -224,7 +215,6 @@
   }
   .ing-name { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
 
-  /* Method steps */
   .steps-list { padding: 4px 0; }
   .step {
     display: grid;
@@ -232,7 +222,6 @@
     gap: 0 14px;
     padding: 14px 20px;
     border-bottom: 1px solid #F4F4F4;
-    position: relative;
   }
   .step:last-child { border-bottom: none; }
   .step-num {
@@ -263,7 +252,6 @@
     line-height: 1.65;
   }
 
-  /* Tip card */
   .tip-card {
     grid-column: 1 / -1;
     background: var(--card-bg);
@@ -277,7 +265,6 @@
   .tip-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: var(--meal-accent); margin-bottom: 3px; }
   .tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 
-  /* Sunday prep */
   .prep-card {
     grid-column: 1 / -1;
     background: var(--card-bg);
@@ -323,7 +310,6 @@
     background: var(--meal-accent); flex-shrink: 0; margin-top: 7px;
   }
 
-  /* ── FOOTER ──────────────────────────────────────────────────────── */
   .site-footer {
     text-align: center; padding: 24px;
     font-size: 12px; color: var(--text-muted);
@@ -331,7 +317,6 @@
     background: #fff;
   }
 
-  /* ── PAGE TRANSITION ─────────────────────────────────────────────── */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -343,7 +328,7 @@
 
 <header class="site-header">
   <div class="site-logo">Steve's Kitchen <span>/ Meal Plan</span></div>
-  <div class="site-meta">Week of 28 April 2026</div>
+  <div class="site-meta">Week of 4 May 2026</div>
 </header>
 
 <nav class="tab-bar" id="tabBar"></nav>
@@ -356,196 +341,230 @@
 <script>
 const MEALS = [
   {
-    day: 'Monday', shortDay: 'MON', date: '28 April',
-    name: 'Korean Gochujang Beef Stir-fry',
+    day: 'Monday', shortDay: 'MON', date: '4 May',
+    name: 'Prawn Tikka Masala',
+    subtitle: 'with Basmati Rice',
+    cuisine: 'Indian', serves: '2–3', time: '25 min', method: 'Pan',
+    emoji: '🦐',
+    gradient: 'linear-gradient(135deg, #0d0400 0%, #5C1A00 45%, #A03A10 100%)',
+    accent: '#C04A1A',
+    accentLight: '#FDF1EC',
+    ingredients: [
+      ['400g','Raw king prawns, peeled'],
+      ['3 tbsp','Tikka masala paste'],
+      ['1 tin','Coconut milk (400ml)'],
+      ['1 tin','Chopped tomatoes'],
+      ['1 large','Onion, finely diced'],
+      ['3 cloves','Garlic, minced'],
+      ['1 tbsp','Ginger paste'],
+      ['1 tsp','Turmeric'],
+      ['1 tsp','Garam masala'],
+      ['1 tbsp','Tomato purée'],
+      ['200g','Basmati rice'],
+      ['1 tbsp','Vegetable oil'],
+      ['to taste','Salt'],
+      ['to serve','Fresh coriander & lime'],
+    ],
+    steps: [
+      ['15 min','Start the rice first','Rinse 200g basmati until the water runs clear. Start in the rice cooker with 240ml water. It will be ready just as the curry finishes.'],
+      ['8 min','Build the onion base','Heat 1 tbsp vegetable oil in HexClad pan on medium (5–6/10). Add the diced onion with a pinch of salt. Cook 7–8 min, stirring regularly, until soft and pale golden. Don\'t rush — the base is the flavour foundation.'],
+      ['1 min','Add garlic and ginger','Add 3 cloves minced garlic and 1 tbsp ginger paste to the pan. Stir constantly for 60 sec until fragrant. Don\'t let them brown.'],
+      ['2 min','Bloom the paste and spices','Add 3 tbsp tikka masala paste, 1 tsp turmeric and 1 tbsp tomato purée. Stir and cook 90 sec on medium-high — the paste darkens and the raw edge cooks out. Keep it moving.'],
+      ['7 min','Build and simmer the sauce','Pour in 1 tin chopped tomatoes and 1 tin coconut milk. Stir well, scraping up any fond. Bring to a gentle simmer, then cook uncovered 6–7 min until the sauce reduces slightly and deepens in colour. Stir in 1 tsp garam masala. Taste: adjust salt.'],
+      ['3 min','Cook the prawns','Add 400g raw prawns in a single layer. Stir gently. They\'re done the moment they turn uniformly pink and curl into a loose C-shape — about 2–3 min. Remove from heat immediately. An O-shape means overcooked.'],
+      ['30 sec','Finish','Squeeze lime over the top. Scatter fresh coriander. Serve straight from the pan over rice.'],
+    ],
+    tip: 'Prawns are the last thing in and they only need 3 minutes. The most common mistake is adding them too early or leaving them on the heat too long. Pink and C-shaped: done. Off the heat.',
+    sundayPrep: [
+      'Finely dice onion and store in a container.',
+      'Mince garlic and keep covered with a drop of oil.',
+      'If using frozen prawns, move to fridge Saturday evening to thaw overnight.',
+    ],
+  },
+  {
+    day: 'Tuesday', shortDay: 'TUE', date: '5 May',
+    name: 'Bangers & Mash',
+    subtitle: 'with Onion Gravy & Peas — a house favourite',
+    cuisine: 'British', serves: '2–3', time: '30 min', method: 'Pan + Hob',
+    emoji: '🍽️',
+    gradient: 'linear-gradient(135deg, #080500 0%, #3A2800 45%, #6B4A10 100%)',
+    accent: '#8B6020',
+    accentLight: '#FBF5EC',
+    ingredients: [
+      ['6','Pork sausages'],
+      ['600g','Maris Piper potatoes, peeled and cubed'],
+      ['200g','Frozen peas'],
+      ['1 tbsp','Vegetable oil'],
+      ['30g','Butter'],
+      ['splash','Whole milk'],
+      ['1 tbsp','Worcestershire sauce'],
+      ['gravy','Granules or packet, made up'],
+      ['to taste','Salt & black pepper'],
+    ],
+    steps: [
+      ['20 min','Boil the potatoes','Peel and cut 600g Maris Pipers into even chunks — roughly 3–4cm. Put in a pan of cold salted water, bring to the boil, then simmer 15–18 min until a knife goes through with no resistance. Drain well and leave to steam dry in the colander for 2 min — the drier the potato, the fluffier the mash.'],
+      ['20 min','Cook the sausages (start with potatoes)','Heat 1 tbsp vegetable oil in HexClad pan on medium heat (5/10). Add the sausages. Turn every 3–4 min. You want them deep golden-brown on all sides, cooked all the way through — about 18–20 min total. Medium heat is important: too high and the skins split before the inside is cooked.'],
+      ['3 min','Cook the peas','With 3 min left, tip frozen peas into a small pan of boiling salted water. Simmer 2–3 min. Drain well.'],
+      ['3 min','Make the mash','Return drained potatoes to the hot pan (off the heat). Add 30g butter and a splash of warm milk. Mash firmly, then beat with a wooden spoon until smooth. Season generously with salt and black pepper. Taste — it should be well seasoned and buttery.'],
+      ['2 min','Make the gravy','Follow packet instructions. A splash of Worcestershire sauce stirred in lifts it from flat to proper gravy.'],
+      ['1 min','Plate','Big pile of mash, three sausages on top, peas alongside, gravy poured generously over everything.'],
+    ],
+    tip: 'Steam-dry the potatoes after draining — that 2 minutes in the colander makes a real difference to mash texture. Wet potatoes make gluey mash.',
+    sundayPrep: [
+      'Peel and cube potatoes, store in cold water in the fridge to prevent browning.',
+      'No other prep needed — this one comes together start to finish in one go.',
+    ],
+  },
+  {
+    day: 'Wednesday', shortDay: 'WED', date: '6 May',
+    name: 'Thai Green Curry',
+    subtitle: 'with Chicken, Bamboo Shoots & Basmati Rice',
+    cuisine: 'Thai', serves: '2–3', time: '25 min', method: 'Pan',
+    emoji: '🍛',
+    gradient: 'linear-gradient(135deg, #011008 0%, #0A4020 45%, #1A7040 100%)',
+    accent: '#1E7A4A',
+    accentLight: '#EBF7F1',
+    ingredients: [
+      ['2 large','Chicken breasts, sliced into strips'],
+      ['2–3 tbsp','Thai green curry paste'],
+      ['1 tin','Coconut milk (400ml)'],
+      ['1 tin','Bamboo shoots, drained'],
+      ['150g','Green beans, trimmed'],
+      ['1 tsp','Sugar (golden granulated)'],
+      ['1 tbsp','Fish sauce'],
+      ['200g','Basmati rice'],
+      ['1 tbsp','Vegetable oil'],
+      ['to serve','Fresh coriander & lime'],
+    ],
+    steps: [
+      ['15 min','Start rice first','Rinse 200g basmati and start in the rice cooker with 240ml water before anything else.'],
+      ['2 min','Fry the paste','Heat 1 tbsp oil in HexClad pan on medium-high. Add 2–3 tbsp Thai green curry paste. Stir and fry 60–90 sec until it darkens slightly and smells fragrant and toasty. Frying the paste before adding liquid is what develops the flavour — don\'t skip this step.'],
+      ['3 min','Add coconut milk','Shake the tin well — the cream settles at the top. Pour in the full tin. Stir to combine with the paste. Bring to a gentle simmer. Don\'t boil hard: it splits the sauce and dulls the colour.'],
+      ['10 min','Add chicken and bamboo','Add sliced chicken breast and drained bamboo shoots. Stir to coat. Simmer gently 8–10 min until chicken is cooked through — no pink in the thickest piece. Add 1 tbsp fish sauce and 1 tsp sugar. Stir and taste: it should be creamy, fragrant, lightly sweet-salty. Adjust fish sauce for salt, sugar if too sharp.'],
+      ['4 min','Add green beans','Add 150g trimmed green beans in the last 3–4 min — you want them cooked through but still with a little bite. Bright green, not khaki.'],
+      ['1 min','Finish','Squeeze lime over. Scatter fresh coriander. Serve over rice.'],
+    ],
+    tip: 'Frying the paste dry before the coconut milk goes in is the single most important step. It transforms the paste from raw and sharp to deep and fragrant. 90 seconds of stirring is all it takes.',
+    sundayPrep: [
+      'Slice chicken breasts into even strips and refrigerate.',
+      'Trim green beans and store in a container.',
+      'Drain bamboo shoots and keep covered.',
+    ],
+  },
+  {
+    day: 'Thursday', shortDay: 'THU', date: '7 May',
+    name: 'Chipotle Beef & Black Bean',
+    subtitle: 'Rice Bowl with Sour Cream & Lime',
+    cuisine: 'Mexican', serves: '2–3', time: '25 min', method: 'Pan',
+    emoji: '🌶️',
+    gradient: 'linear-gradient(135deg, #0d0400 0%, #5C1800 45%, #9E3A0A 100%)',
+    accent: '#B84A18',
+    accentLight: '#FDF1EB',
+    ingredients: [
+      ['400g','Beef mince'],
+      ['1.5 tbsp','Chipotle chilli paste'],
+      ['1 tin','Black beans, drained'],
+      ['1 tin','Chopped tomatoes'],
+      ['1 large','Onion, finely diced'],
+      ['3 cloves','Garlic, minced'],
+      ['1 tsp','Cumin, ground'],
+      ['1 tsp','Smoked paprika'],
+      ['1 tsp','Coriander, ground'],
+      ['1 tbsp','Tomato purée'],
+      ['200g','Basmati rice'],
+      ['1 tbsp','Vegetable oil'],
+      ['1','Lime, juiced'],
+      ['to serve','Sour cream & fresh coriander'],
+    ],
+    steps: [
+      ['15 min','Start the rice','Rinse 200g basmati and start in the rice cooker.'],
+      ['5 min','Brown the mince — properly','Heat HexClad pan on high. Add 1 tbsp oil. Add beef mince and press it flat in the pan. Leave undisturbed for 2–3 min to build a deep brown crust. Then break it up and continue cooking, spreading it out. A proper sear = real flavour. Grey steamed mince is flat. Season with salt and pepper.'],
+      ['5 min','Soften the onion','Push the browned mince to the side. Reduce heat to medium. Add diced onion to the clear side of the pan and cook 4–5 min until soft. Then mix together with the mince.'],
+      ['1 min','Add garlic and spices','Add 3 cloves minced garlic, 1 tsp cumin, 1 tsp smoked paprika, 1 tsp coriander and 1 tbsp tomato purée. Stir everything together 60 sec — the spices bloom and the purée caramelises slightly.'],
+      ['2 min','Add the chipotle','Add 1.5 tbsp chipotle paste. Stir through on medium-high for 90 sec. The paste coats the mince and adds that smoky, mild heat. It\'s the backbone of the whole dish.'],
+      ['8 min','Simmer with tomatoes and beans','Pour in 1 tin chopped tomatoes. Add 1 tin drained black beans. Stir well. Simmer uncovered 7–8 min until the sauce thickens and reduces. It should coat the back of a spoon.'],
+      ['1 min','Finish','Squeeze in the juice of 1 lime. Taste and adjust salt. Serve over rice, topped with a generous dollop of sour cream and fresh coriander.'],
+    ],
+    tip: 'This makes excellent next-day lunch — the flavours deepen overnight. Reheat with a splash of water and serve in a wrap with cheese. Make the full batch even if cooking for two.',
+    sundayPrep: [
+      'Dice onion and store in a container.',
+      'Mince garlic in advance — store covered.',
+      'This is very quick to make from scratch, so minimal prep needed.',
+    ],
+  },
+  {
+    day: 'Friday', shortDay: 'FRI', date: '8 May',
+    name: 'Soy & Honey Chicken Thighs',
     subtitle: 'with Egg Noodles & Bamboo Shoots',
-    cuisine: 'Korean', serves: '2–3', time: '25 min', method: 'Wok — high heat',
+    cuisine: 'Japanese', serves: '2–3', time: '30 min', method: 'Air fryer + Pan',
     emoji: '🍜',
-    gradient: 'linear-gradient(135deg, #1a0606 0%, #5C1010 45%, #9B2020 100%)',
-    accent: '#B5443F',
-    accentLight: '#FDF0EF',
+    gradient: 'linear-gradient(135deg, #030810 0%, #0D2040 45%, #1A3A6A 100%)',
+    accent: '#2A5298',
+    accentLight: '#EBF0FA',
     ingredients: [
-      ['400g','Beef stir-fry strips'],['125g','Egg noodles (dried)'],
-      ['1 tin','Bamboo shoots, drained'],['4','Spring onions, sliced'],
-      ['3 cloves','Garlic, minced'],['2 tbsp','Gochujang'],
-      ['2 tbsp','Dark soy sauce'],['1 tbsp','Light soy sauce'],
-      ['1 tbsp','Sesame oil'],['1 tbsp','Honey'],
-      ['1 tbsp','Ginger paste'],['1 tbsp','Cornflour'],
-      ['1 tbsp','Rice vinegar'],['1 tsp','Chilli flakes'],['1 tbsp','Vegetable oil'],
+      ['4','Boneless chicken thighs'],
+      ['2 tbsp','Dark soy sauce'],
+      ['1 tbsp','Light soy sauce'],
+      ['2 tbsp','Honey'],
+      ['1 tbsp','Ginger paste'],
+      ['3 cloves','Garlic, minced'],
+      ['1 tbsp','Sesame oil'],
+      ['1 tbsp','Cornflour'],
+      ['125g','Egg noodles (dried)'],
+      ['1 tin','Bamboo shoots, drained'],
+      ['1 tsp','Chilli flakes'],
+      ['1 tbsp','Vegetable oil'],
+      ['4','Spring onions, sliced'],
     ],
     steps: [
-      ['3 min','Cook the noodles','Boil 125g dried egg noodles in well-salted water 2–3 min until just under al dente. Drain, rinse cold immediately, toss in a few drops of sesame oil to stop clumping. Set aside — they finish in the wok.'],
-      ['2 min','Coat the beef','Toss 400g beef stir-fry strips with 1 tbsp cornflour and a pinch of salt. The cornflour locks moisture in during the sear and binds sauce to every piece. Don\'t skip it.'],
-      ['1 min','Make the sauce','Whisk together: 2 tbsp gochujang, 2 tbsp dark soy sauce, 1 tbsp light soy sauce, 1 tbsp honey, 1 tbsp rice vinegar, and 2 tbsp water. Taste: deeply savoury, bold, pleasantly sweet. Adjust with a little more honey if needed.'],
-      ['5 min','Sear the beef — the critical step','Heat HexClad wok on maximum gas for 90 seconds before adding oil. Add 1 tbsp vegetable oil — it should shimmer and just smoke. Lay beef in a single layer. Hold 60–90 sec without moving until a dark crust forms. Toss once. Work in 2–3 batches. Crowding the pan drops the temperature and steams instead of searing.'],
-      ['2 min','Build the aromatics','Without lowering heat, add 3 cloves minced garlic, 1 tbsp ginger paste and 1 tsp chilli flakes. Stir constantly 30 sec. Add 1 tin drained bamboo shoots; toss 60 sec.'],
-      ['2 min','Combine and sauce','Return all beef. Pour the sauce over and toss aggressively on maximum heat 60–90 sec until it coats everything. Add cooked noodles and toss until glossed through.'],
-      ['30 sec','Finish','Off heat — drizzle 1 tbsp sesame oil over the top (cooking it kills the fragrance). Serve immediately with 4 sliced spring onions piled on.'],
+      ['10+ min','Marinate the chicken','Mix: 2 tbsp dark soy, 1 tbsp light soy, 2 tbsp honey, 1 tbsp ginger paste, 3 cloves minced garlic and 1 tbsp cornflour. Coat the 4 chicken thighs thoroughly. Leave to marinate while the air fryer preheats — 10 min minimum, longer if time allows.'],
+      ['20 min','Air fry the chicken','Preheat Ninja to 190°C for 3 min. Add chicken thighs in a single layer, smooth side down. Cook 10 min, flip, cook 8–10 min more until deep mahogany and cooked through. Watch the glaze in the last 5 min — honey burns fast. If it\'s colouring too quickly, drop to 180°C.'],
+      ['4 min','Cook the noodles','Boil 125g dried egg noodles in well-salted water 3–4 min until just tender. Drain, rinse with cold water immediately, toss with a few drops of sesame oil to stop clumping.'],
+      ['3 min','Stir-fry the bamboo','Heat 1 tbsp vegetable oil in HexClad pan on high. Add drained bamboo shoots and 1 tsp chilli flakes. Toss 2 min until hot and slightly golden at the edges. Add noodles and toss together.'],
+      ['1 min','Combine and finish','Slice the rested chicken thighs. Pile noodles and bamboo into bowls. Lay sliced chicken on top. Drizzle 1 tbsp sesame oil over everything. Scatter spring onions. Serve immediately.'],
     ],
-    tip: 'Maximum heat is non-negotiable. The HexClad wok can handle it — let it get properly hot before the beef goes in. That loud, aggressive sizzle the moment it hits the pan is exactly what you want.',
+    tip: 'Keep a close eye on the glaze in the air fryer — honey mixed with soy goes from perfectly caramelised to burnt quickly. The last 5 minutes are critical. Dark mahogany: good. Black and smoking: too far.',
     sundayPrep: [
-      'Mix the stir-fry sauce (gochujang, soy sauces, honey, rice vinegar) in a jar — refrigerate.',
-      'Slice beef into strips, toss in cornflour, cover and refrigerate.',
-      'Drain bamboo shoots. Mince garlic. Slice spring onions.',
+      'Mix the marinade and coat the chicken on Thursday evening for deeper flavour penetration.',
+      'Slice spring onions and store in a small container.',
+      'Drain bamboo shoots in advance.',
     ],
   },
   {
-    day: 'Tuesday', shortDay: 'TUE', date: '29 April',
-    name: 'Harissa Lamb Meatballs',
-    subtitle: 'on Red Lentil Dahl — batch-friendly',
-    cuisine: 'North African', serves: '2–3 + leftovers', time: '40 min', method: 'Pan',
-    emoji: '🫕',
-    gradient: 'linear-gradient(135deg, #110a00 0%, #5C3000 45%, #9B6020 100%)',
-    accent: '#B87333',
-    accentLight: '#FDF4EC',
-    ingredients: [
-      ['500g','Lamb mince'],['200g','Red lentils, dried'],
-      ['1 tin','Chopped tomatoes'],['2 tbsp','Harissa paste'],
-      ['1 tbsp','Ginger paste'],['3 cloves','Garlic, minced'],
-      ['1 large','Onion, finely diced'],['1 tsp','Cumin, ground'],
-      ['1 tsp','Coriander, ground'],['½ tsp','Cinnamon, ground'],
-      ['½ tsp','Chilli flakes'],['1 tbsp','Tomato purée'],
-      ['2 tbsp','olive oil'],['to serve','Greek yogurt'],['to garnish','Fresh coriander'],
-    ],
-    steps: [
-      ['5 min','Form the meatballs','Combine 500g lamb mince with 1 tbsp harissa paste, 1½ cloves minced garlic (half the total), 1 tsp ground cumin, ½ tsp ground cinnamon, salt and pepper. Mix just until combined — overworking makes them dense. Roll into 16 even golf-ball sized balls. Wet hands to stop sticking.'],
-      ['6 min','Brown the meatballs','Heat 2 tbsp olive oil in HexClad pan on medium-high (7/10 on gas). Give it 60 sec to reach temperature. Brown meatballs in 2 batches, turning every 90 sec until deeply coloured on all sides. They don\'t need to be cooked through — they finish in the dahl. Remove to a plate.'],
-      ['7 min','Build the dahl base','Same pan — don\'t clean it. Fry 1 large diced onion on medium 5–6 min until genuinely soft and pale golden. Add remaining 1½ cloves minced garlic and 1 tbsp ginger paste; stir 60 sec until fragrant.'],
-      ['90 sec','Bloom the spices','Stir in 1 tsp ground coriander, remaining 1 tbsp harissa paste and 1 tbsp tomato purée. Cook 90 sec — the paste darkens, spices toast, the base deepens. Keep it moving so it doesn\'t catch.'],
-      ['20 min','Simmer to finish','Add 200g dried red lentils, 1 tin chopped tomatoes and 400ml water. Stir and bring to a gentle simmer. Nestle meatballs back in. Cook uncovered 18–20 min, stirring every 5 min. Done when lentils are completely soft and sauce has thickened to a spoonable consistency.'],
-      ['1 min','Serve','Taste and adjust salt. Squeeze of lemon if it needs lifting. Serve in deep bowls with a generous dollop of Greek yogurt and fresh coriander scattered over.'],
-    ],
-    tip: 'Dahl thickens significantly overnight. When reheating for lunch, add 3–4 tbsp water and stir over medium heat — it comes back perfectly.',
-    sundayPrep: [
-      'Mix and roll all 16 meatballs. Lay on a lined tray, cover with cling film and refrigerate.',
-      'Finely dice the onion and store in a container.',
-      'Weigh out 200g lentils. Mince the garlic.',
-    ],
-  },
-  {
-    day: 'Wednesday', shortDay: 'WED', date: '30 April',
-    name: 'Jerk Chicken Thighs',
-    subtitle: 'with Rice & Kidney Beans',
-    cuisine: 'Caribbean', serves: '2–3', time: '30 min + marinade', method: 'Air fryer',
-    emoji: '🍗',
-    gradient: 'linear-gradient(135deg, #071208 0%, #1A4D24 45%, #2E7A3A 100%)',
-    accent: '#3D7A52',
-    accentLight: '#EDF7F1',
-    ingredients: [
-      ['4 large','Chicken thighs, bone-in'],['1 tin','Kidney beans, drained'],
-      ['250g','Basmati rice'],['1½ tsp','Allspice, ground'],
-      ['1 tsp','Thyme, dried'],['1 tsp','Chilli flakes'],
-      ['1 tbsp','Dark soy sauce'],['1 tbsp','Honey'],
-      ['1 tbsp','Ginger paste'],['3 cloves','Garlic, minced'],
-      ['1','Lime, juiced'],['1 tbsp','olive oil'],['to taste','Salt & black pepper'],
-    ],
-    steps: [
-      ['5 min','Score and marinate','Using a sharp knife, cut 3–4 deep diagonal slashes through the skin right down to the bone — the marinade can only penetrate what it physically touches. Mix the marinade: 1½ tsp ground allspice, 1 tsp dried thyme, 1 tsp chilli flakes, 1 tbsp dark soy sauce, 1 tbsp honey, 1 tbsp ginger paste, 3 cloves minced garlic, juice of 1 lime, 1 tbsp olive oil, salt and pepper. Work it firmly into every cut and all over the skin. Cover and refrigerate. Tuesday evening is ideal — overnight gives the best flavour penetration but 4 hours minimum will do.'],
-      ['3 min','Preheat air fryer','Set Ninja to 200°C, preheat 3 minutes. Place 4 thighs skin-side up in a single layer — no overlapping, or the skin won\'t crisp. Don\'t line the basket.'],
-      ['25 min','Cook','Air fry 200°C for 22–25 min. Don\'t open the drawer in the first 15 min. At 22 min: skin should be deep mahogany, set and firm. Pierce the thickest part — juices must run completely clear. If skin needs more colour, give it 3 more minutes.'],
-      ['15 min','Rice and beans (start when chicken goes in)','Rinse 250g basmati rice until water runs mostly clear. Add to rice cooker with 300ml water. With 5 min left on the chicken, stir in 1 tin drained kidney beans — they warm through in the residual steam.'],
-      ['5 min','Rest and serve','Rest chicken 5 min on a board — cutting too early sends the juices straight onto the board. Serve over rice and beans. Squeeze any remaining lime over.'],
-    ],
-    tip: 'A good one to cook with your son — he can mix the marinade and score the chicken. The scoring technique is the key skill here; shallow cuts make no difference to flavour penetration.',
-    sundayPrep: [
-      'Score the chicken thighs deeply — 3–4 cuts per thigh, right down to the bone.',
-      'Mix the marinade and coat chicken generously. Refrigerate Tuesday evening — overnight is ideal, 4 hours minimum.',
-      'Drain and rinse the kidney beans, store in a container.',
-    ],
-  },
-  {
-    day: 'Thursday', shortDay: 'THU', date: '1 May',
-    name: 'Chicken Saag',
-    subtitle: 'with Basmati Rice',
-    cuisine: 'Indian', serves: '2–3', time: '35 min', method: 'Pan',
-    emoji: '🥘',
-    gradient: 'linear-gradient(135deg, #110c00 0%, #5C4000 45%, #9B7020 100%)',
-    accent: '#C08B28',
-    accentLight: '#FDF8EC',
-    ingredients: [
-      ['4 boneless','Chicken thighs, cut into chunks'],['200g','Fresh spinach'],
-      ['1 tin','Chopped tomatoes'],['1 large','Onion, finely diced'],
-      ['3 cloves','Garlic, minced'],['1 tbsp','Ginger paste'],
-      ['1 tsp','Cumin, ground'],['1 tsp','Coriander, ground'],
-      ['1 tsp','Turmeric'],['1 tsp','Garam masala'],
-      ['200g','Basmati rice'],['2 tbsp','olive oil'],
-      ['to taste','Salt'],['optional','Greek yogurt to serve'],
-    ],
-    steps: [
-      ['10 min','Build the onion base — the foundation','Heat 2 tbsp olive oil in HexClad pan, medium heat (5–6/10). Add 1 large finely diced onion with a pinch of salt. Stir every 60–90 sec. Go past translucent — you want pale golden, with light caramelisation at the edges. The full 8–10 min. Rushing gives you a thin, flat sauce.'],
-      ['2 min','Garlic, ginger and spices','Push onion to the side. Add 3 cloves minced garlic and 1 tbsp ginger paste to the bare, hot pan centre. Stir 30 sec until fragrant. Add 1 tsp ground cumin, 1 tsp ground coriander and 1 tsp turmeric — stir everything together 60 sec. Spices should smell toasted and open, not raw.'],
-      ['5 min','Brown the chicken','Add 4 boneless chicken thighs (cut into chunks) in a single layer. Increase heat to medium-high (7/10). Leave undisturbed 2 min to colour underneath, then turn and repeat. Season generously with salt. It doesn\'t need to be fully cooked through yet.'],
-      ['15 min','Simmer','Pour in 1 tin chopped tomatoes. Stir and scrape up any fond from the pan base. Bring to a gentle simmer. Cook uncovered 12–15 min until chicken is cooked through and sauce has thickened and darkened.'],
-      ['2 min','Spinach and garam masala','Add 200g fresh spinach in 2–3 handfuls — each batch wilts in 30 sec before you add the next. Stir in 1 tsp garam masala right at the end to keep its aromatic brightness. Taste and adjust salt.'],
-      ['15 min','Rice','Rinse 200g basmati rice and start in the rice cooker with 240ml water when the simmer begins — done in sync with the curry.'],
-    ],
-    tip: 'The onion stage is where Indian curries are won or lost. Pale onions give you a weak, flat sauce. Properly golden onions — with that caramelised edge — give you real depth. Take the time.',
-    sundayPrep: [
-      'Finely dice the onion and refrigerate in a container.',
-      'Cut chicken thighs into even chunks and refrigerate.',
-      'Mince garlic — store covered in a small jar with a drop of oil.',
-    ],
-  },
-  {
-    day: 'Friday', shortDay: 'FRI', date: '2 May',
-    name: 'Coconut & Ginger Prawn Curry',
-    subtitle: 'with Basmati Rice',
-    cuisine: 'Thai', serves: '2–3', time: '25 min', method: 'Wok',
-    emoji: '🍤',
-    gradient: 'linear-gradient(135deg, #001410 0%, #0D4A40 45%, #1E7A6A 100%)',
-    accent: '#2E8B7A',
-    accentLight: '#EBF7F5',
-    ingredients: [
-      ['400g','Raw king prawns, peeled'],['1 tin','Coconut milk'],
-      ['200g','Basmati rice'],['1','Onion, finely sliced'],
-      ['3 cloves','Garlic, minced'],['1 tsp','Ginger paste'],
-      ['1 tbsp','Fish sauce'],['1 tbsp','Light soy sauce'],
-      ['1 tbsp','Sriracha'],['1 tsp','Rice vinegar'],
-      ['1','Lime — juice and zest'],['handful','Fresh coriander'],['1 tbsp','Oil'],
-    ],
-    steps: [
-      ['15 min','Start rice first','Rinse 200g basmati rice and start in the rice cooker with 240ml water before anything else. It takes 15 min and should finish just as the curry is done.'],
-      ['5 min','Build the base','Heat 1 tbsp oil in HexClad wok on medium-high. Add 1 finely sliced onion 3–4 min until softened and just colouring at the edges. Add 3 cloves minced garlic and 1 tsp ginger paste; stir 30 sec until fragrant.'],
-      ['4 min','Build the sauce','Shake the coconut tin well — the cream settles. Pour in 1 tin coconut milk along with 1 tbsp fish sauce, 1 tbsp light soy sauce, 1 tbsp sriracha and 1 tsp rice vinegar. Stir and bring to a gentle simmer. Taste now: creamy, salty, warm heat. Adjust with more sriracha, fish sauce, or a pinch of sugar.'],
-      ['3 min','Cook the prawns — timing is everything','Add 400g raw king prawns in a single layer. Cook 2 min without stirring — they\'ll start turning pink from underneath. Turn gently; cook 1–2 min more. They\'re done the moment they\'re uniformly pink and in a loose C-shape. Remove from heat immediately. A tight O-shape means overcooked.'],
-      ['1 min','Finish','Squeeze in the juice of 1 lime. Stir. Final taste. Serve over rice, topped with a handful of fresh coriander, lime zest, and extra sriracha at the table.'],
-    ],
-    tip: 'Watch the prawns obsessively in those last 3 minutes. They go from raw to perfect to overcooked in 90 seconds. The moment they\'re pink all the way through — you\'re done. Off the heat.',
-    sundayPrep: [
-      'If using frozen prawns, move to fridge Sunday evening to thaw overnight.',
-      'Finely slice onion, mince garlic — store together.',
-      'Mix fish sauce, soy sauce, sriracha and rice vinegar in a jar.',
-    ],
-  },
-  {
-    day: 'Saturday', shortDay: 'SAT', date: '3 May',
-    name: 'Ribeye Steaks',
-    subtitle: 'with Peppercorn Sauce & Air Fryer Chips',
-    cuisine: 'Western', serves: '2–3', time: '40 min', method: 'Pan + Air fryer',
+    day: 'Saturday', shortDay: 'SAT', date: '9 May',
+    name: 'Smoked Paprika Pork Chops',
+    subtitle: 'with Air Fryer Patatas Bravas',
+    cuisine: 'Spanish', serves: '2–3', time: '35 min', method: 'Pan + Air fryer',
     emoji: '🥩',
-    gradient: 'linear-gradient(135deg, #06080a 0%, #1C2830 45%, #384E5A 100%)',
-    accent: '#546E7A',
-    accentLight: '#EEF2F4',
+    gradient: 'linear-gradient(135deg, #0d0400 0%, #5A1008 45%, #9C2A10 100%)',
+    accent: '#B53018',
+    accentLight: '#FDF0EE',
     ingredients: [
-      ['2–3 × 250g','Ribeye steaks'],['800g','Potatoes, cut into thick chips'],
-      ['2 tsp','Black pepper, coarsely cracked'],['150ml','Double cream'],
-      ['100ml','Beef stock'],['1 tbsp','Worcestershire sauce'],
-      ['2 tbsp','Butter'],['1','Shallot, finely diced'],
-      ['2 cloves','Garlic, minced'],['1 tbsp','olive oil'],['generous','Flaky salt'],
+      ['2–3','Pork chops (bone-in or boneless)'],
+      ['1.5 tsp','Smoked paprika'],
+      ['1 tsp','Cumin, ground'],
+      ['½ tsp','Chilli flakes'],
+      ['1 tsp','Black pepper, ground'],
+      ['1 tsp','Sea salt'],
+      ['2 tbsp','Olive oil'],
+      ['600g','Potatoes, cut into chunky pieces'],
+      ['1 tbsp','Olive oil (for potatoes)'],
+      ['2 tbsp','Sriracha'],
+      ['2 tbsp','Ketchup'],
+      ['1 tsp','Red wine vinegar'],
     ],
     steps: [
-      ['30 min','Chips — start here','Toss 800g chip-cut potatoes in 1 tbsp olive oil and generous flaky salt. Preheat Ninja to 200°C for 3 min. Add chips — don\'t overcrowd or they steam. Cook 28–30 min, shaking at halfway. Deep golden with crisp edges and fluffy centres. Add 3–5 min if needed.'],
-      ['20 min before','Temper and season the steak','Take 2–3 ribeye steaks (250g each) from the fridge 20–30 min before cooking. Cold steak in a hot pan cooks unevenly — outside overdone before the centre hits temperature. Season both sides heavily with flaky salt and 2 tsp coarsely cracked black pepper. Press it in firmly.'],
-      ['5–7 min','Sear — the HexClad method','Heat HexClad pan on maximum gas for 90 seconds, no oil yet. Add a thin film of olive oil — it should shimmer and smoke immediately. Lay steaks away from you. Do not move. For a 2.5cm ribeye: 2.5 min per side for medium-rare, 3.5 min for medium. Last 60 sec: add 1 tbsp butter and baste continuously, tilting the pan and spooning foaming butter over. Hold the fat cap against the pan 30 sec.'],
-      ['5+ min','Rest — non-negotiable','Transfer to a warm board. Do not cut. Rest minimum 5 min — the fibres relax and reabsorb the juices. Cut too early and they pour onto the board, not your plate.'],
-      ['6 min','Peppercorn sauce — same pan','Don\'t clean the pan. The fond is the backbone of the sauce. Reduce heat to medium. Add 1 tbsp butter and 1 finely diced shallot — cook 2 min. Add 2 cloves minced garlic and 1 tsp cracked black pepper — stir 30 sec. Add 1 tbsp Worcestershire sauce and 100ml beef stock — it\'ll sizzle hard; scrape up all the fond. Reduce by half (~3 min). Pour in 150ml double cream; simmer 2–3 min until the sauce coats a spoon. Taste and season.'],
-      ['1 min','Plate','Slice steak against the grain. Chips alongside. Sauce poured over or served in a small jug.'],
+      ['30 min','Air fryer patatas bravas — start here','Cut 600g potatoes into chunky 3–4cm pieces (skin on is fine). Toss in 1 tbsp olive oil and a generous pinch of sea salt. Preheat Ninja to 200°C for 3 min. Cook 25–28 min, shaking at the halfway point. Deep golden crust, fluffy inside. Add 3–5 min if needed.'],
+      ['5 min','Make and apply the spice rub','Mix: 1.5 tsp smoked paprika, 1 tsp ground cumin, ½ tsp chilli flakes, 1 tsp black pepper, 1 tsp sea salt. Rub generously and firmly all over both sides of the pork chops. Don\'t be shy — this rub is the flavour. Let the chops sit at room temperature while the potatoes cook.'],
+      ['2 min','Make the bravas sauce','Mix 2 tbsp sriracha, 2 tbsp ketchup and 1 tsp red wine vinegar in a small bowl. Taste: smoky, spicy, slightly sharp. Add more sriracha for heat. Set aside.'],
+      ['8 min','Pan cook the chops','Heat HexClad pan on medium-high (7/10). Add 1 tbsp olive oil, let it shimmer. Lay chops away from you. Cook 4 min undisturbed — you want a deep, spiced crust forming. Flip and cook 3–4 min more until cooked through. For bone-in chops, hold the fat cap edge against the pan 30 sec to render it.'],
+      ['4 min','Rest, then plate','Rest the chops on a warm board 3–4 min. Don\'t skip this. Serve the chops alongside the golden patatas bravas with the bravas sauce poured over the potatoes or in a small bowl for dipping.'],
     ],
-    tip: 'If the steak doesn\'t make a loud, aggressive sizzle the moment it hits the pan, it wasn\'t hot enough. Pull it out, heat the pan longer, and go again. No compromise on this.',
+    tip: 'Let the spice rub sit on the chops for 20–30 minutes before cooking if you have time. The smoked paprika needs a bit of time on the meat to really penetrate — even 15 minutes makes a difference.',
     sundayPrep: [
-      'Cut potatoes into even thick chip shapes. Store in cold water in the fridge to prevent browning.',
-      'Finely dice shallot and mince garlic — store together in a container.',
-      'Crack black pepper coarsely using a mortar or the base of a heavy pan.',
+      'Mix the spice rub in advance and store in a small jar — it keeps for weeks.',
+      'Cut potatoes and store in cold water in the fridge overnight.',
+      'Mix bravas sauce in advance and refrigerate.',
     ],
   },
 ];
@@ -636,7 +655,7 @@ function buildPanels() {
         <div class="prep-card">
           <div class="prep-toggle" onclick="togglePrep(this)">
             <div class="prep-toggle-left">
-              <span class="prep-tag">Sunday Prep</span>
+              <span class="prep-tag">Prep Ahead</span>
               <span class="prep-title">What to prep ahead for this meal</span>
             </div>
             <svg class="prep-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -652,23 +671,18 @@ function buildPanels() {
 }
 
 function activateTab(index) {
-  document.querySelectorAll('.tab').forEach((t, i) => {
-    t.classList.toggle('active', i === index);
-  });
-  document.querySelectorAll('.panel').forEach((p, i) => {
-    p.classList.toggle('active', i === index);
-  });
-  // Scroll tab into view
-  const tabs = document.querySelectorAll('.tab');
-  if (tabs[index]) tabs[index].scrollIntoView({ inline: 'center', behavior: 'smooth' });
-  // Scroll page to top
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === index));
+  document.querySelectorAll('.panel').forEach((p, i) => p.classList.toggle('active', i === index));
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function togglePrep(toggle) {
-  toggle.classList.toggle('open');
-  toggle.querySelector('.prep-chevron').classList.toggle('open');
-  toggle.nextElementSibling.classList.toggle('open');
+  const body = toggle.nextElementSibling;
+  const chevron = toggle.querySelector('.prep-chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chevron.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
 }
 
 buildTabs();
