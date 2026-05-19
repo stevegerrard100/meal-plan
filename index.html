@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chéz Gerrard — Week of 13 May</title>
+<title>Chéz Gerrard — Week of 20 May</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -349,327 +349,343 @@
 
 <header class="site-header">
   <div class="site-logo">Chéz Gerrard <span>/ Meal Plan</span></div>
-  <div class="site-meta">Week of 13 May 2026</div>
+  <div class="site-meta">Week of 20 May 2026</div>
 </header>
 
 <nav class="tab-bar" id="tabBar"></nav>
 <main id="mainContent"></main>
 
 <footer class="site-footer">
-  Chéz Gerrard &nbsp;·&nbsp; All recipes serve 2–3
+  Chéz Gerrard &nbsp;·&nbsp; Wednesday serves 2 (dinner + lunch next day) · All other meals serve 2–3
 </footer>
 
 <script>
 const MEALS = [
   {
-    day: 'Wednesday', shortDay: 'WED', date: '13 May',
-    name: 'Spiced Lamb Kofta',
-    subtitle: 'with Flatbreads & Harissa Yogurt',
-    cuisine: 'Middle Eastern', serves: '2–3', time: '25 min', method: 'Pan',
-    emoji: '🫓',
-    gradient: 'linear-gradient(135deg, #0a0400 0%, #4A1800 45%, #8C3A18 100%)',
-    accent: '#A04020',
-    accentLight: '#FCF0EB',
-    ingredients: [
-      ['500g','Lamb mince'],
-      ['1.5 tsp','Cumin, ground'],
-      ['1 tsp','Coriander, ground'],
-      ['½ tsp','Cinnamon, ground'],
-      ['½ tsp','Chilli powder'],
-      ['1 tbsp','Ginger paste'],
-      ['1 tsp','Sea salt'],
-      ['1 tbsp','Olive oil'],
-      ['2–3','Flatbreads'],
-      ['150g','Greek yogurt'],
-      ['2 tbsp','Harissa paste'],
-      ['1','Lemon, halved'],
-      ['to serve','Fresh coriander'],
-    ],
-    steps: [
-      ['5 min','Mix the kofta',[
-        '<strong>500g lamb mince</strong> — add to a large bowl',
-        '<strong>1.5 tsp cumin, 1 tsp coriander, ½ tsp cinnamon, ½ tsp chilli powder, 1 tbsp ginger paste, 1 tsp salt</strong> — add all to the mince',
-        'Mix with your hands — just enough to combine. Don\'t overwork it.',
-        'Form into 8–10 oval sausage shapes, about 8cm long. Press firm so they hold their shape.',
-      ]],
-      ['1 min','Make the harissa yogurt',[
-        '<strong>150g Greek yogurt</strong> — into a bowl',
-        '<strong>2 tbsp harissa paste + good squeeze of lemon</strong> — mix in. Taste: should be creamy with a hit of heat.',
-        'Add more harissa if you want it spicier. Set aside.',
-      ]],
-      ['12 min','Cook the kofta',[
-        'Heat HexClad pan on medium-high (7/10)',
-        '<strong>1 tbsp olive oil</strong> — add to hot pan',
-        '<strong>Kofta</strong> — lay in, don\'t crowd. Cook undisturbed 3–4 min until a deep brown crust forms underneath',
-        'Flip. Cook 3 min more. Turn once more — total 10–12 min. Firm and dark on all sides, no pink inside.',
-      ]],
-      ['2 min','Warm the flatbreads',[
-        '<strong>2–3 flatbreads</strong> — 30 sec each side in a dry pan on medium heat',
-        'Or 20 sec in the microwave wrapped in a damp paper towel. Slightly charred edges are good.',
-      ]],
-      ['1 min','Serve',[
-        '<strong>Harissa yogurt</strong> — spread over the flatbreads',
-        '<strong>3–4 kofta per flatbread</strong> — lay on top',
-        '<strong>Lemon</strong> — squeeze over. <strong>Fresh coriander</strong> — scatter.',
-      ]],
-    ],
-    tip: 'Don\'t overwork the mince when mixing — just combine. Over-mixing melts the fat and makes the kofta dense and tough. Work quickly and with cool hands.',
-    sundayPrep: [
-      'Mix and shape the kofta ahead — store covered in the fridge for up to 24 hrs. Fresher flavour if you season the mix and shape it just before cooking.',
-      'Make the harissa yogurt in advance and refrigerate.',
-    ],
-  },
-  {
-    day: 'Thursday', shortDay: 'THU', date: '14 May',
-    name: 'Beef Keema',
-    subtitle: 'with Red Lentil Dahl & Basmati Rice',
-    cuisine: 'Indian', serves: '2–3 + lunch', time: '30 min', method: 'Pan',
-    emoji: '🍛',
-    gradient: 'linear-gradient(135deg, #060200 0%, #3C1000 45%, #7A2E08 100%)',
-    accent: '#903A10',
-    accentLight: '#FBF0EA',
-    ingredients: [
-      ['400g','Beef mince'],
-      ['100g','Red lentils (dried), rinsed'],
-      ['200g','Basmati rice'],
-      ['1 large','Onion, finely diced'],
-      ['3 cloves','Garlic, minced'],
-      ['1 tbsp','Ginger paste'],
-      ['2 tsp','Cumin, ground'],
-      ['2 tsp','Coriander, ground'],
-      ['1 tsp','Turmeric'],
-      ['1 tsp','Garam masala'],
-      ['1 tsp','Chilli powder'],
-      ['1 tin','Chopped tomatoes (400g)'],
-      ['1 tbsp','Tomato purée'],
-      ['1 tbsp','Vegetable oil'],
-      ['300ml','Water (for lentils)'],
-      ['to taste','Salt'],
-      ['to serve','Fresh coriander & lemon'],
-    ],
-    steps: [
-      ['15 min','Start rice and lentils together',[
-        '<strong>200g basmati</strong> — rinse and start in the rice cooker',
-        '<strong>100g red lentils + 300ml water + ¼ tsp turmeric</strong> — add to a small saucepan. Bring to boil, then simmer gently 15 min, stirring occasionally, until completely soft and collapsing.',
-        'Add a splash more water if they get too thick. Season with salt at the end.',
-      ]],
-      ['6 min','Brown the mince — properly',[
-        'Heat HexClad pan on high',
-        '<strong>1 tbsp vegetable oil</strong> — add to pan',
-        '<strong>400g beef mince</strong> — press flat into the pan. Leave undisturbed 2–3 min to build a deep brown crust.',
-        'Break up with a spoon and continue cooking until all pink is gone. Season well with salt and pepper.',
-      ]],
-      ['5 min','Soften the onion',[
-        'Push mince to one side. Lower heat to medium.',
-        '<strong>1 large diced onion</strong> — add to the cleared half of the pan. Cook 4–5 min, stirring, until soft and translucent.',
-        'Mix together with the mince.',
-      ]],
-      ['90 sec','Add garlic, ginger, spices',[
-        '<strong>3 cloves minced garlic + 1 tbsp ginger paste</strong> — add to pan',
-        '<strong>2 tsp cumin, 2 tsp coriander, ¾ tsp turmeric, 1 tsp chilli powder</strong> — add spices',
-        '<strong>1 tbsp tomato purée</strong> — stir in. Cook everything on medium-high for 90 sec. Spices bloom, purée caramelises slightly, raw edge cooks out.',
-      ]],
-      ['10 min','Simmer the sauce',[
-        '<strong>1 tin (400g) chopped tomatoes</strong> — pour in. Scrape up any fond.',
-        'Bring to a simmer, cook uncovered 8–10 min until thickened and reduced.',
-        '<strong>1 tsp garam masala</strong> — stir in. Taste: adjust salt and chilli.',
-      ]],
-      ['2 min','Combine and finish',[
-        '<strong>Cooked lentils</strong> — stir through the keema. They\'ll thicken everything and add body. Loosen with a splash of water if very thick.',
-        '<strong>Lemon + fresh coriander</strong> — squeeze and scatter over. Serve over rice.',
-      ]],
-    ],
-    tip: 'This is one of the best batch-cook meals in the plan — it actively improves overnight as the spices deepen. Make the full amount even if it\'s just the two of you. Reheat Thursday\'s leftovers with a splash of water for Friday lunch.',
-    sundayPrep: [
-      'Dice onion and mince garlic in advance — store covered.',
-      'Rinse and soak lentils for 10 min before cooking to speed up the simmer.',
-    ],
-  },
-  {
-    day: 'Friday', shortDay: 'FRI', date: '15 May',
-    name: 'Pan-seared Lamb Chops',
-    subtitle: 'with Beef Stock Jus & Air Fryer Chips',
-    cuisine: 'French / Western', serves: '2–3', time: '30 min', method: 'Pan + Air fryer',
-    emoji: '🥩',
-    gradient: 'linear-gradient(135deg, #05000a 0%, #2A0A30 45%, #5A1850 100%)',
-    accent: '#6E2260',
-    accentLight: '#F8EEF6',
-    ingredients: [
-      ['4','Lamb loin chops or cutlets'],
-      ['1 carton','Beef stock (500ml)'],
-      ['2 tbsp','Red wine vinegar'],
-      ['1 tsp','Thyme, dried'],
-      ['1 tsp','Black pepper, ground'],
-      ['1 tbsp','Olive oil'],
-      ['600g','Potatoes, cut into thick chips'],
-      ['1 tbsp','Vegetable oil (for chips)'],
-      ['to taste','Sea salt'],
-    ],
-    steps: [
-      ['28 min','Start the chips first',[
-        '<strong>600g potatoes</strong> — cut into thick chips (~1.5cm, skin on)',
-        '<strong>1 tbsp vegetable oil + generous pinch of sea salt</strong> — toss the chips to coat',
-        'Preheat Ninja to 200°C for 3 min. Cook 25–28 min, shaking the basket halfway. Deep golden and crispy outside, fluffy inside.',
-      ]],
-      ['5 min','Season the chops',[
-        '<strong>4 lamb chops</strong> — pat completely dry with kitchen paper. Moisture kills the crust.',
-        '<strong>Sea salt, black pepper, 1 tsp dried thyme</strong> — season both sides liberally. Press firmly into the meat.',
-        'Leave to sit at room temperature for at least 10 min while chips cook.',
-      ]],
-      ['6 min','Sear the chops',[
-        'When chips have 10 min left: heat HexClad pan on high until properly smoking',
-        '<strong>1 tbsp olive oil</strong> — add to pan',
-        '<strong>Lamb chops</strong> — lay in away from you. Leave completely undisturbed 2–3 min — let the crust form and release naturally.',
-        'Flip. Another 2–3 min. Cutlets: 2 min per side. Loin chops: 3 min per side. Goal is deep mahogany brown, not grey.',
-      ]],
-      ['6 min','Rest the chops + build the jus',[
-        'Remove chops to a warm plate. Don\'t wash the pan. Turn to medium heat.',
-        '<strong>2 tbsp red wine vinegar</strong> — add to pan. It sizzles hard, lifting all the dark fond. Stir and scrape for 30 sec.',
-        '<strong>500ml beef stock</strong> — pour in. Bring to boil, then simmer 5–6 min until reduced by roughly half and jus coats the back of a spoon.',
-        '<strong>½ tsp thyme</strong> — add. Taste: rich, savoury, slightly sharp. Adjust salt.',
-      ]],
-      ['1 min','Plate',[
-        '<strong>Chips</strong> — onto plates first',
-        '<strong>Chops</strong> — on top or alongside',
-        '<strong>Jus</strong> — poured over everything. Serve immediately.',
-      ]],
-    ],
-    tip: 'The fond — the dark brown stuck bits in the pan after the chops — is pure concentrated flavour. The red wine vinegar lifts it instantly. Don\'t be alarmed by the sizzle and steam. Add the stock straight after, before it burns.',
-    sundayPrep: [
-      'Cut chips and store in cold water in the fridge — drain and pat dry before cooking.',
-      'Season chops with salt and pepper up to a day ahead for deeper flavour.',
-    ],
-  },
-  {
-    day: 'Saturday', shortDay: 'SAT', date: '16 May',
-    name: 'Chicken Shawarma Thighs',
-    subtitle: 'with Spiced Chickpeas & Garlic Yogurt',
-    cuisine: 'Middle Eastern', serves: '2–3', time: '40 min', method: 'Air fryer + Pan',
+    day: 'Wednesday', shortDay: 'WED', date: '20 May',
+    name: 'Kashmiri Spiced Chicken',
+    subtitle: 'with Basmati Rice & Wilted Spinach — serves 2 (dinner + Thursday lunch)',
+    cuisine: 'Indian', serves: '2 (+ lunch)', time: '25 min', method: 'Air fryer',
     emoji: '🍗',
-    gradient: 'linear-gradient(135deg, #080400 0%, #3E1C00 45%, #7C3A08 100%)',
-    accent: '#9E4A10',
+    gradient: 'linear-gradient(135deg, #060200 0%, #3C1400 45%, #7A3210 100%)',
+    accent: '#A04A10',
     accentLight: '#FBF2EA',
     ingredients: [
-      ['4–6','Chicken thighs, boneless & skinless'],
-      ['1.5 tsp','Cumin, ground'],
-      ['1.5 tsp','Coriander, ground'],
-      ['1 tsp','Turmeric'],
-      ['½ tsp','Cinnamon, ground'],
-      ['1 tsp','Smoked paprika'],
-      ['½ tsp','Chilli powder'],
-      ['2 tbsp','Preserved lemon paste'],
-      ['2 tbsp','Olive oil'],
-      ['1','Lemon, juiced'],
-      ['2 tins','Chickpeas (400g each), drained'],
-      ['1 tbsp','Harissa paste'],
-      ['1 tbsp','Olive oil (for chickpeas)'],
-      ['150g','Greek yogurt'],
+      ['2','Chicken thighs, boneless & skinless'],
+      ['1.5 tsp','Kashmiri chilli blend'],
+      ['1 tsp','Garam masala'],
+      ['1 tsp','Coriander, ground'],
+      ['1 tsp','Cumin, ground'],
+      ['½ tsp','Turmeric'],
+      ['2 tbsp','Greek yogurt (marinade)'],
+      ['1 tbsp','Olive oil'],
+      ['1 tsp','Sea salt'],
+      ['1 thumb','Fresh ginger, grated'],
       ['2 cloves','Garlic, minced'],
-      ['to taste','Salt'],
+      ['150g','Basmati rice'],
+      ['100g','Spinach'],
+      ['1','Lemon'],
     ],
     steps: [
-      ['20+ min','Marinate the chicken — do this first',[
-        '<strong>1.5 tsp cumin, 1.5 tsp coriander, 1 tsp turmeric, ½ tsp cinnamon, 1 tsp smoked paprika, ½ tsp chilli powder</strong> — combine in a bowl',
-        '<strong>2 tbsp preserved lemon paste + 2 tbsp olive oil + juice of 1 lemon</strong> — add to spices and mix into a paste',
-        '<strong>4–6 chicken thighs</strong> — coat thoroughly all over. Marinate at least 20 min — longer is better. Morning is ideal.',
+      ['5 min + rest','Mix the marinade & coat chicken',[
+        '<strong>1.5 tsp Kashmiri chilli, 1 tsp garam masala, 1 tsp coriander, 1 tsp cumin, ½ tsp turmeric, 1 tsp salt</strong> — combine in a bowl',
+        '<strong>2 tbsp Greek yogurt + 1 tbsp olive oil + 1 thumb grated ginger + 2 minced garlic cloves + squeeze of lemon</strong> — mix into the spices to form a thick paste',
+        '<strong>2 chicken thighs</strong> — coat completely all over. Press the marinade in.',
+        'Marinate at least 1 hr — morning is ideal. Cover and refrigerate.',
+      ]],
+      ['15 min','Start rice',[
+        '<strong>150g basmati</strong> — rinse well and start in the rice cooker before the chicken goes in',
       ]],
       ['18 min','Air fry the chicken',[
-        'Preheat Ninja to 190°C',
-        '<strong>Marinated chicken thighs</strong> — place in a single layer. Cook 15–18 min, flipping halfway.',
-        'Check at 15 min — done when deep golden and no pink when pressed or cut. Don\'t overcook past 18 min.',
+        'Preheat Ninja to 190°C for 3 min',
+        '<strong>Marinated chicken thighs</strong> — place in the basket in a single layer',
+        'Cook 15–18 min, flipping halfway. Done when deeply coloured and firm with no pink when pressed.',
+        'Rest on a plate for 5 min before serving — important for juiciness.',
       ]],
-      ['5 min','Spiced chickpeas',[
-        'Heat HexClad pan on medium-high',
-        '<strong>1 tbsp olive oil</strong> — add to pan',
-        '<strong>2 tins (400g each) drained chickpeas</strong> — add to pan',
-        '<strong>1 tbsp harissa paste + pinch of cumin + pinch of salt</strong> — toss together 4–5 min until hot and some edges crisp',
-        '<strong>½ lemon</strong> — squeeze over at the end',
+      ['3 min','Wilt the spinach',[
+        'Heat HexClad pan on medium. Splash of olive oil.',
+        '<strong>2 cloves garlic, sliced</strong> — 30 sec until just softening',
+        '<strong>100g spinach</strong> — add to pan. Toss 2 min until fully wilted.',
+        '<strong>Salt + squeeze of lemon</strong> — season and serve.',
       ]],
-      ['1 min','Make garlic yogurt',[
-        '<strong>150g Greek yogurt</strong> — into a bowl',
-        '<strong>2 cloves minced garlic + pinch of salt + squeeze of lemon</strong> — stir in. Taste: cooling and garlicky.',
-        'Let sit 5 min for the garlic to mellow slightly.',
-      ]],
-      ['1 min','Plate',[
-        '<strong>Chickpeas</strong> — spoon onto plates',
-        '<strong>Chicken thighs</strong> — place on top',
-        '<strong>Garlic yogurt</strong> — spoon alongside or over. Add flatbreads if you have them.',
+      ['1 min','Serve & box lunch',[
+        'Plate one portion: rice + chicken + spinach.',
+        'Box the second portion immediately — it travels best while slightly warm. Keeps well in the fridge for Thursday lunch.',
       ]],
     ],
-    tip: 'Preserved lemon paste is the flavour backbone of this marinade — it does a different job to fresh lemon. Don\'t swap it out. Boneless thighs cook faster than bone-in so keep an eye from 15 min — they\'re done the moment the marinade has caught colour and the meat feels firm with no give.',
+    tip: 'Kashmiri chilli gives deep brick-red colour and a mild, fragrant heat rather than sharpness — it\'s the reason tandoori dishes look the way they do. The yogurt marinade does two jobs: tenderises the meat and creates a coating that caramelises beautifully in the air fryer. Don\'t skip the 5-minute rest after cooking.',
     sundayPrep: [
-      'Marinate the chicken in the morning for maximum flavour — cover and refrigerate, then go straight to the air fryer at dinner time.',
-      'Make the garlic yogurt ahead and refrigerate — the garlic mellows nicely over a few hours.',
+      'Mix the marinade and coat the chicken in the morning — cover and refrigerate. The longer it sits, the better.',
+      'Rinse the rice before you start cooking.',
+      'Grate and mince ginger and garlic in advance.',
     ],
   },
   {
-    day: 'Sunday', shortDay: 'SUN', date: '17 May',
-    name: 'Turkey Pad Kra Pao',
-    subtitle: 'Thai Basil Stir-fry with Basmati Rice & Fried Egg — Oli\'s to run',
-    cuisine: 'Thai', serves: '2–3', time: '25 min', method: 'Wok',
-    emoji: '🌿',
-    gradient: 'linear-gradient(135deg, #010a03 0%, #093018 45%, #126030 100%)',
-    accent: '#187040',
-    accentLight: '#EBF7F1',
+    day: 'Thursday', shortDay: 'THU', date: '21 May',
+    name: 'Honey & Sriracha Prawn Fried Rice',
+    subtitle: 'with Cucumber & Sesame Salad — good one for Oli to help with',
+    cuisine: 'Asian', serves: '2–3', time: '20 min', method: 'Wok',
+    emoji: '🦐',
+    gradient: 'linear-gradient(135deg, #080002 0%, #3A0810 45%, #7A1830 100%)',
+    accent: '#B83030',
+    accentLight: '#FBF0F0',
     ingredients: [
-      ['500g','Turkey mince'],
-      ['2 tbsp','Vegetable oil'],
-      ['4 cloves','Garlic, minced'],
-      ['2','Fresh red chillies, roughly chopped (or 1 tsp chilli flakes)'],
+      ['400g','Raw tiger prawns, peeled'],
+      ['300g','Cooked basmati rice, cold (Wednesday\'s leftovers)'],
+      ['2 tbsp','Honey'],
+      ['2 tbsp','Sriracha'],
       ['2 tbsp','Light soy sauce'],
-      ['1 tbsp','Dark soy sauce'],
       ['1 tbsp','Fish sauce'],
-      ['2 tsp','Sugar (golden granulated)'],
-      ['Large handful','Thai basil leaves — essential, see tip'],
+      ['1 tbsp','Sesame oil'],
+      ['1 tbsp','Vegetable oil'],
+      ['3','Eggs'],
       ['4','Spring onions, sliced'],
-      ['2–3','Eggs (one per person, fried on top)'],
-      ['200g','Basmati rice'],
-      ['extra','Vegetable oil for frying eggs'],
+      ['3 cloves','Garlic, minced'],
+      ['1 thumb','Fresh ginger, grated'],
+      ['½','Cucumber, finely sliced'],
+      ['1 tbsp','Rice vinegar (for salad)'],
+      ['Salt','to taste'],
     ],
     steps: [
-      ['15 min','Start rice',[
-        '<strong>200g basmati</strong> — rinse and start in the rice cooker before anything else',
+      ['2 min','Make the sauce & salad — before you turn the heat on',[
+        '<strong>2 tbsp honey + 2 tbsp sriracha + 2 tbsp light soy sauce + 1 tbsp fish sauce</strong> — mix in a small bowl. Set next to the hob.',
+        '<strong>½ cucumber, finely sliced</strong> — toss with 1 tbsp rice vinegar + pinch of salt + drizzle of sesame oil. Set aside — this is your salad.',
+        'Have everything else measured and within reach before the wok goes on.',
       ]],
       ['2 min','Get the wok ripping hot',[
         '<strong>HexClad wok</strong> — on highest gas flame. Leave 2 full minutes until properly smoking.',
-        'This isn\'t optional — medium heat gives steamed grey mince, not a proper stir-fry.',
+        'This isn\'t optional. Medium heat gives steamed grey prawns and clumped rice.',
       ]],
-      ['1 min','Garlic and chilli in',[
-        '<strong>2 tbsp vegetable oil</strong> — add to the hot wok',
-        '<strong>4 cloves minced garlic + 2 chopped red chillies</strong> — add immediately. Stir constantly 30–40 sec until fragrant.',
-        'Don\'t let the garlic burn — it goes from raw to golden to bitter very fast at this heat.',
+      ['90 sec','Garlic and ginger',[
+        '<strong>1 tbsp vegetable oil</strong> — add to the hot wok',
+        '<strong>3 cloves minced garlic + 1 thumb grated ginger</strong> — add immediately. Stir constantly for 30–40 sec. Fragrant, slightly golden — not brown.',
       ]],
-      ['4 min','Add turkey, get colour first',[
-        '<strong>500g turkey mince</strong> — spread flat across the wok. Leave undisturbed 60–90 sec — let it sear without moving.',
-        'Break up with a spatula and toss. Continue cooking, tossing regularly, until all pink is gone — 3–4 min total.',
+      ['3 min','Cook the prawns',[
+        '<strong>400g prawns</strong> — add to the wok in one layer. Leave undisturbed 60 sec to sear.',
+        'Toss once. Cook 1–2 min more until just pink through — don\'t overcook.',
+        'Remove to a plate — they\'ll finish in the sauce later.',
       ]],
-      ['2 min','Season and glaze',[
-        '<strong>2 tbsp light soy sauce</strong> — add',
-        '<strong>1 tbsp dark soy sauce</strong> — add',
-        '<strong>1 tbsp fish sauce</strong> — add',
-        '<strong>2 tsp sugar</strong> — add. Toss on high heat 60–90 sec until sauce coats the mince and starts to caramelise.',
-        'Taste: flat = tiny bit more fish sauce. Too salty = touch more sugar.',
+      ['2 min','Scramble eggs + fry rice',[
+        'Crack <strong>3 eggs</strong> straight into the wok. Scramble briefly with a spatula — big loose curds, not fully set.',
+        '<strong>300g cold cooked rice</strong> — add immediately. Break up any clumps. Toss on high heat 2 min until rice is heated through and starting to catch slightly.',
       ]],
-      ['30 sec','Basil off the heat',[
-        'Take the wok off the gas',
-        '<strong>Large handful Thai basil leaves</strong> — throw in immediately. Toss once — wilts from the residual heat. The aroma will fill the kitchen.',
-      ]],
-      ['3 min','Fry the eggs',[
-        'Heat a generous splash of oil in a small pan on medium-high',
-        '<strong>2–3 eggs</strong> — crack in and fry sunny-side up. Whites fully set, yolk still runny. Edges slightly crispy.',
-      ]],
-      ['1 min','Serve',[
-        '<strong>Rice</strong> — into bowls',
-        '<strong>Turkey mince</strong> — on top',
-        '<strong>Fried egg</strong> — over everything',
-        '<strong>Spring onions</strong> — scatter over',
+      ['90 sec','Sauce + prawns back in',[
+        'Pour the sauce over the rice. Toss hard on high heat 60 sec.',
+        '<strong>Prawns</strong> — add back in. Toss everything together 30 sec more.',
+        '<strong>½ tbsp sesame oil</strong> — drizzle in off the heat. Toss once.',
+        'Taste: should be sticky, sweet-hot, deeply savoury. Scatter spring onions.',
       ]],
     ],
-    tip: 'Thai basil is the dish. Regular Italian basil won\'t give you the same anise-y, peppery hit — it\'s worth sourcing (Waitrose, Asian supermarkets, or a large Tesco Extra usually stock it). If you genuinely can\'t find it, use regular basil plus an extra splash of fish sauce, but it\'s a different dish.',
+    tip: 'Cold leftover rice is essential for fried rice — it separates and fries rather than clumping and steaming. Wednesday\'s rice is perfect for this. The sauce goes in at the very end, not the beginning — this is what gives a sticky glaze without making everything soggy. Work fast once it hits the pan.',
     sundayPrep: [
-      'Mince garlic and chop chillies in advance.',
-      'Slice spring onions ahead.',
-      'For Oli: measure out the soy sauces, fish sauce and sugar into a small bowl before cooking — it all needs to go in fast once the mince is done.',
+      'Mix the sauce (honey, sriracha, light soy, fish sauce) into a bowl in the afternoon — 2 min job.',
+      'Slice spring onions and cucumber. Store covered in the fridge.',
+      'Make sure Wednesday\'s rice is cold in the fridge.',
+      'For Oli: pre-measure everything into bowls before he starts — the wok moves fast.',
+    ],
+  },
+  {
+    day: 'Friday', shortDay: 'FRI', date: '22 May',
+    name: 'Beef Arrabiata Penne',
+    subtitle: 'with Sautéed Spinach — batch sauce for Saturday lunch',
+    cuisine: 'Italian', serves: '2–3 + leftover sauce', time: '30 min', method: 'Pan',
+    emoji: '🍝',
+    gradient: 'linear-gradient(135deg, #050002 0%, #280814 45%, #641028 100%)',
+    accent: '#8B2030',
+    accentLight: '#F8ECEE',
+    ingredients: [
+      ['400g','Beef mince'],
+      ['2 tins','Chopped tomatoes (400g each)'],
+      ['200g','Penne'],
+      ['4 cloves','Garlic, minced'],
+      ['2 tsp','Chilli flakes (adjust for heat)'],
+      ['1 tbsp','Tomato purée'],
+      ['1 tsp','Dried oregano'],
+      ['1 tsp','Red wine vinegar'],
+      ['1 tbsp','Olive oil'],
+      ['100g','Spinach'],
+      ['Sea salt + black pepper','to taste'],
+      ['Parmesan','to serve'],
+    ],
+    steps: [
+      ['6 min','Brown the mince — properly',[
+        'Heat HexClad pan on high until hot. Add <strong>1 tbsp olive oil</strong>.',
+        '<strong>400g beef mince</strong> — press flat across the pan. Don\'t touch it for 2–3 min. Let a deep brown crust form underneath.',
+        'Break up with a spoon. Continue cooking until all pink is gone. Season well with salt and pepper.',
+        'The mince should have dark, slightly crispy patches — that\'s flavour. Don\'t drain off the fat.',
+      ]],
+      ['90 sec','Garlic, chilli, purée',[
+        'Lower heat to medium.',
+        '<strong>4 cloves minced garlic + 2 tsp chilli flakes</strong> — add to the mince. Stir 60 sec until fragrant but not catching.',
+        '<strong>1 tbsp tomato purée</strong> — stir in. Cook 30 sec more until it darkens slightly.',
+      ]],
+      ['12 min','Add tomatoes & reduce',[
+        '<strong>2 tins (800g) chopped tomatoes</strong> — pour in. Scrape up any bits from the bottom.',
+        '<strong>1 tsp red wine vinegar + 1 tsp dried oregano</strong> — stir in.',
+        'Bring to a simmer. Cook uncovered 12 min, stirring every few minutes, until the sauce is thick, deep red, and pulling away from the edges.',
+        'Taste and adjust salt. It should have a clean chilli heat — not aggressive.',
+      ]],
+      ['11 min','Cook pasta',[
+        'While sauce simmers: boil a large pan of heavily salted water.',
+        '<strong>200g penne</strong> — cook to packet instructions (usually 11 min for al dente).',
+        'Before draining, scoop out a mug of pasta water. Drain.',
+      ]],
+      ['2 min','Combine',[
+        'Add drained penne to the sauce. Toss together. Add a splash of pasta water if the sauce is too thick — it should cling to the penne, not sit in a pool.',
+        '<strong>100g spinach</strong> — throw in off the heat. Toss once until just wilted.',
+        'Taste: salt, heat, balance. Serve with parmesan.',
+      ]],
+      ['10 min','After dinner — prep Saturday BBQ marinades',[
+        'While the pan is still out: mix the <strong>ras el hanout chicken marinade</strong> (2 tbsp ras el hanout + 2 tbsp olive oil + 1 lemon juiced + 3 garlic cloves minced + 1 tsp salt). Coat the chicken thighs and refrigerate overnight.',
+        'Mix the <strong>kofta mixture</strong> (500g beef mince + 1 tsp cumin + 1 tsp coriander + 1 tsp chilli powder + ½ tsp allspice + 2 garlic cloves + 1 tsp grated ginger + 1 tsp salt). Cover and refrigerate.',
+      ]],
+    ],
+    tip: 'The arrabiata makes more sauce than you need tonight — that\'s intentional. Box the surplus sauce (without pasta mixed in) for a Saturday lunch reheat. It improves overnight. The pasta water trick is real: the starch in it helps the sauce emulsify and cling rather than slide off. One mug reserved is enough.',
+    sundayPrep: [
+      'Mince garlic in advance.',
+      'After dinner Friday: prep both BBQ marinades — chicken and kofta mix. Both improve overnight in the fridge.',
+    ],
+  },
+  {
+    day: 'Saturday', shortDay: 'SAT', date: '23 May',
+    name: 'BBQ Spread',
+    subtitle: 'Ras el Hanout Chicken · Beef Kofta Skewers · Garlic Yogurt · Salad · Flatbreads',
+    cuisine: 'North African', serves: '4–6', time: 'Afternoon prep + evening grill', method: 'BBQ',
+    emoji: '🔥',
+    gradient: 'linear-gradient(135deg, #020100 0%, #1E0E00 45%, #4A2A08 100%)',
+    accent: '#B86010',
+    accentLight: '#FDF3E8',
+    ingredients: [
+      ['— CHICKEN MARINADE (done Friday night) —', ''],
+      ['8–10','Chicken thighs, boneless & skinless'],
+      ['2 tbsp','Ras el hanout'],
+      ['2 tbsp','Olive oil'],
+      ['1','Lemon, juiced'],
+      ['3 cloves','Garlic, minced'],
+      ['1 tsp','Sea salt'],
+      ['— BEEF KOFTA (done Friday night) —', ''],
+      ['500g','Beef mince'],
+      ['1 tsp','Cumin, ground'],
+      ['1 tsp','Coriander, ground'],
+      ['1 tsp','Chilli powder'],
+      ['½ tsp','Allspice, ground'],
+      ['2 cloves','Garlic, minced'],
+      ['1 tsp','Fresh ginger, grated'],
+      ['1 tsp','Sea salt'],
+      ['— SIDES —', ''],
+      ['200g','Greek yogurt'],
+      ['2 cloves','Garlic, minced (for yogurt)'],
+      ['2','Courgettes, sliced lengthways'],
+      ['3','Ripe tomatoes, roughly chopped'],
+      ['1','Cucumber, roughly chopped'],
+      ['½','Red onion, finely sliced'],
+      ['2 tbsp','Red wine vinegar (salad dressing)'],
+      ['1 tbsp','Extra virgin olive oil (salad)'],
+      ['Pack','Flatbreads'],
+      ['2 tbsp','Harissa (condiment)'],
+      ['2','Lemons (to serve)'],
+    ],
+    steps: [
+      ['Done Friday','Marinades already prepped',[
+        'Chicken thighs should be marinated and in the fridge overnight.',
+        'Kofta mince mixture should be mixed and in the fridge overnight.',
+        'If not done Friday: marinate chicken by 10am Saturday minimum — 6+ hours gives proper flavour.',
+      ]],
+      ['20 min — afternoon','Shape kofta, prep sides',[
+        '<strong>Kofta</strong> — wet your hands. Shape the mince mixture into 12–14 oval sausages, about 10cm long and 3cm wide. Press firmly so they hold together. Thread onto flat metal skewers if you have them, or cook directly on the grate.',
+        '<strong>Garlic yogurt</strong> — mix 200g Greek yogurt + 2 minced garlic cloves + pinch of salt + squeeze of lemon. Taste: cooling, garlicky. Refrigerate until needed.',
+        '<strong>Tomato & cucumber salad</strong> — chop tomatoes and cucumber into rough chunks. Add thinly sliced red onion. Dress with 2 tbsp red wine vinegar + 1 tbsp EVOO + pinch of salt. Leave to sit and soften.',
+        '<strong>Courgettes</strong> — slice lengthways into 5mm strips. Toss with EVOO and sea salt.',
+      ]],
+      ['Light the BBQ','Getting the heat right',[
+        'Charcoal: light 45 min before cooking — wait until coals are covered with white ash with no black patches remaining. No flames.',
+        'Gas BBQ: preheat 10–15 min on high. Reduce to medium-high before cooking.',
+        'The grate should be properly hot — a drop of water should spit and evaporate instantly.',
+      ]],
+      ['8 min per side','Chicken thighs — main event',[
+        'Place chicken thighs on the hot grate. Leave undisturbed 6–8 min — resist moving them.',
+        'The marinade will char slightly — that\'s correct. Flip when releasing easily.',
+        'Cook 6–8 min on the second side. Check: juices should run clear when pressed. Internal temp 75°C+ if you have a probe.',
+        'Move to a cooler part of the grate if flaring. Rest 5 min before serving.',
+      ]],
+      ['5 min per side','Kofta skewers',[
+        'Add kofta to the grate while the chicken is on its second side.',
+        '4–5 min per side on medium-high heat. They cook faster than chicken.',
+        'Should be dark brown with slightly charred edges — firm when pressed, not soft.',
+        'If they start falling apart: grate too hot. Move to a cooler zone.',
+      ]],
+      ['3 min + 1 min','Courgette + flatbreads',[
+        '<strong>Courgette slices</strong> — 2–3 min per side on the hot grate. Grill marks are the goal. Season with sea salt off the grate.',
+        '<strong>Flatbreads</strong> — 20–30 sec directly on the grates. Watch them. They go from soft to charred fast.',
+      ]],
+      ['Serve','Lay it all out',[
+        'Spread everything on the table: chicken, kofta, garlic yogurt, salad, grilled courgette, flatbreads, harissa, lemon wedges.',
+        'Eat in whatever order feels right. This is not a plated meal.',
+      ]],
+    ],
+    tip: 'Ras el hanout is a spice blend that was made for fire — the fat in the marinade carries the spices and creates an incredible crust on the BBQ. The key is patience: don\'t touch the chicken for the first 6–8 minutes. It will release naturally when the crust has formed. If it\'s sticking, it\'s not ready to flip.',
+    sundayPrep: [
+      'Friday evening: mix chicken marinade and kofta mixture — both go in the fridge overnight.',
+      'Saturday morning: shop for fresh items. Chicken should be marinating from Friday.',
+      'Afternoon: shape kofta, prep all sides, let salad sit for an hour to develop.',
+    ],
+  },
+  {
+    day: 'Sunday', shortDay: 'SUN', date: '25 May',
+    name: 'Chipotle Chicken & Black Bean Bowl',
+    subtitle: 'with Basmati Rice & Soured Cream',
+    cuisine: 'Mexican', serves: '2–3', time: '30 min', method: 'Pan',
+    emoji: '🌶️',
+    gradient: 'linear-gradient(135deg, #040100 0%, #2A0C00 45%, #6A2210 100%)',
+    accent: '#983A18',
+    accentLight: '#FAF0ED',
+    ingredients: [
+      ['4–5','Chicken thighs, boneless & skinless, cut into chunks'],
+      ['1 tin','Black beans (400g), drained and rinsed'],
+      ['1 tin','Chopped tomatoes (400g)'],
+      ['2 tbsp','Chipotle chilli paste'],
+      ['3 cloves','Garlic, minced'],
+      ['1 tsp','Cumin, ground'],
+      ['1 tbsp','Vegetable oil'],
+      ['200g','Basmati rice'],
+      ['Sea salt','to taste'],
+      ['1','Lime'],
+      ['Soured cream','to serve'],
+      ['Fresh coriander','to serve (optional)'],
+    ],
+    steps: [
+      ['15 min','Start the rice',[
+        '<strong>200g basmati</strong> — rinse and start in the rice cooker.',
+      ]],
+      ['5 min','Brown the chicken',[
+        'Heat HexClad pan on medium-high. Add <strong>1 tbsp vegetable oil</strong>.',
+        '<strong>4–5 chicken thighs, cut into 3cm chunks</strong> — season with salt. Add to the pan.',
+        'Brown for 4–5 min, turning once. You want colour on the outside, not fully cooked through yet.',
+        'Remove to a plate.',
+      ]],
+      ['2 min','Garlic, chipotle, cumin',[
+        'Lower heat to medium. Same pan.',
+        '<strong>3 cloves minced garlic</strong> — cook 30 sec, stirring.',
+        '<strong>2 tbsp chipotle paste + 1 tsp cumin</strong> — add. Stir 30–40 sec. The paste darkens slightly and becomes fragrant — this is the flavour base.',
+        'Careful: chipotle paste can spit at high heat.',
+      ]],
+      ['12 min','Build the sauce + finish chicken',[
+        '<strong>1 tin (400g) chopped tomatoes</strong> — pour in. Stir everything together.',
+        '<strong>1 tin (400g) black beans, drained</strong> — add.',
+        '<strong>Browned chicken</strong> — nestle back into the pan.',
+        'Bring to a simmer. Cook uncovered 10–12 min, stirring occasionally, until the sauce has thickened and the chicken is cooked through.',
+        'Taste: smoky, mildly hot, deeply savoury. Add more salt if needed. If you want more heat, a few drops of sriracha does it.',
+      ]],
+      ['1 min','Finish and serve',[
+        '<strong>Lime</strong> — squeeze half over the pan. Taste again. The acid lifts everything.',
+        'Spoon over rice in bowls. Soured cream on top. Scatter fresh coriander if you have it.',
+        'Serve with the other lime half on the side.',
+      ]],
+    ],
+    tip: 'Chipotle paste is primarily smoky rather than hot — it gives the dish a campfire depth that\'s different to fresh chilli. Two tablespoons is the correct amount for a good hit without being overwhelming. If Oli wants it milder, hold back one tablespoon and add 1 tbsp tomato purée in its place to keep the volume.',
+    sundayPrep: [
+      'Cut the chicken into chunks and store covered in the fridge if prepping ahead.',
+      'Drain and rinse the black beans.',
     ],
   },
 ];
@@ -698,9 +714,10 @@ function buildPanels() {
     panel.style.setProperty('--meal-accent', m.accent);
     panel.style.setProperty('--meal-accent-light', m.accentLight);
 
-    const ings = m.ingredients.map(([qty, name]) =>
-      `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`
-    ).join('');
+    const ings = m.ingredients.map(([qty, name]) => {
+      if (!name) return `<div class="ingredient-row" style="background:#F7F6F3;"><span class="ing-qty" style="font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#999;min-width:unset;width:100%">${qty}</span></div>`;
+      return `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`;
+    }).join('');
 
     const steps = m.steps.map(([time, head, body], idx) => {
       const bodyHtml = Array.isArray(body)
