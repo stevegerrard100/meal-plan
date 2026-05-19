@@ -236,7 +236,7 @@
   .step-body {}
   .step-head-row {
     display: flex; align-items: center; gap: 8px;
-    margin-bottom: 5px; flex-wrap: wrap;
+    margin-bottom: 8px; flex-wrap: wrap;
   }
   .step-heading { font-size: 13px; font-weight: 700; color: var(--text-primary); }
   .time-badge {
@@ -250,6 +250,27 @@
   .step-text {
     font-size: 13px; color: var(--text-secondary);
     line-height: 1.65;
+  }
+  .step-bullets {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .step-bullets li {
+    font-size: 13px; color: var(--text-secondary);
+    line-height: 1.55;
+    padding-left: 16px;
+    position: relative;
+  }
+  .step-bullets li::before {
+    content: '·';
+    position: absolute; left: 0;
+    color: var(--meal-accent);
+    font-weight: 700; font-size: 18px; line-height: 1.0;
+  }
+  .step-bullets li strong {
+    color: var(--text-primary);
+    font-weight: 600;
   }
 
   .tip-card {
@@ -365,11 +386,32 @@ const MEALS = [
       ['to serve','Fresh coriander'],
     ],
     steps: [
-      ['5 min','Mix the kofta','Combine 500g lamb mince with cumin, coriander, cinnamon, chilli powder, ginger paste and 1 tsp salt in a bowl. Mix with your hands — just enough to combine. Don\'t overwork it. Form into 8–10 oval sausage shapes, about 8cm long. Press them firm so they hold their shape.'],
-      ['1 min','Make the harissa yogurt','Mix 150g Greek yogurt with 2 tbsp harissa paste and a good squeeze of lemon. Taste — it should be creamy with a hit of heat. Add more harissa if you want it spicier. Set aside.'],
-      ['12 min','Cook the kofta','Heat HexClad pan on medium-high (7/10). Add 1 tbsp olive oil. Lay kofta in — don\'t crowd them. Cook undisturbed 3–4 min until a deep brown crust forms underneath, then turn. Cook 3 min more. Turn once more for even colour all round — total about 10–12 min. They should be firm and dark on all sides, cooked through with no pink.'],
-      ['2 min','Warm the flatbreads','30 seconds each side in a dry pan over medium heat, or 20 sec in the microwave wrapped in a damp paper towel. Slightly charred edges are good.'],
-      ['1 min','Serve','Spread harissa yogurt on the flatbreads. Lay 3–4 kofta on each. Squeeze more lemon over. Scatter fresh coriander.'],
+      ['5 min','Mix the kofta',[
+        '<strong>500g lamb mince</strong> — add to a large bowl',
+        '<strong>1.5 tsp cumin, 1 tsp coriander, ½ tsp cinnamon, ½ tsp chilli powder, 1 tbsp ginger paste, 1 tsp salt</strong> — add all to the mince',
+        'Mix with your hands — just enough to combine. Don\'t overwork it.',
+        'Form into 8–10 oval sausage shapes, about 8cm long. Press firm so they hold their shape.',
+      ]],
+      ['1 min','Make the harissa yogurt',[
+        '<strong>150g Greek yogurt</strong> — into a bowl',
+        '<strong>2 tbsp harissa paste + good squeeze of lemon</strong> — mix in. Taste: should be creamy with a hit of heat.',
+        'Add more harissa if you want it spicier. Set aside.',
+      ]],
+      ['12 min','Cook the kofta',[
+        'Heat HexClad pan on medium-high (7/10)',
+        '<strong>1 tbsp olive oil</strong> — add to hot pan',
+        '<strong>Kofta</strong> — lay in, don\'t crowd. Cook undisturbed 3–4 min until a deep brown crust forms underneath',
+        'Flip. Cook 3 min more. Turn once more — total 10–12 min. Firm and dark on all sides, no pink inside.',
+      ]],
+      ['2 min','Warm the flatbreads',[
+        '<strong>2–3 flatbreads</strong> — 30 sec each side in a dry pan on medium heat',
+        'Or 20 sec in the microwave wrapped in a damp paper towel. Slightly charred edges are good.',
+      ]],
+      ['1 min','Serve',[
+        '<strong>Harissa yogurt</strong> — spread over the flatbreads',
+        '<strong>3–4 kofta per flatbread</strong> — lay on top',
+        '<strong>Lemon</strong> — squeeze over. <strong>Fresh coriander</strong> — scatter.',
+      ]],
     ],
     tip: 'Don\'t overwork the mince when mixing — just combine. Over-mixing melts the fat and makes the kofta dense and tough. Work quickly and with cool hands.',
     sundayPrep: [
@@ -406,12 +448,36 @@ const MEALS = [
       ['to serve','Fresh coriander & lemon'],
     ],
     steps: [
-      ['15 min','Start rice and lentils together','Rinse 200g basmati and start in the rice cooker. In a separate small saucepan, add rinsed 100g red lentils, 300ml water and ¼ tsp turmeric. Bring to a boil, then simmer gently 15 min, stirring occasionally, until lentils are completely soft and collapsing. Add a splash more water if they get too thick. Season with salt at the end.'],
-      ['6 min','Brown the mince — properly','Heat HexClad pan on high. Add 1 tbsp vegetable oil. Add beef mince, press it flat. Leave undisturbed 2–3 min to build a deep brown crust. Then break up with a spoon and continue cooking until all the pink is gone. Season well with salt and pepper. A proper sear here is the difference between a flat mince dish and a flavourful one.'],
-      ['5 min','Soften the onion','Push mince to one side. Lower heat to medium. Add diced onion to the cleared half of the pan. Cook 4–5 min, stirring, until soft and translucent. Then mix together with the mince.'],
-      ['90 sec','Add garlic, ginger, spices','Add 3 cloves minced garlic, 1 tbsp ginger paste, 2 tsp cumin, 2 tsp coriander, remaining ¾ tsp turmeric, 1 tsp chilli powder and 1 tbsp tomato purée. Stir everything together on medium-high for 90 sec. The spices bloom, the purée caramelises slightly, and the raw edge cooks out.'],
-      ['10 min','Simmer the sauce','Pour in 1 tin chopped tomatoes. Stir well, scraping up any fond. Bring to a simmer and cook uncovered 8–10 min until thickened and reduced. Stir in 1 tsp garam masala. Taste: adjust salt and chilli.'],
-      ['2 min','Combine and finish','Stir the cooked lentils through the keema — they\'ll thicken everything further and add body. If it\'s very thick, loosen with a splash of water. Squeeze lemon over, scatter coriander. Serve over rice.'],
+      ['15 min','Start rice and lentils together',[
+        '<strong>200g basmati</strong> — rinse and start in the rice cooker',
+        '<strong>100g red lentils + 300ml water + ¼ tsp turmeric</strong> — add to a small saucepan. Bring to boil, then simmer gently 15 min, stirring occasionally, until completely soft and collapsing.',
+        'Add a splash more water if they get too thick. Season with salt at the end.',
+      ]],
+      ['6 min','Brown the mince — properly',[
+        'Heat HexClad pan on high',
+        '<strong>1 tbsp vegetable oil</strong> — add to pan',
+        '<strong>400g beef mince</strong> — press flat into the pan. Leave undisturbed 2–3 min to build a deep brown crust.',
+        'Break up with a spoon and continue cooking until all pink is gone. Season well with salt and pepper.',
+      ]],
+      ['5 min','Soften the onion',[
+        'Push mince to one side. Lower heat to medium.',
+        '<strong>1 large diced onion</strong> — add to the cleared half of the pan. Cook 4–5 min, stirring, until soft and translucent.',
+        'Mix together with the mince.',
+      ]],
+      ['90 sec','Add garlic, ginger, spices',[
+        '<strong>3 cloves minced garlic + 1 tbsp ginger paste</strong> — add to pan',
+        '<strong>2 tsp cumin, 2 tsp coriander, ¾ tsp turmeric, 1 tsp chilli powder</strong> — add spices',
+        '<strong>1 tbsp tomato purée</strong> — stir in. Cook everything on medium-high for 90 sec. Spices bloom, purée caramelises slightly, raw edge cooks out.',
+      ]],
+      ['10 min','Simmer the sauce',[
+        '<strong>1 tin (400g) chopped tomatoes</strong> — pour in. Scrape up any fond.',
+        'Bring to a simmer, cook uncovered 8–10 min until thickened and reduced.',
+        '<strong>1 tsp garam masala</strong> — stir in. Taste: adjust salt and chilli.',
+      ]],
+      ['2 min','Combine and finish',[
+        '<strong>Cooked lentils</strong> — stir through the keema. They\'ll thicken everything and add body. Loosen with a splash of water if very thick.',
+        '<strong>Lemon + fresh coriander</strong> — squeeze and scatter over. Serve over rice.',
+      ]],
     ],
     tip: 'This is one of the best batch-cook meals in the plan — it actively improves overnight as the spices deepen. Make the full amount even if it\'s just the two of you. Reheat Thursday\'s leftovers with a splash of water for Friday lunch.',
     sundayPrep: [
@@ -440,11 +506,33 @@ const MEALS = [
       ['to taste','Sea salt'],
     ],
     steps: [
-      ['28 min','Start the chips first','Cut 600g potatoes into thick chips (roughly 1.5cm thick, skin on). Toss with 1 tbsp vegetable oil and a generous pinch of sea salt. Preheat Ninja to 200°C for 3 min. Cook 25–28 min, shaking the basket at the halfway point. They should be deep golden and crispy on the outside, fluffy inside. Add 3–5 min if needed.'],
-      ['5 min','Season the chops','Pat lamb chops dry with kitchen paper — moisture = no crust. Season both sides liberally with sea salt, black pepper and dried thyme. Press the seasoning firmly into the meat. Leave to sit at room temperature for at least 10 min while the chips cook.'],
-      ['6 min','Sear the chops','When chips have 10 min left, heat HexClad pan on high until it\'s properly smoking. Add 1 tbsp olive oil. Lay chops away from you. Leave completely undisturbed for 2–3 min — you need to let the crust form and release naturally. Flip. Another 2–3 min. For cutlets: 2 min per side. For thicker loin chops: 3 min per side. The goal is deep mahogany brown, not grey.'],
-      ['6 min','Rest the chops + build the jus','Remove chops to a warm plate. Don\'t wash the pan. Turn to medium heat. Add 2 tbsp red wine vinegar — it will sizzle and spit hard, lifting all the dark fond immediately. Stir and scrape for 30 sec. Pour in 500ml beef stock. Bring to a boil then reduce heat. Simmer 5–6 min until reduced by roughly half and the jus coats the back of a spoon. Add ½ tsp thyme. Taste: it should be rich, savoury and slightly sharp. Adjust salt.'],
-      ['1 min','Plate','Chips first, chops on top or alongside, jus poured over everything. Serve immediately.'],
+      ['28 min','Start the chips first',[
+        '<strong>600g potatoes</strong> — cut into thick chips (~1.5cm, skin on)',
+        '<strong>1 tbsp vegetable oil + generous pinch of sea salt</strong> — toss the chips to coat',
+        'Preheat Ninja to 200°C for 3 min. Cook 25–28 min, shaking the basket halfway. Deep golden and crispy outside, fluffy inside.',
+      ]],
+      ['5 min','Season the chops',[
+        '<strong>4 lamb chops</strong> — pat completely dry with kitchen paper. Moisture kills the crust.',
+        '<strong>Sea salt, black pepper, 1 tsp dried thyme</strong> — season both sides liberally. Press firmly into the meat.',
+        'Leave to sit at room temperature for at least 10 min while chips cook.',
+      ]],
+      ['6 min','Sear the chops',[
+        'When chips have 10 min left: heat HexClad pan on high until properly smoking',
+        '<strong>1 tbsp olive oil</strong> — add to pan',
+        '<strong>Lamb chops</strong> — lay in away from you. Leave completely undisturbed 2–3 min — let the crust form and release naturally.',
+        'Flip. Another 2–3 min. Cutlets: 2 min per side. Loin chops: 3 min per side. Goal is deep mahogany brown, not grey.',
+      ]],
+      ['6 min','Rest the chops + build the jus',[
+        'Remove chops to a warm plate. Don\'t wash the pan. Turn to medium heat.',
+        '<strong>2 tbsp red wine vinegar</strong> — add to pan. It sizzles hard, lifting all the dark fond. Stir and scrape for 30 sec.',
+        '<strong>500ml beef stock</strong> — pour in. Bring to boil, then simmer 5–6 min until reduced by roughly half and jus coats the back of a spoon.',
+        '<strong>½ tsp thyme</strong> — add. Taste: rich, savoury, slightly sharp. Adjust salt.',
+      ]],
+      ['1 min','Plate',[
+        '<strong>Chips</strong> — onto plates first',
+        '<strong>Chops</strong> — on top or alongside',
+        '<strong>Jus</strong> — poured over everything. Serve immediately.',
+      ]],
     ],
     tip: 'The fond — the dark brown stuck bits in the pan after the chops — is pure concentrated flavour. The red wine vinegar lifts it instantly. Don\'t be alarmed by the sizzle and steam. Add the stock straight after, before it burns.',
     sundayPrep: [
@@ -480,11 +568,33 @@ const MEALS = [
       ['to taste','Salt'],
     ],
     steps: [
-      ['20+ min','Marinate the chicken — do this first','Mix together: cumin, coriander, turmeric, cinnamon, smoked paprika, chilli powder, preserved lemon paste, 2 tbsp olive oil and the juice of 1 lemon into a paste. Coat the thighs thoroughly all over. Marinate at least 20 min — longer is better. If you\'re planning ahead, do this in the morning.'],
-      ['18 min','Air fry the chicken','Preheat Ninja to 190°C. Place thighs in a single layer. Cook 15–18 min, flipping halfway. Boneless skinless thighs cook fast — check at 15 min. They\'re done when deep golden and the thickest part shows no pink when pressed or cut. Don\'t overcook: without skin or bone they dry out quickly past the 18 min mark.'],
-      ['5 min','Spiced chickpeas','While the chicken is in its final stretch: heat 1 tbsp olive oil in HexClad pan on medium-high. Add both tins of drained chickpeas. Add 1 tbsp harissa paste, pinch each of cumin and salt. Toss 4–5 min until chickpeas are hot and some have crisped at the edges. Squeeze half a lemon over at the end.'],
-      ['1 min','Make garlic yogurt','Mix 150g Greek yogurt with 2 cloves minced garlic, a pinch of salt and a squeeze of lemon. Stir and taste — it should be cooling and garlicky. Let it sit for 5 min for the garlic to mellow slightly.'],
-      ['1 min','Plate','Spoon chickpeas onto plates. Place chicken thighs on top. Spoon garlic yogurt alongside or over. Serve with flatbreads if you have them, or as is.'],
+      ['20+ min','Marinate the chicken — do this first',[
+        '<strong>1.5 tsp cumin, 1.5 tsp coriander, 1 tsp turmeric, ½ tsp cinnamon, 1 tsp smoked paprika, ½ tsp chilli powder</strong> — combine in a bowl',
+        '<strong>2 tbsp preserved lemon paste + 2 tbsp olive oil + juice of 1 lemon</strong> — add to spices and mix into a paste',
+        '<strong>4–6 chicken thighs</strong> — coat thoroughly all over. Marinate at least 20 min — longer is better. Morning is ideal.',
+      ]],
+      ['18 min','Air fry the chicken',[
+        'Preheat Ninja to 190°C',
+        '<strong>Marinated chicken thighs</strong> — place in a single layer. Cook 15–18 min, flipping halfway.',
+        'Check at 15 min — done when deep golden and no pink when pressed or cut. Don\'t overcook past 18 min.',
+      ]],
+      ['5 min','Spiced chickpeas',[
+        'Heat HexClad pan on medium-high',
+        '<strong>1 tbsp olive oil</strong> — add to pan',
+        '<strong>2 tins (400g each) drained chickpeas</strong> — add to pan',
+        '<strong>1 tbsp harissa paste + pinch of cumin + pinch of salt</strong> — toss together 4–5 min until hot and some edges crisp',
+        '<strong>½ lemon</strong> — squeeze over at the end',
+      ]],
+      ['1 min','Make garlic yogurt',[
+        '<strong>150g Greek yogurt</strong> — into a bowl',
+        '<strong>2 cloves minced garlic + pinch of salt + squeeze of lemon</strong> — stir in. Taste: cooling and garlicky.',
+        'Let sit 5 min for the garlic to mellow slightly.',
+      ]],
+      ['1 min','Plate',[
+        '<strong>Chickpeas</strong> — spoon onto plates',
+        '<strong>Chicken thighs</strong> — place on top',
+        '<strong>Garlic yogurt</strong> — spoon alongside or over. Add flatbreads if you have them.',
+      ]],
     ],
     tip: 'Preserved lemon paste is the flavour backbone of this marinade — it does a different job to fresh lemon. Don\'t swap it out. Boneless thighs cook faster than bone-in so keep an eye from 15 min — they\'re done the moment the marinade has caught colour and the meat feels firm with no give.',
     sundayPrep: [
@@ -517,14 +627,43 @@ const MEALS = [
       ['extra','Vegetable oil for frying eggs'],
     ],
     steps: [
-      ['15 min','Start rice','Rinse 200g basmati and start in the rice cooker before anything else.'],
-      ['2 min','Get the wok ripping hot','Put HexClad wok on the highest gas flame. Leave it for 2 full minutes until it\'s properly smoking. This isn\'t optional — Pad Kra Pao needs serious heat to work. A medium-heat wok gives you steamed grey mince, not a proper stir-fry.'],
-      ['1 min','Garlic and chilli in','Add 2 tbsp vegetable oil to the hot wok. Immediately add minced garlic and chopped chilli. Stir constantly for 30–40 sec until fragrant. Don\'t let the garlic burn — it goes from raw to golden to bitter very fast at this heat.'],
-      ['4 min','Add turkey, get colour first','Add 500g turkey mince. Spread it out across the wok and leave it for 60–90 sec — let it sear without moving it. You want some browning, not steaming. Then break it up with a spatula and toss. Continue cooking, tossing regularly, until all the pink is gone — about 3–4 min total.'],
-      ['2 min','Season and glaze','Add 2 tbsp light soy, 1 tbsp dark soy, 1 tbsp fish sauce and 2 tsp sugar. Toss everything together on high heat for 60–90 sec. The sauce should coat the mince and start to caramelise slightly. Taste: if it\'s flat, add a tiny bit more fish sauce. If too salty, a touch more sugar.'],
-      ['30 sec','Basil off the heat','Take the wok off the gas. Immediately throw in the Thai basil leaves. Toss once — they\'ll wilt almost instantly from the residual heat. The aroma will fill the kitchen. This is the moment the dish becomes Pad Kra Pao.'],
-      ['3 min','Fry the eggs','In a small pan, heat a generous splash of oil on medium-high. Crack eggs in and fry until the whites are fully set but the yolk is still runny — sunny-side up. The edges should be slightly crispy.'],
-      ['1 min','Serve','Rice in the bowls, mince on top, fried egg over everything. Sliced spring onions scattered over.'],
+      ['15 min','Start rice',[
+        '<strong>200g basmati</strong> — rinse and start in the rice cooker before anything else',
+      ]],
+      ['2 min','Get the wok ripping hot',[
+        '<strong>HexClad wok</strong> — on highest gas flame. Leave 2 full minutes until properly smoking.',
+        'This isn\'t optional — medium heat gives steamed grey mince, not a proper stir-fry.',
+      ]],
+      ['1 min','Garlic and chilli in',[
+        '<strong>2 tbsp vegetable oil</strong> — add to the hot wok',
+        '<strong>4 cloves minced garlic + 2 chopped red chillies</strong> — add immediately. Stir constantly 30–40 sec until fragrant.',
+        'Don\'t let the garlic burn — it goes from raw to golden to bitter very fast at this heat.',
+      ]],
+      ['4 min','Add turkey, get colour first',[
+        '<strong>500g turkey mince</strong> — spread flat across the wok. Leave undisturbed 60–90 sec — let it sear without moving.',
+        'Break up with a spatula and toss. Continue cooking, tossing regularly, until all pink is gone — 3–4 min total.',
+      ]],
+      ['2 min','Season and glaze',[
+        '<strong>2 tbsp light soy sauce</strong> — add',
+        '<strong>1 tbsp dark soy sauce</strong> — add',
+        '<strong>1 tbsp fish sauce</strong> — add',
+        '<strong>2 tsp sugar</strong> — add. Toss on high heat 60–90 sec until sauce coats the mince and starts to caramelise.',
+        'Taste: flat = tiny bit more fish sauce. Too salty = touch more sugar.',
+      ]],
+      ['30 sec','Basil off the heat',[
+        'Take the wok off the gas',
+        '<strong>Large handful Thai basil leaves</strong> — throw in immediately. Toss once — wilts from the residual heat. The aroma will fill the kitchen.',
+      ]],
+      ['3 min','Fry the eggs',[
+        'Heat a generous splash of oil in a small pan on medium-high',
+        '<strong>2–3 eggs</strong> — crack in and fry sunny-side up. Whites fully set, yolk still runny. Edges slightly crispy.',
+      ]],
+      ['1 min','Serve',[
+        '<strong>Rice</strong> — into bowls',
+        '<strong>Turkey mince</strong> — on top',
+        '<strong>Fried egg</strong> — over everything',
+        '<strong>Spring onions</strong> — scatter over',
+      ]],
     ],
     tip: 'Thai basil is the dish. Regular Italian basil won\'t give you the same anise-y, peppery hit — it\'s worth sourcing (Waitrose, Asian supermarkets, or a large Tesco Extra usually stock it). If you genuinely can\'t find it, use regular basil plus an extra splash of fish sauce, but it\'s a different dish.',
     sundayPrep: [
@@ -563,18 +702,21 @@ function buildPanels() {
       `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`
     ).join('');
 
-    const steps = m.steps.map(([time, head, body], idx) =>
-      `<div class="step">
+    const steps = m.steps.map(([time, head, body], idx) => {
+      const bodyHtml = Array.isArray(body)
+        ? `<ul class="step-bullets">${body.map(b => `<li>${b}</li>`).join('')}</ul>`
+        : `<p class="step-text">${body}</p>`;
+      return `<div class="step">
         <div class="step-num">${idx + 1}</div>
         <div class="step-body">
           <div class="step-head-row">
             <span class="step-heading">${head}</span>
             <span class="time-badge">${time}</span>
           </div>
-          <p class="step-text">${body}</p>
+          ${bodyHtml}
         </div>
-      </div>`
-    ).join('');
+      </div>`;
+    }).join('');
 
     const prepItems = m.sundayPrep.map(p =>
       `<div class="prep-item"><div class="prep-dot"></div><div>${p}</div></div>`
