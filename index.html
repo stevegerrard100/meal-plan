@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chéz Gerrard — Week of 26 May</title>
+<title>Chéz Gerrard — Week of 8 June</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --radius: 12px;
     --shadow: 0 2px 12px rgba(0,0,0,0.07);
@@ -22,9 +21,7 @@
     --accent: #111111;
     --transition: 0.22s ease;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--page-bg);
@@ -32,7 +29,6 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
   }
-
   .site-header {
     position: sticky; top: 0; z-index: 100;
     background: #fff;
@@ -41,14 +37,9 @@
     padding: 0 28px;
     height: 56px;
   }
-  .site-logo {
-    font-size: 15px; font-weight: 700; letter-spacing: -0.3px;
-    color: var(--text-primary);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .site-logo { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
   .site-logo span { color: var(--text-muted); font-weight: 400; }
   .site-meta { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-
   .tab-bar {
     position: sticky; top: 56px; z-index: 99;
     background: #fff;
@@ -58,7 +49,6 @@
     padding: 0 20px;
   }
   .tab-bar::-webkit-scrollbar { display: none; }
-
   .tab {
     flex-shrink: 0;
     display: flex; flex-direction: column; align-items: center;
@@ -69,106 +59,28 @@
     user-select: none;
   }
   .tab:hover .tab-day { color: var(--text-primary); }
-  .tab-day {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    transition: color var(--transition);
-    margin-bottom: 2px;
-  }
-  .tab-name {
-    font-size: 12px; font-weight: 500;
-    color: var(--text-secondary);
-    white-space: nowrap;
-    transition: color var(--transition);
-    max-width: 130px;
-    overflow: hidden; text-overflow: ellipsis;
-  }
+  .tab-day { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: var(--text-muted); text-transform: uppercase; transition: color var(--transition); margin-bottom: 2px; }
+  .tab-name { font-size: 12px; font-weight: 500; color: var(--text-secondary); white-space: nowrap; transition: color var(--transition); max-width: 130px; overflow: hidden; text-overflow: ellipsis; }
   .tab.active .tab-day { color: var(--tab-accent, #111); }
   .tab.active .tab-name { color: var(--tab-accent, #111); font-weight: 600; }
   .tab.active { border-bottom-color: var(--tab-accent, #111); }
-
   .panel { display: none; }
   .panel.active { display: block; }
-
-  .hero {
-    width: 100%; height: 280px;
-    position: relative; overflow: hidden;
-    display: flex; flex-direction: column; justify-content: flex-end;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: var(--hero-gradient);
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
-  }
-  .hero-emoji {
-    position: absolute; right: 48px; top: 50%;
-    transform: translateY(-50%);
-    font-size: 120px; opacity: 0.12;
-    filter: grayscale(0.2);
-    pointer-events: none;
-    user-select: none;
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    padding: 0 36px 28px;
-  }
-  .cuisine-pill {
-    display: inline-flex; align-items: center;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #fff;
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(4px);
-    margin-bottom: 10px;
-  }
-  .hero-title {
-    font-size: 32px; font-weight: 800; line-height: 1.15;
-    color: #fff; letter-spacing: -0.5px;
-    margin-bottom: 4px;
-  }
-  .hero-subtitle {
-    font-size: 14px; color: rgba(255,255,255,0.75);
-    font-style: italic; font-weight: 400;
-  }
-
-  .meta-strip {
-    background: #fff;
-    display: flex; gap: 0;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+  .hero { width: 100%; height: 280px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; }
+  .hero-bg { position: absolute; inset: 0; background: var(--hero-gradient); }
+  .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 60%, transparent 100%); }
+  .hero-emoji { position: absolute; right: 48px; top: 50%; transform: translateY(-50%); font-size: 120px; opacity: 0.12; filter: grayscale(0.2); pointer-events: none; user-select: none; }
+  .hero-content { position: relative; z-index: 2; padding: 0 36px 28px; }
+  .cuisine-pill { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #fff; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); margin-bottom: 10px; }
+  .hero-title { font-size: 32px; font-weight: 800; line-height: 1.15; color: #fff; letter-spacing: -0.5px; margin-bottom: 4px; }
+  .hero-subtitle { font-size: 14px; color: rgba(255,255,255,0.75); font-style: italic; font-weight: 400; }
+  .meta-strip { background: #fff; display: flex; gap: 0; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
   .meta-strip::-webkit-scrollbar { display: none; }
-  .meta-item {
-    flex: 1; min-width: 100px;
-    display: flex; flex-direction: column; align-items: center;
-    padding: 14px 16px;
-    border-right: 1px solid var(--border);
-  }
+  .meta-item { flex: 1; min-width: 100px; display: flex; flex-direction: column; align-items: center; padding: 14px 16px; border-right: 1px solid var(--border); }
   .meta-item:last-child { border-right: none; }
-  .meta-label {
-    font-size: 9px; font-weight: 700; letter-spacing: 0.8px;
-    text-transform: uppercase; color: var(--text-muted);
-    margin-bottom: 3px;
-  }
+  .meta-label { font-size: 9px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px; }
   .meta-value { font-size: 13px; font-weight: 600; color: var(--text-primary); }
-
-  .content {
-    max-width: 1100px; margin: 0 auto;
-    padding: 32px 24px 60px;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-  }
+  .content { max-width: 1100px; margin: 0 auto; padding: 32px 24px 60px; display: grid; grid-template-columns: 300px 1fr; grid-template-rows: auto auto; gap: 20px; }
   @media (max-width: 780px) {
     .content { grid-template-columns: 1fr; padding: 20px 16px 48px; gap: 16px; }
     .hero { height: 220px; }
@@ -176,172 +88,48 @@
     .hero-emoji { font-size: 80px; right: 20px; }
     .hero-content { padding: 0 20px 20px; }
   }
-
-  .card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-  }
-  .card-header {
-    padding: 16px 20px 12px;
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 8px;
-  }
-  .card-header-title {
-    font-size: 10px; font-weight: 700; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--text-muted);
-  }
-  .card-header-accent {
-    width: 20px; height: 3px; border-radius: 2px;
-    background: var(--meal-accent);
-    margin-left: auto;
-  }
-
+  .card { background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+  .card-header { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  .card-header-title { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); }
+  .card-header-accent { width: 20px; height: 3px; border-radius: 2px; background: var(--meal-accent); margin-left: auto; }
   .ingredients-list { padding: 8px 0; }
-  .ingredient-row {
-    display: flex; align-items: baseline;
-    padding: 8px 20px;
-    gap: 12px;
-    border-bottom: 1px solid #F4F4F4;
-    transition: background var(--transition);
-  }
+  .ingredient-row { display: flex; align-items: baseline; padding: 8px 20px; gap: 12px; border-bottom: 1px solid #F4F4F4; transition: background var(--transition); }
   .ingredient-row:last-child { border-bottom: none; }
   .ingredient-row:hover { background: #FAFAFA; }
-  .ing-qty {
-    font-size: 12px; font-weight: 700;
-    color: var(--text-primary);
-    min-width: 62px; flex-shrink: 0;
-  }
+  .ing-qty { font-size: 12px; font-weight: 700; color: var(--text-primary); min-width: 62px; flex-shrink: 0; }
   .ing-name { font-size: 13px; color: var(--text-secondary); line-height: 1.4; }
-
   .steps-list { padding: 4px 0; }
-  .step {
-    display: grid;
-    grid-template-columns: 32px 1fr;
-    gap: 0 14px;
-    padding: 14px 20px;
-    border-bottom: 1px solid #F4F4F4;
-  }
+  .step { display: grid; grid-template-columns: 32px 1fr; gap: 0 14px; padding: 14px 20px; border-bottom: 1px solid #F4F4F4; }
   .step:last-child { border-bottom: none; }
-  .step-num {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    background: var(--meal-accent);
-    color: #fff;
-    font-size: 12px; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 1px;
-  }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--meal-accent); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
   .step-body {}
-  .step-head-row {
-    display: flex; align-items: center; gap: 8px;
-    margin-bottom: 8px; flex-wrap: wrap;
-  }
+  .step-head-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
   .step-heading { font-size: 13px; font-weight: 700; color: var(--text-primary); }
-  .time-badge {
-    font-size: 10px; font-weight: 700;
-    padding: 2px 8px; border-radius: 20px;
-    background: var(--meal-accent-light);
-    color: var(--meal-accent);
-    white-space: nowrap;
-    letter-spacing: 0.2px;
-  }
-  .step-text {
-    font-size: 13px; color: var(--text-secondary);
-    line-height: 1.65;
-  }
-  .step-bullets {
-    list-style: none;
-    padding: 0; margin: 0;
-    display: flex; flex-direction: column; gap: 7px;
-  }
-  .step-bullets li {
-    font-size: 13px; color: var(--text-secondary);
-    line-height: 1.55;
-    padding-left: 16px;
-    position: relative;
-  }
-  .step-bullets li::before {
-    content: '·';
-    position: absolute; left: 0;
-    color: var(--meal-accent);
-    font-weight: 700; font-size: 18px; line-height: 1.0;
-  }
-  .step-bullets li strong {
-    color: var(--text-primary);
-    font-weight: 600;
-  }
-
-  .tip-card {
-    grid-column: 1 / -1;
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--meal-accent);
-    padding: 16px 20px;
-    display: flex; gap: 12px; align-items: flex-start;
-  }
+  .time-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: var(--meal-accent-light); color: var(--meal-accent); white-space: nowrap; letter-spacing: 0.2px; }
+  .step-text { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+  .step-bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px; }
+  .step-bullets li { font-size: 13px; color: var(--text-secondary); line-height: 1.55; padding-left: 16px; position: relative; }
+  .step-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--meal-accent); font-weight: 700; font-size: 18px; line-height: 1.0; }
+  .step-bullets li strong { color: var(--text-primary); font-weight: 600; }
+  .tip-card { grid-column: 1 / -1; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm); border-left: 4px solid var(--meal-accent); padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start; }
   .tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .tip-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: var(--meal-accent); margin-bottom: 3px; }
   .tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-
-  .prep-card {
-    grid-column: 1 / -1;
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-  }
-  .prep-toggle {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 14px 20px;
-    cursor: pointer;
-    user-select: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color var(--transition);
-  }
+  .prep-card { grid-column: 1 / -1; background: var(--card-bg); border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .prep-toggle { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; cursor: pointer; user-select: none; border-bottom: 1px solid transparent; transition: border-color var(--transition); }
   .prep-toggle.open { border-bottom-color: var(--border); }
   .prep-toggle-left { display: flex; align-items: center; gap: 10px; }
-  .prep-tag {
-    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
-    background: #F0F0F0; color: var(--text-muted);
-    padding: 3px 8px; border-radius: 6px;
-    text-transform: uppercase;
-  }
+  .prep-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; background: #F0F0F0; color: var(--text-muted); padding: 3px 8px; border-radius: 6px; text-transform: uppercase; }
   .prep-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
-  .prep-chevron {
-    width: 20px; height: 20px; color: var(--text-muted);
-    transition: transform var(--transition);
-    flex-shrink: 0;
-  }
+  .prep-chevron { width: 20px; height: 20px; color: var(--text-muted); transition: transform var(--transition); flex-shrink: 0; }
   .prep-chevron.open { transform: rotate(180deg); }
   .prep-body { display: none; padding: 16px 20px; }
   .prep-body.open { display: block; }
-  .prep-item {
-    display: flex; gap: 10px; align-items: flex-start;
-    padding: 7px 0;
-    font-size: 13px; color: var(--text-secondary);
-    line-height: 1.55;
-    border-bottom: 1px solid #F4F4F4;
-  }
+  .prep-item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; font-size: 13px; color: var(--text-secondary); line-height: 1.55; border-bottom: 1px solid #F4F4F4; }
   .prep-item:last-child { border-bottom: none; }
-  .prep-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--meal-accent); flex-shrink: 0; margin-top: 7px;
-  }
-
-  .site-footer {
-    text-align: center; padding: 24px;
-    font-size: 12px; color: var(--text-muted);
-    border-top: 1px solid var(--border);
-    background: #fff;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  .prep-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--meal-accent); flex-shrink: 0; margin-top: 7px; }
+  .site-footer { text-align: center; padding: 24px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); background: #fff; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
   .panel.active { animation: fadeIn 0.2s ease forwards; }
 </style>
 </head>
@@ -349,510 +137,591 @@
 
 <header class="site-header">
   <div class="site-logo">Chéz Gerrard <span>/ Meal Plan</span></div>
-  <div class="site-meta">Week of 26 May 2026</div>
+  <div class="site-meta">Week of 8 June 2026</div>
 </header>
 
 <nav class="tab-bar" id="tabBar"></nav>
 <main id="mainContent"></main>
 
 <footer class="site-footer">
-  Chéz Gerrard &nbsp;·&nbsp; All meals serve 2–3 &nbsp;·&nbsp; Thursday is a quick 25-minute night
+  Chéz Gerrard &nbsp;·&nbsp; All meals serve 2–3 &nbsp;·&nbsp; Saturday is cook-together night with Oli 🍗
 </footer>
 
 <script>
 const MEALS = [
   {
-    day: 'Thursday', shortDay: 'THU', date: '29 May',
-    name: 'Smoked Paprika Chicken',
-    subtitle: 'with Air Fryer Potato Wedges & Dressed Salad — quick night, 25 min',
-    cuisine: 'Spanish / Western', serves: '2–3', time: '25 min', method: 'Air fryer',
+    day: 'Sunday', shortDay: 'SUN', date: '8 Jun',
+    name: 'Harissa & Preserved Lemon Chicken',
+    subtitle: 'with Roasted Aubergine & Basmati Rice — bold North African flavours',
+    cuisine: 'North African', serves: '2–3', time: '30 min', method: 'Air fryer',
     emoji: '🍗',
-    gradient: 'linear-gradient(135deg, #040002 0%, #2A0A00 45%, #6E2008 100%)',
+    gradient: 'linear-gradient(135deg, #020100 0%, #2A0800 45%, #701808 100%)',
     accent: '#C04010',
     accentLight: '#FBF0EC',
     ingredients: [
       ['4–5','Chicken thighs, boneless & skinless'],
-      ['1.5 tsp','Smoked paprika'],
-      ['1 tsp','Garlic (2 cloves, minced or ½ tsp granules)'],
-      ['1 tsp','Dried oregano'],
-      ['½ tsp','Cumin, ground'],
+      ['2 tbsp','Harissa paste (lemon)'],
+      ['1 tbsp','Preserved lemon paste'],
+      ['2 tsp','Ras el hanout'],
+      ['1 tsp','Cumin, ground'],
       ['1 tbsp','Olive oil'],
-      ['1 tsp','Sea salt'],
-      ['½ tsp','Black pepper'],
-      ['600g','Potatoes (for wedges)'],
-      ['1 tbsp','Olive oil (for wedges)'],
-      ['½ tsp','Smoked paprika (for wedges)'],
-      ['— SALAD —',''],
-      ['2 handfuls','Mixed salad leaves'],
-      ['½','Cucumber, sliced'],
-      ['Handful','Cherry tomatoes, halved'],
-      ['1 tbsp','Extra virgin olive oil'],
-      ['1 tbsp','Red wine vinegar'],
-      ['Pinch','Salt'],
+      ['Salt + pepper','to season'],
+      ['— AUBERGINE —',''],
+      ['1 large','Aubergine, cut into 2cm cubes'],
+      ['1 tbsp','Olive oil'],
+      ['½ tsp','Ras el hanout'],
+      ['Pinch','Sea salt'],
+      ['— TO SERVE —',''],
+      ['200g','Basmati rice'],
+      ['4 tbsp','Natural yogurt'],
+      ['1','Lemon, cut into wedges'],
+      ['Handful','Fresh coriander (optional)'],
     ],
     steps: [
-      ['5 min','Season chicken & start wedges',[
-        '<strong>600g potatoes</strong> — cut into wedges, about 2cm thick. Toss with 1 tbsp olive oil, ½ tsp smoked paprika, pinch of salt. Into the air fryer at 200°C.',
-        'Wedges go in first — they need a head start: cook 10 min before the chicken goes in.',
-        '<strong>4–5 chicken thighs</strong> — mix 1.5 tsp smoked paprika, ½ tsp cumin, 1 tsp oregano, salt, pepper with 1 tbsp olive oil to a paste. Rub all over the chicken while the wedges start.',
+      ['5 min','Marinate chicken & prep aubergine',[
+        '<strong>4–5 chicken thighs</strong> — pat dry. Mix <strong>2 tbsp harissa + 1 tbsp preserved lemon paste + 2 tsp ras el hanout + 1 tsp cumin + 1 tbsp olive oil</strong> into a paste. Coat the chicken all over, getting it under any loose skin. Even 10 min of marinating will improve the depth.',
+        '<strong>Aubergine</strong> — cut into 2cm cubes. Toss with 1 tbsp olive oil + ½ tsp ras el hanout + a pinch of salt.',
+        'Start the <strong>rice cooker</strong> now with 200g basmati.',
       ]],
-      ['18 min','Air fry chicken alongside wedges',[
-        'After wedges have had 10 min: add the chicken thighs to the basket alongside (or in a second layer if your Ninja allows two trays).',
-        'Cook at 190°C for 18 min, flipping chicken halfway at the 9-min mark.',
-        'Wedges should be golden and crisp by the time chicken is done — give them a shake at the same time as flipping the chicken.',
-        'Chicken is done when the skin is deep red and caramelised, firm when pressed. Rest 3 min.',
+      ['12 min','Roast aubergine in air fryer',[
+        'Air fryer at <strong>200°C</strong>. Add the aubergine in a single layer.',
+        'Cook 10–12 min, shaking halfway. You want the edges caramelised and slightly collapsed — not steamed and soggy. Don\'t crowd the basket.',
+        'Remove aubergine when done and set aside. It\'ll keep warm.',
       ]],
-      ['3 min','Make the salad',[
-        'While everything finishes: toss <strong>salad leaves + sliced cucumber + halved cherry tomatoes</strong> together.',
-        '<strong>1 tbsp EVOO + 1 tbsp red wine vinegar + pinch salt</strong> — dress just before serving.',
+      ['18 min','Cook the chicken',[
+        'Air fryer at <strong>190°C</strong>. Add the chicken thighs.',
+        'Cook 16–18 min, flipping halfway at the 9 min mark.',
+        'The harissa should be deeply caramelised and slightly charred at the edges — that\'s the goal. Internal temp should be 75°C+ or juices run clear.',
+        'Rest 3 min before slicing or serving whole.',
       ]],
       ['Serve','Plate up',[
-        'Chicken thighs whole alongside the wedges. Salad on the side.',
-        'Optional: a dollop of soured cream or garlic mayo alongside the wedges.',
+        'Rice base. Chicken thighs whole or sliced on top.',
+        'Roasted aubergine alongside, or scattered over.',
+        '<strong>Yogurt</strong> on the side — stir in a little harissa paste if you want to serve it as a sauce.',
+        'Squeeze of lemon over everything. Scatter coriander if using.',
       ]],
     ],
-    tip: 'The key to crispy wedges in the air fryer is not crowding them — they need space for hot air to circulate. If your Ninja basket is small, do the wedges in two batches first, then re-crisp them for 3 min at the end while the chicken rests. A single layer always beats a pile.',
+    tip: 'Preserved lemon paste is the secret weapon here — it adds salinity and a floral citrus depth that\'s completely different from fresh lemon. If the harissa marinade tastes flat before cooking, it just needs more of it, not more chilli. The aubergine is best slightly collapsed and jammy, not al dente — it absorbs all the juices from the chicken when plated.',
     sundayPrep: [
-      'No prep needed — this is intentionally the fastest meal of the week.',
-      'If you want to save 5 min: mix the spice rub in advance and store in a small bowl, covered.',
+      'This is the Sunday meal — marinate the chicken while the aubergine is prepped, no advance prep needed.',
+      'Great leftovers next day: slice the chicken cold over a quick dressed salad with the remaining yogurt as dressing.',
     ],
   },
   {
-    day: 'Friday', shortDay: 'FRI', date: '30 May',
-    name: 'Coconut & Lemongrass Prawn Curry',
-    subtitle: 'with Basmati Rice — fresh prawns, Thai aromatics',
-    cuisine: 'Thai', serves: '2–3', time: '25 min', method: 'Wok',
+    day: 'Monday', shortDay: 'MON', date: '9 Jun',
+    name: 'Garlic & Chilli King Prawns',
+    subtitle: 'with Rice Noodles & Wilted Spinach — fast wok night',
+    cuisine: 'Asian', serves: '2–3', time: '20 min', method: 'Wok',
     emoji: '🦐',
-    gradient: 'linear-gradient(135deg, #010402 0%, #043018 45%, #0A6030 100%)',
-    accent: '#0A7840',
+    gradient: 'linear-gradient(135deg, #010302 0%, #041A10 45%, #0A4830 100%)',
+    accent: '#1A7850',
     accentLight: '#E8F7EE',
     ingredients: [
       ['400g','Raw king prawns, peeled & deveined'],
-      ['1 tin','Coconut milk (400ml)'],
-      ['2 stalks','Fresh lemongrass (Asian supermarket)'],
-      ['6','Kaffir lime leaves, fresh or frozen (Asian supermarket)'],
-      ['1 thumb','Fresh ginger, sliced (or 1 tsp ginger paste)'],
-      ['3 cloves','Garlic, minced'],
-      ['1–2','Fresh red chilli, sliced'],
+      ['4 cloves','Garlic, finely sliced'],
+      ['1–2','Fresh red chilli, finely sliced (or 1 tsp chilli flakes)'],
+      ['1 tbsp','Oyster sauce'],
+      ['1 tbsp','Light soy sauce'],
       ['1 tbsp','Fish sauce'],
-      ['½ tsp','Turmeric'],
+      ['1 tsp','Sesame oil'],
       ['1 tbsp','Vegetable oil'],
+      ['200g','Flat rice noodles (fresh from Asian supermarket, or dried — soak 8 min)'],
+      ['200g','Baby spinach'],
+      ['3','Spring onions, sliced'],
       ['1','Lime, juiced'],
-      ['200g','Basmati rice'],
-      ['4','Spring onions, sliced (to serve)'],
-      ['Small bunch','Fresh coriander (to serve — optional)'],
+      ['Small bunch','Fresh coriander (optional)'],
     ],
     steps: [
-      ['15 min','Start rice & prep aromatics',[
-        '<strong>200g basmati</strong> — rinse and start in the rice cooker.',
-        '<strong>Lemongrass</strong> — bash the stalks with the flat of your knife to bruise them. This releases the oils. Cut into 3cm pieces.',
-        '<strong>Kaffir lime leaves</strong> — tear roughly to bruise.',
-        '<strong>Ginger</strong> — slice into coins if using fresh.',
-        'Have everything laid out before the wok goes on.',
+      ['5 min','Soak noodles & lay everything out',[
+        'If using dried rice noodles: soak in just-boiled water for 8 min, then drain. Fresh noodles need no soaking.',
+        'Mix the sauce: <strong>1 tbsp oyster sauce + 1 tbsp light soy + 1 tbsp fish sauce + 1 tsp sesame oil</strong> in a small bowl.',
+        'Have garlic, chilli, prawns, spinach and spring onions all prepped and within reach — this dish moves fast once the wok is hot.',
       ]],
-      ['3 min','Build the base',[
-        '<strong>HexClad wok</strong> — heat on medium-high. Add 1 tbsp vegetable oil.',
-        '<strong>Lemongrass + kaffir lime leaves + ginger slices</strong> — add to the wok. Stir and press them 60–90 sec. They should be fragrant but not catching.',
-        '<strong>3 cloves minced garlic + chilli slices</strong> — add. Stir 30 sec more.',
-        '<strong>½ tsp turmeric</strong> — stir in. Cook 15 sec until bloomed.',
+      ['2 min','Build the aromatic base',[
+        '<strong>HexClad wok</strong> — heat on high until smoking. Add 1 tbsp vegetable oil.',
+        '<strong>Garlic slices</strong> — add first. Stir constantly. They should sizzle immediately and turn golden in 30–45 sec. Don\'t let them burn.',
+        '<strong>Chilli</strong> — add. Stir 20 sec more. The oil should smell intensely fragrant.',
       ]],
-      ['5 min','Add coconut milk & simmer',[
-        '<strong>1 tin coconut milk</strong> — pour in. Stir to combine everything.',
-        '<strong>1 tbsp fish sauce</strong> — add. Taste the broth: it should be fragrant, creamy, slightly salty. Add more fish sauce if needed (it\'s your salt source here).',
-        'Bring to a gentle simmer. Cook 3–4 min to let the flavours meld.',
+      ['2 min','Cook the prawns',[
+        '<strong>400g prawns</strong> — spread in a single layer across the hot wok. Don\'t stir for 60 sec — let them sear.',
+        'Flip and stir 60 sec more. Prawns are done when fully pink and curled. Pull off heat the moment they look cooked — they carry over.',
       ]],
-      ['3 min','Cook the prawns',[
-        '<strong>400g prawns</strong> — add to the simmering broth. They will cook fast.',
-        'Stir gently. Prawns are done when fully pink and just curled — about 2–3 min. Do not overcook.',
-        'Remove the lemongrass pieces and kaffir lime leaves before serving (or leave them in and tell Oli to push them aside — they\'re not edible).',
+      ['2 min','Add noodles, spinach & sauce',[
+        'Turn heat back to high. Add <strong>drained noodles</strong> to the wok.',
+        'Pour the <strong>sauce mix</strong> over and toss everything together — 30 sec.',
+        '<strong>Baby spinach</strong> — add in handfuls, folding in as it wilts. Another 30 sec.',
+        'Add <strong>spring onions</strong>. Squeeze <strong>lime juice</strong> over. Final toss.',
       ]],
-      ['1 min','Finish & serve',[
-        '<strong>Juice of 1 lime</strong> — squeeze over. Taste: should be fragrant, coconutty, with a clean acidity from the lime.',
-        'Ladle over rice. Scatter spring onions and coriander if using.',
-        'Serve with extra lime on the side.',
+      ['Serve','Plate up',[
+        'Straight from wok to bowl — this dish is best eaten immediately.',
+        'Coriander scattered over if using. Extra chilli or sriracha on the side.',
+        'Taste before serving: should be savoury, garlicky, with the lime cutting through the richness.',
       ]],
     ],
-    tip: 'Lemongrass and kaffir lime are what make a Thai curry taste Thai rather than just spiced. Both are available from your Asian supermarket and make an enormous difference — dried versions don\'t come close. Bruise the lemongrass hard before adding it: you\'re trying to crack the stalk so the oils bleed into the oil.',
+    tip: 'The single biggest wok mistake is adding too many ingredients at once and dropping the temperature. Prawns especially need a hot pan and space — if you crowd them, they steam instead of sear and turn rubbery. For 2–3 portions in a home wok, cook the prawns in two batches if the wok feels full. The whole dish comes together in under 5 minutes of actual cooking once everything\'s prepped.',
     sundayPrep: [
-      'Fresh lemongrass and kaffir lime leaves from the Asian supermarket — pick up Thursday or Friday.',
-      'Prawns should be the freshest thing in your fridge — cook them the day the main shop arrives.',
+      'Prawns are fresh — cook tonight or tomorrow at the latest.',
+      'If using dried noodles, buy flat rice noodles from your Asian supermarket — far better texture than packet egg noodles for this dish.',
     ],
   },
   {
-    day: 'Saturday', shortDay: 'SAT', date: '31 May',
-    name: 'Ribeye Steak',
-    subtitle: 'with Peppercorn Sauce, Air Fryer Chips & Dressed Watercress',
-    cuisine: 'Western', serves: '2', time: '30 min', method: 'Pan + Air fryer',
-    emoji: '🥩',
-    gradient: 'linear-gradient(135deg, #010101 0%, #1A0A00 45%, #3A1A08 100%)',
-    accent: '#6A3010',
-    accentLight: '#F5EDE8',
-    ingredients: [
-      ['2','Ribeye steaks (250–300g each, at least 2cm thick)'],
-      ['1 tbsp','Vegetable oil'],
-      ['Large knob','Butter'],
-      ['2 cloves','Garlic, bashed (skin on)'],
-      ['2 sprigs','Fresh thyme (or ½ tsp dried)'],
-      ['Sea salt + black pepper','for the steak'],
-      ['— PEPPERCORN SAUCE —',''],
-      ['1 tbsp','Black pepper, coarsely ground (use a lot)'],
-      ['1','Shallot or small onion, finely diced'],
-      ['1 tbsp','Butter'],
-      ['1 tbsp','Worcestershire sauce'],
-      ['150ml','Single or double cream'],
-      ['Sea salt','to taste'],
-      ['— CHIPS —',''],
-      ['600g','Potatoes (Maris Piper ideal)'],
-      ['1 tbsp','Vegetable oil'],
-      ['— SALAD —',''],
-      ['2 handfuls','Watercress or rocket'],
-      ['1 tbsp','Extra virgin olive oil'],
-      ['½','Lemon, juiced'],
-    ],
-    steps: [
-      ['20 min','Chips first — they take longest',[
-        '<strong>600g potatoes</strong> — peel and cut into thick chips, about 1.5cm square. Par-boil in salted water 5 min, then drain and steam-dry in the colander for 2 min (this is the crispy-chip secret).',
-        'Toss with 1 tbsp vegetable oil. Season with salt. Into the air fryer at 200°C for 18–20 min, shaking halfway. They should be going when the steak starts.',
-      ]],
-      ['5 min','Bring steak to room temp & season',[
-        'Take steaks out of the fridge 20 min before cooking — a cold centre means uneven cooking.',
-        'Pat completely dry with kitchen paper. Season all over with sea salt and black pepper — press it in. Don\'t be shy with the seasoning.',
-      ]],
-      ['4–6 min','Sear the steaks',[
-        'Heat HexClad pan on the highest flame until it is smoking. Add <strong>1 tbsp vegetable oil</strong>.',
-        '<strong>Steaks</strong> — lay away from you. Do not move them.',
-        '2 min undisturbed for medium-rare. Flip once.',
-        'After flipping: add <strong>a large knob of butter + 2 bashed garlic cloves + thyme</strong>. Tilt the pan and baste the steaks continuously with the foaming butter for 60–90 sec.',
-        'For medium: 3 min per side. Press test: springy = rare, slight resistance = medium-rare, firm = medium.',
-        '<strong>Rest on a board for 5 min minimum</strong> — do not skip this.',
-      ]],
-      ['5 min','Make peppercorn sauce in the steak pan',[
-        'Same pan, medium heat. Don\'t clean it — the fond is flavour.',
-        '<strong>1 tbsp butter + 1 diced shallot</strong> — cook 2 min until soft.',
-        '<strong>1 tbsp coarsely ground black pepper</strong> — stir in 30 sec. It should sizzle and become very fragrant.',
-        '<strong>1 tbsp Worcestershire sauce</strong> — add. Sizzle and scrape up all the bits from the bottom.',
-        '<strong>150ml cream</strong> — pour in. Simmer 2–3 min, stirring, until thick enough to coat the back of a spoon. Taste: peppery, rich, savoury. Season with a little salt.',
-      ]],
-      ['Serve','Plate and eat',[
-        'Slice steak against the grain. Chips alongside.',
-        'Spoon peppercorn sauce over the steak.',
-        'Quick watercress salad: toss leaves with 1 tbsp EVOO + squeeze of lemon + pinch of salt. On the side.',
-      ]],
-    ],
-    tip: 'The resting step is non-negotiable. When steak comes off the heat, the muscle fibres are contracted and the juices are pushed to the centre. Five minutes of resting lets them redistribute through the whole steak. Cut it too early and all the juice ends up on the board, not in the meat. Set a timer and make the sauce while it rests.',
-    sundayPrep: [
-      'Take steaks out of the fridge 20–30 min before cooking to come to room temperature.',
-      'Par-boil the chips 5 min and steam-dry them — can be done an hour ahead if needed.',
-      'Everything else happens live — this is a last-minute meal by design.',
-    ],
-  },
-  {
-    day: 'Monday', shortDay: 'MON', date: '2 June',
-    name: 'Spaghetti Carbonara',
-    subtitle: 'with Dressed Green Salad — proper emulsified sauce, no cream',
-    cuisine: 'Italian', serves: '2–3', time: '25 min', method: 'Pan',
+    day: 'Tuesday', shortDay: 'TUE', date: '10 Jun',
+    name: 'Lamb Mince Ragu',
+    subtitle: 'with Penne, Parmesan & Dressed Green Salad — pasta night',
+    cuisine: 'Italian', serves: '2–3', time: '35 min', method: 'Pan',
     emoji: '🍝',
-    gradient: 'linear-gradient(135deg, #030202 0%, #201408 45%, #503010 100%)',
-    accent: '#9A6820',
-    accentLight: '#FBF5E8',
+    gradient: 'linear-gradient(135deg, #020001 0%, #1E0608 45%, #5A0A10 100%)',
+    accent: '#9A1820',
+    accentLight: '#FAECEC',
     ingredients: [
-      ['200g','Spaghetti'],
-      ['150g','Pancetta lardons (or diced guanciale if available)'],
-      ['3','Eggs (whole)'],
-      ['1','Egg yolk (extra)'],
-      ['60g','Pecorino Romano, finely grated (or Parmesan)'],
-      ['1 tbsp','Black pepper, coarsely ground — a lot'],
-      ['Sea salt','for pasta water only'],
+      ['500g','Lamb mince'],
+      ['1 tin','Chopped tomatoes (400g)'],
+      ['1 tbsp','Tomato purée'],
+      ['1 medium','Onion, finely diced'],
+      ['4 cloves','Garlic, minced'],
+      ['1 tsp','Garam masala'],
+      ['1 tsp','Cumin, ground'],
+      ['½ tsp','Cinnamon, ground'],
+      ['1 tsp','Chilli flakes'],
+      ['1 tsp','Dried oregano'],
+      ['1 tbsp','Red wine vinegar'],
+      ['1 tbsp','Olive oil'],
+      ['Sea salt + black pepper','to taste'],
+      ['200g','Penne (or rigatoni)'],
       ['— SALAD —',''],
-      ['2 handfuls','Rocket or mixed leaves'],
-      ['½','Lemon, juiced'],
+      ['3 handfuls','Mixed leaves or rocket'],
+      ['Handful','Cherry tomatoes, halved'],
       ['1 tbsp','Extra virgin olive oil'],
+      ['1 tbsp','Red wine vinegar'],
+      ['Generous pinch','Sea salt'],
+      ['— TO SERVE —',''],
+      ['Parmesan','freshly grated, to serve'],
     ],
     steps: [
-      ['2 min','Make the egg mixture — before anything else',[
-        '<strong>3 eggs + 1 extra yolk</strong> — crack into a bowl. Whisk together.',
-        '<strong>50g pecorino</strong> — add most of it to the eggs. Mix well.',
-        '<strong>1 tbsp coarsely ground black pepper</strong> — stir in.',
-        'This mixture should be thick and glossy. Set it next to the hob where you can reach it. This is the sauce — there is no cream.',
+      ['5 min','Soften onion & bloom spices',[
+        '<strong>1 tbsp olive oil</strong> in a wide pan on medium heat. Add <strong>diced onion</strong>.',
+        'Cook 5 min, stirring occasionally, until softened and lightly golden — not brown yet.',
+        '<strong>4 cloves garlic</strong> — add. Cook 1 min, stirring.',
+        '<strong>Garam masala + cumin + cinnamon + chilli flakes</strong> — add all at once. Stir into the onion and cook 60 sec. The spices should hit the oil and smell toasted.',
       ]],
-      ['11 min','Boil pasta in heavily salted water',[
-        'Large pot, heavily salted water (it should taste like the sea — this is your only seasoning opportunity).',
-        '<strong>200g spaghetti</strong> — cook 1–2 min less than the packet says. You want it al dente going into the pan.',
-        '<strong>Before draining: scoop out at least 2 mugs of pasta water.</strong> This is your emulsifier — don\'t forget it.',
+      ['8 min','Brown the lamb',[
+        '<strong>500g lamb mince</strong> — add to the pan. Break it up immediately with a wooden spoon.',
+        'Cook on medium-high, breaking up as you go. Don\'t stir constantly — let it sit and brown in patches.',
+        'Key moment: cook until all the moisture has evaporated and the mince starts to sizzle and fry in its own fat. That\'s when you get colour and depth. Takes about 6–8 min.',
+        'Season generously with <strong>salt + black pepper</strong>.',
       ]],
-      ['5 min','Render the pancetta',[
-        'HexClad pan on medium. <strong>150g pancetta lardons</strong> — add straight to the cold pan (no oil). Let them render slowly, 4–5 min, until the fat runs out and the lardons are crisp and golden.',
-        'Turn the heat to LOW. This is critical — the egg must not scramble.',
+      ['15 min','Build the sauce',[
+        '<strong>1 tbsp tomato purée</strong> — stir in. Cook 1 min until it darkens slightly.',
+        '<strong>1 tin chopped tomatoes + 1 tbsp red wine vinegar</strong> — add both. Stir to combine.',
+        'Half-fill the empty tomato tin with water and add that too.',
+        'Bring to a boil, then reduce to a steady simmer. Cook uncovered 12–15 min until the sauce has thickened and is coating the mince. Stir occasionally.',
+        'Taste: should be deep, slightly spiced, and rich. Adjust salt.',
+        '<strong>Dried oregano</strong> — stir in at the end.',
       ]],
-      ['3 min','The carbonara moment',[
-        'Add the drained spaghetti directly to the pan with the pancetta and rendered fat. Toss to coat.',
-        'Take the pan off the heat entirely.',
-        '<strong>Pour the egg mixture over the pasta</strong> — start tossing immediately with tongs, continuously.',
-        '<strong>Add pasta water a splash at a time</strong> while tossing — the starch helps the egg emulsify into a silky sauce rather than scrambling.',
-        'Keep tossing and adding water until the sauce is glossy and clings to every strand. It should flow, not clump.',
-        'Taste: seasoning comes from the pancetta and cheese — it may not need salt.',
+      ['10 min','Cook the pasta',[
+        'Boil a large pot of well-salted water. Add <strong>200g penne</strong>.',
+        'Cook to packet instructions, about 10–11 min for al dente.',
+        '<strong>Before draining</strong> — scoop out a mug of pasta water. Drain the pasta.',
+        'Add pasta directly to the ragu pan. Toss to coat — add a splash of pasta water if the sauce is too thick. It should cling, not pool.',
       ]],
-      ['Serve','Plate immediately',[
-        'Carbonara waits for no one — plate it while it\'s moving and hot.',
-        'Extra pecorino on top, another crack of black pepper.',
-        'Quick salad alongside: toss rocket with 1 tbsp EVOO + squeeze of lemon + pinch of salt.',
+      ['Serve','Plate up',[
+        'Pasta in bowls. Generous Parmesan grated over.',
+        'Dressed salad on the side: leaves + cherry tomatoes + 1 tbsp EVOO + 1 tbsp red wine vinegar + pinch salt — toss and serve.',
       ]],
     ],
-    tip: 'The enemy of carbonara is heat. Eggs scramble at around 70°C — once you add the egg mixture, the pan must be off the heat, and the pasta water is what creates the sauce, not cooking. The starch in the water lubricates the eggs and prevents scrambling while creating that glossy coating. Work fast, keep tossing, and don\'t add too much water at once.',
+    tip: 'The spice mix here — garam masala, cumin, cinnamon — is what separates a lamb ragu from a beef bolognese. It\'s not a curry; it\'s a quiet warmth in the background. The key step everyone skips is cooking the mince long enough to fully evaporate the water and start frying. That\'s where the brown, savoury flavour comes from. If the pan looks like it\'s steaming instead of sizzling, it\'s not ready yet.',
     sundayPrep: [
-      'No Sunday prep needed — this is a weeknight pasta that starts and finishes in 25 min.',
-      'The egg mixture can be mixed an hour ahead and left covered at room temperature.',
+      'The ragu improves significantly after resting — make it Monday night, refrigerate, and reheat Tuesday for a noticeably better sauce.',
+      'Makes excellent next-day lunch: reheat with a splash of water, serve over rice or with flatbread.',
     ],
   },
   {
-    day: 'Tuesday', shortDay: 'TUE', date: '3 June',
-    name: 'Korean Sesame-Soy Chicken',
-    subtitle: 'with Egg Noodles & Wilted Spinach',
-    cuisine: 'Korean', serves: '2–3', time: '30 min', method: 'Air fryer + Wok',
-    emoji: '🍜',
-    gradient: 'linear-gradient(135deg, #030002 0%, #240808 45%, #601010 100%)',
-    accent: '#B01820',
-    accentLight: '#FAF0F0',
+    day: 'Wednesday', shortDay: 'WED', date: '11 Jun',
+    name: 'Teriyaki Chicken Thighs',
+    subtitle: 'with Steamed Rice & Tenderstem Broccoli — sticky, glossy, fast',
+    cuisine: 'Japanese', serves: '2–3', time: '25 min', method: 'Air fryer + Pan',
+    emoji: '🍗',
+    gradient: 'linear-gradient(135deg, #010202 0%, #080A20 45%, #1A1A50 100%)',
+    accent: '#4040A0',
+    accentLight: '#EDEDF8',
     ingredients: [
       ['4–5','Chicken thighs, boneless & skinless'],
-      ['— MARINADE —',''],
-      ['2 tbsp','Dark soy sauce'],
-      ['1 tbsp','Honey'],
-      ['1 tbsp','Sesame oil'],
-      ['1 tsp','Ginger paste'],
-      ['2 cloves','Garlic, minced'],
-      ['1 tsp','Gochujang (last of the jar — use it all)'],
-      ['1 tbsp','Sriracha'],
-      ['— NOODLES —',''],
-      ['250g','Dried egg noodles'],
+      ['— TERIYAKI SAUCE —',''],
+      ['3 tbsp','Dark soy sauce'],
       ['1 tbsp','Light soy sauce'],
-      ['1 tbsp','Sesame oil'],
-      ['1 tbsp','Dark soy sauce'],
-      ['1 tbsp','Rice vinegar'],
-      ['1 tsp','Honey'],
-      ['— VEG —',''],
-      ['100g','Spinach'],
+      ['2 tbsp','Honey'],
+      ['1 tsp','Ginger paste'],
+      ['1 tsp','Sesame oil'],
+      ['1 tsp','Cornflour (dissolved in 1 tbsp cold water)'],
+      ['— TO COOK —',''],
       ['1 tbsp','Vegetable oil'],
+      ['— SIDES —',''],
+      ['200g','Basmati rice'],
+      ['250g','Tenderstem, trimmed'],
+      ['1 tbsp','Soy sauce (light, for tenderstem)'],
+      ['1 tsp','Sesame oil (for tenderstem)'],
+      ['1 tsp','Sesame seeds (to serve, optional)'],
       ['2','Spring onions, sliced (to serve)'],
-      ['1 tbsp','Sesame seeds (to serve — if available)'],
     ],
     steps: [
-      ['2 hrs ahead (or morning)','Marinate the chicken',[
-        'Mix <strong>2 tbsp dark soy + 1 tbsp honey + 1 tbsp sesame oil + 1 tsp ginger paste + 2 cloves minced garlic + 1 tsp gochujang + 1 tbsp sriracha</strong> in a bowl.',
-        'Add chicken thighs and coat completely. Cover and refrigerate. 2 hours minimum — overnight is excellent.',
-        'This uses the last of the gochujang — scrape every bit out of the jar.',
+      ['5 min','Make teriyaki sauce & marinate',[
+        'Mix <strong>3 tbsp dark soy + 1 tbsp light soy + 2 tbsp honey + 1 tsp ginger paste + 1 tsp sesame oil</strong>.',
+        '<strong>Cornflour slurry</strong>: dissolve 1 tsp cornflour in 1 tbsp cold water. Add to the sauce and mix.',
+        '<strong>Chicken thighs</strong> — coat in half the teriyaki sauce. Reserve the other half for glazing.',
+        'Start the <strong>rice cooker</strong> with 200g basmati.',
       ]],
       ['18 min','Air fry the chicken',[
-        'Preheat Ninja to 190°C. Place marinated thighs in the basket in a single layer.',
-        'Cook 18 min, flipping halfway. The marinade will caramelise and char slightly on the edges — that\'s correct and exactly what you want.',
-        'Rest 3 min before slicing.',
+        'Air fryer at <strong>190°C</strong>. Add chicken thighs, smooth side down.',
+        'Cook 9 min, flip, brush with more reserved sauce, cook another 8–9 min.',
+        'In the last 2 min, brush with a final coat of sauce. The glaze should set, darken, and become sticky.',
+        'Rest 3 min. The cornflour in the sauce thickens it to a lacquer-like finish.',
       ]],
-      ['5 min','Cook noodles + make noodle sauce',[
-        'Cook <strong>250g egg noodles</strong> per packet (usually 4–5 min in boiling water). Drain.',
-        'Mix <strong>1 tbsp light soy + 1 tbsp dark soy + 1 tbsp sesame oil + 1 tbsp rice vinegar + 1 tsp honey</strong> in a small bowl. This is your noodle sauce.',
+      ['5 min','Cook the tenderstem',[
+        '<strong>HexClad pan</strong> on medium-high. Add 1 tbsp vegetable oil.',
+        'Add <strong>tenderstem</strong> — don\'t stir, let it char slightly on one side, 2 min.',
+        'Flip, cook another 2 min. Should be vibrant green, tender, with a bit of char.',
+        'Off heat: splash of <strong>light soy + 1 tsp sesame oil</strong>. Toss.',
       ]],
-      ['3 min','Wok the noodles',[
-        'HexClad wok on high heat. Add <strong>1 tbsp vegetable oil</strong>.',
-        'Add drained noodles — toss on high heat 60 sec to get some colour and heat through.',
-        'Pour the noodle sauce over — toss hard 60–90 sec until every strand is coated and slightly sticky.',
-        '<strong>100g spinach</strong> — add. Toss until just wilted, 30–40 sec.',
-      ]],
-      ['Serve','Slice and plate',[
-        'Slice chicken thighs diagonally — you want to see the caramelised marinade on the outside.',
-        'Noodles in bowls. Chicken on top. Scatter spring onions and sesame seeds if using.',
-        'A drizzle of extra sriracha on the side for heat.',
+      ['Serve','Plate up',[
+        'Rice base. Chicken thighs alongside, sliced or whole.',
+        'Tenderstem on the side.',
+        'Scatter <strong>spring onions + sesame seeds</strong> over the chicken.',
+        'Any remaining glaze from the pan can be drizzled over.',
       ]],
     ],
-    tip: 'Gochujang is a fermented chilli paste with depth and a slight sweetness that fresh chilli can\'t replicate — even a teaspoon makes a difference to the overall flavour of the marinade. This recipe uses the last of it, so add gochujang to next week\'s shop. The marinade caramelises in the air fryer because of the honey and soy sugars — you\'re essentially lacquering the chicken, which is why the colour is so dramatic.',
+    tip: 'Mirin is the traditional teriyaki sweetener but it\'s out of stock — honey does the job here. The cornflour slurry is the trick to getting a proper glossy, lacquered finish rather than a thin, watery sauce. Without it the glaze slides off; with it, it sticks and caramelises. Don\'t skip the final 2-minute glaze brush at the end of the air fryer run — that\'s what makes it look restaurant quality.',
     sundayPrep: [
-      'Marinate the chicken in the morning — 2 hours minimum, all day is better.',
-      'Mix the noodle sauce in advance and store in a small bowl — just pour it in when needed.',
+      'The teriyaki sauce can be made in advance and stored in the fridge for up to 5 days.',
+      'Tenderstem cooks in under 5 minutes — no advance prep needed.',
     ],
   },
   {
-    day: 'Wednesday', shortDay: 'WED', date: '4 June',
-    name: 'Chicken Tikka Masala',
-    subtitle: 'with Basmati Rice & Wilted Spinach — batch for Thursday lunch',
-    cuisine: 'Indian', serves: '2–3 + lunch', time: '35 min', method: 'Pan',
-    emoji: '🍛',
-    gradient: 'linear-gradient(135deg, #040100 0%, #2E0A00 45%, #722008 100%)',
-    accent: '#B84010',
-    accentLight: '#FAF0EC',
+    day: 'Thursday', shortDay: 'THU', date: '12 Jun',
+    name: 'Korean Beef Mince Bowl',
+    subtitle: 'with Steamed Rice & Sesame Cucumber — 25-minute wok meal',
+    cuisine: 'Korean', serves: '2–3', time: '25 min', method: 'Wok',
+    emoji: '🥩',
+    gradient: 'linear-gradient(135deg, #020101 0%, #200408 45%, #601010 100%)',
+    accent: '#B01818',
+    accentLight: '#FAE8E8',
     ingredients: [
-      ['4–5','Chicken thighs, boneless & skinless, cut into chunks'],
-      ['3–4 tbsp','Tikka masala paste (uses most of the jar)'],
-      ['1 tin','Coconut milk (400ml)'],
-      ['1 tin','Chopped tomatoes (400g)'],
-      ['1 tsp','Garam masala'],
-      ['¼ tsp','Turmeric'],
+      ['500g','Beef mince'],
+      ['4 cloves','Garlic, minced'],
       ['1 tsp','Ginger paste'],
-      ['1 tbsp','Vegetable oil'],
-      ['1','Onion, finely diced'],
-      ['3 cloves','Garlic, minced'],
-      ['Sea salt','to taste'],
+      ['— KOREAN SAUCE —',''],
+      ['3 tbsp','Dark soy sauce'],
+      ['1 tbsp','Light soy sauce'],
+      ['1 tbsp','Sriracha (sub for gochujang — add more for extra heat)'],
+      ['1 tbsp','Honey'],
+      ['1 tsp','Sesame oil'],
+      ['— SIDES —',''],
       ['200g','Basmati rice'],
-      ['100g','Spinach'],
-      ['1 tbsp','Olive oil (for spinach)'],
-      ['½','Lemon'],
+      ['1','Cucumber, halved & sliced diagonally'],
+      ['1 tsp','Rice vinegar'],
+      ['1 tsp','Sesame oil'],
+      ['Pinch','Salt + pinch sugar'],
+      ['— TO SERVE —',''],
+      ['2','Spring onions, sliced'],
+      ['1 tsp','Sesame seeds'],
+      ['Sriracha','extra, on the side'],
     ],
     steps: [
-      ['15 min','Start rice & brown the chicken',[
-        '<strong>200g basmati</strong> — rinse and start in the rice cooker.',
-        'Heat HexClad pan on medium-high. Add <strong>1 tbsp vegetable oil</strong>.',
-        '<strong>Chicken thighs, cut into 3cm chunks</strong> — season with salt. Brown in batches (don\'t crowd the pan) for 3–4 min, turning once. Remove to a plate — they don\'t need to be cooked through.',
+      ['5 min','Make sauce & quick-pickle cucumber',[
+        'Mix <strong>3 tbsp dark soy + 1 tbsp light soy + 1 tbsp sriracha + 1 tbsp honey + 1 tsp sesame oil</strong>.',
+        '<strong>Sesame cucumber</strong>: halve and slice the cucumber diagonally. Toss with <strong>1 tsp rice vinegar + 1 tsp sesame oil + pinch salt + pinch sugar</strong>. Set aside — even 10 min will improve it.',
+        'Start the <strong>rice cooker</strong>.',
       ]],
-      ['5 min','Onion, garlic, paste',[
-        'Same pan, medium heat.',
-        '<strong>1 diced onion</strong> — cook 4–5 min until soft and starting to colour. Stir regularly.',
-        '<strong>3 minced garlic cloves + 1 tsp ginger paste</strong> — add. Stir 1 min.',
-        '<strong>3–4 tbsp tikka masala paste + ¼ tsp turmeric</strong> — add. Stir and cook 2 min, pressing the paste into the onions. It should darken and become very fragrant. This step is where the flavour develops — don\'t rush it.',
+      ['2 min','Fry garlic & ginger',[
+        '<strong>HexClad wok</strong> on high heat. Add 1 tbsp vegetable oil.',
+        '<strong>4 cloves minced garlic + 1 tsp ginger paste</strong> — add. Stir constantly for 60 sec. Should be fragrant and just beginning to colour.',
       ]],
-      ['15 min','Build the sauce & cook through',[
-        '<strong>1 tin chopped tomatoes</strong> — pour in. Stir to combine.',
-        '<strong>1 tin coconut milk</strong> — add. Stir everything together.',
-        '<strong>Browned chicken</strong> — nestle back in.',
-        'Bring to a simmer. Cook uncovered 12–15 min until chicken is cooked through and the sauce has thickened.',
-        '<strong>1 tsp garam masala</strong> — stir in off the heat. Taste: rich, mildly spiced, slightly creamy. Add salt if needed. Squeeze of lemon to lift.',
+      ['8 min','Brown the beef',[
+        '<strong>500g beef mince</strong> — add to wok. Break up immediately.',
+        'Cook on high, pressing flat in sections to get contact with the hot surface. Don\'t stir constantly — let it sear and brown.',
+        'Keep cooking until all moisture has gone and the beef is sizzling in its own fat and starting to caramelise. Takes about 7–8 min. This is where the flavour is.',
+        'Drain any excess fat if needed.',
       ]],
-      ['3 min','Wilt the spinach',[
-        'In a separate pan: heat 1 tbsp olive oil. Add <strong>100g spinach</strong>. Toss until just wilted, 2 min. Season with salt.',
+      ['2 min','Sauce & finish',[
+        'Pour the <strong>sauce mixture</strong> over the beef. Toss to coat everything.',
+        'Stir-fry 1–2 min on high heat. The sauce should reduce and coat the beef in a sticky gloss.',
+        'Taste: should be savoury, umami-rich, with a kick from the sriracha. Adjust with more soy or sriracha.',
       ]],
-      ['Serve & batch',[
-        'Plate: rice, tikka, spinach alongside.',
-        'The tikka improves overnight — box what\'s left for Thursday lunch. It reheats perfectly in the microwave.',
+      ['Serve','Plate up',[
+        'Rice in bowls. Korean beef on one side. Sesame cucumber on the other.',
+        'Scatter <strong>spring onions + sesame seeds</strong> over the beef.',
+        'Extra sriracha on the side for Oli if he wants heat.',
       ]],
     ],
-    tip: 'Tikka masala paste from a jar is genuinely a shortcut worth taking — the base spices are already toasted and balanced. But you still need to cook it properly: frying the paste in the oil with the onion for a full 2 minutes before adding liquid is what removes the raw paste flavour. It should smell toasty, not sharp. Don\'t skip that step.',
+    tip: 'Gochujang is out of stock this week — sriracha is the substitute here. It\'s a different heat profile (vinegar-forward, less fermented depth) but works well. Pick up a jar of gochujang if you see it at Waitrose or the Asian supermarket — it\'s worth having for Korean dishes and keeps for months. The browning step on the beef is the most important part of this dish. If the wok isn\'t hot enough, the mince steams instead of caramelises and the bowl will taste flat.',
     sundayPrep: [
-      'Cut chicken into chunks and refrigerate covered if prepping ahead.',
-      'Dice the onion in advance.',
-      'The curry improves overnight — make it Tuesday evening and reheat if you want the best flavour on Wednesday.',
+      'Quick-pickle the cucumber earlier in the day for better flavour — it only improves with time.',
+      'This reheats well for lunch: rice + beef + a fresh bit of cucumber.',
+    ],
+  },
+  {
+    day: 'Friday', shortDay: 'FRI', date: '13 Jun',
+    name: 'Bavette Steak + Chimichurri',
+    subtitle: 'with Air Fryer Chips & Dressed Green Salad — proper Friday treat',
+    cuisine: 'Latin / Western', serves: '2', time: '30 min', method: 'Pan + Air fryer',
+    emoji: '🥩',
+    gradient: 'linear-gradient(135deg, #010201 0%, #040E08 45%, #0A3018 100%)',
+    accent: '#1E7040',
+    accentLight: '#E8F5EE',
+    ingredients: [
+      ['2','Bavette (flank) steaks, 200–250g each'],
+      ['1 tbsp','Vegetable oil'],
+      ['Sea salt + black pepper','generous, to season'],
+      ['— CHIMICHURRI —',''],
+      ['Large bunch','Fresh flat-leaf parsley, finely chopped'],
+      ['Small bunch','Fresh coriander, finely chopped'],
+      ['3 cloves','Garlic, very finely minced'],
+      ['1 tsp','Chilli flakes'],
+      ['1 tsp','Dried oregano'],
+      ['3 tbsp','Extra virgin olive oil'],
+      ['1 tbsp','Red wine vinegar'],
+      ['½ tsp','Sea salt'],
+      ['— CHIPS —',''],
+      ['600g','Potatoes (Maris Piper), cut into thick chips'],
+      ['1 tbsp','Olive oil'],
+      ['Sea salt','to season'],
+      ['— SALAD —',''],
+      ['3 handfuls','Mixed leaves or rocket'],
+      ['Handful','Cherry tomatoes, halved'],
+      ['1 tbsp','Extra virgin olive oil'],
+      ['½','Lemon, juiced'],
+      ['Pinch','Salt'],
+    ],
+    steps: [
+      ['20 min','Start chips & make chimichurri',[
+        '<strong>Chips</strong>: par-boil 600g cut potatoes in salted water 5 min. Drain, steam-dry 2 min in the colander — this is the crispy secret. Toss with 1 tbsp olive oil + salt. Air fryer at 200°C for 18–20 min, shaking halfway.',
+        '<strong>Chimichurri</strong>: finely chop <strong>parsley + coriander + garlic</strong>. Combine in a bowl with <strong>1 tsp chilli flakes + 1 tsp dried oregano + 3 tbsp EVOO + 1 tbsp red wine vinegar + ½ tsp salt</strong>. Taste — it should be punchy, herby, and acidic. This can sit while the steak cooks.',
+        'Take steaks out of the fridge now — 20 min at room temp before cooking.',
+      ]],
+      ['2 min','Sear the steaks',[
+        '<strong>HexClad pan</strong> — heat on <strong>very high</strong> until it\'s smoking. Add 1 tbsp vegetable oil.',
+        '<strong>Season steaks generously</strong> with sea salt and black pepper — both sides, press it in.',
+        'Steaks in the pan. Don\'t touch them for 60–90 sec. They need to sear, not steam.',
+        'For <strong>medium-rare</strong>: 2 min each side for a 2cm thick bavette. Press with a finger — should feel springy with a little give.',
+      ]],
+      ['5 min','Rest the steaks',[
+        '<strong>Off the heat</strong> — bavette must rest for at least 5 min. This is non-negotiable: the juices redistribute and the steak goes from tough to tender.',
+        'Tent loosely with foil while finishing the chips.',
+      ]],
+      ['Serve','Slice & plate',[
+        '<strong>Critical:</strong> slice bavette <strong>against the grain</strong>. Look at the muscle fibres running along the steak — cut perpendicular to them. This is the difference between tender and chewy with this cut.',
+        'Fan slices on the plate. Spoon <strong>chimichurri</strong> generously over the steak — don\'t be shy.',
+        'Chips on the side. Dressed salad on the side.',
+      ]],
+    ],
+    tip: 'Bavette (flank steak) is the value steak — it has more flavour than fillet and is far cheaper, but it\'s a loose-grained cut that needs two things: high heat sear and resting, and slicing against the grain. If you cut with the grain it\'ll be stringy and chewy. Cut against it and it\'s almost as tender as sirloin. The chimichurri is the dish\'s anchor — make it earlier in the day if you can, as 30 min of sitting improves it enormously.',
+    sundayPrep: [
+      'Chimichurri can be made earlier in the day — keep it at room temperature, covered, for up to 6 hours.',
+      'Bavette is best medium-rare to medium — well-done will make it tough.',
+    ],
+  },
+  {
+    day: 'Saturday', shortDay: 'SAT', date: '14 Jun',
+    name: 'KFC-style Crispy Chicken',
+    subtitle: 'with Simple Slaw — cook-together night with Oli 🤜🤛',
+    cuisine: 'American', serves: '2–3', time: '40 min', method: 'Air fryer',
+    emoji: '🍗',
+    gradient: 'linear-gradient(135deg, #020101 0%, #1E0800 45%, #601808 100%)',
+    accent: '#C03010',
+    accentLight: '#FAF0EC',
+    ingredients: [
+      ['5–6','Chicken thighs, boneless & skinless'],
+      ['— MARINADE —',''],
+      ['200ml','Buttermilk (or 200ml natural yogurt + 1 tsp lemon juice, mixed)'],
+      ['1 tsp','Sea salt'],
+      ['1 tsp','Chilli powder'],
+      ['— COATING —',''],
+      ['80g','Plain flour'],
+      ['60g','Panko breadcrumbs'],
+      ['1 tbsp','Smoked paprika'],
+      ['1 tsp','Chilli powder'],
+      ['1 tsp','Garam masala'],
+      ['1 tsp','Dried thyme'],
+      ['½ tsp','Dried oregano'],
+      ['1 tsp','Sea salt'],
+      ['1 tsp','Black pepper'],
+      ['1 tsp','Garlic (from 2 cloves, minced — granules better if available)'],
+      ['— SLAW —',''],
+      ['¼','White cabbage, very finely shredded (or buy pre-shredded)'],
+      ['2','Carrots, grated'],
+      ['3 tbsp','Mayonnaise'],
+      ['1 tbsp','Red wine vinegar'],
+      ['1 tsp','Sugar'],
+      ['Pinch','Salt'],
+      ['— DIPPING SAUCE —',''],
+      ['2 tbsp','Ketchup'],
+      ['1 tbsp','Sriracha'],
+      ['1 tsp','Honey'],
+    ],
+    steps: [
+      ['5 min (+ 30 min marinate)','Marinade — Oli\'s job',[
+        '<strong>Oli task</strong>: mix the marinade — <strong>200ml buttermilk (or yogurt + lemon juice) + 1 tsp salt + 1 tsp chilli powder</strong> in a bowl.',
+        'Add the chicken thighs. Coat well. Cover and leave in the fridge for <strong>at least 30 min</strong> — longer is better (can do overnight).',
+        'The acid in buttermilk tenderises the meat and helps the coating stick.',
+      ]],
+      ['5 min','Make the spice coating — Oli\'s job',[
+        '<strong>Oli task</strong>: in a wide, shallow bowl or plate, mix all the coating ingredients: <strong>flour + panko + smoked paprika + chilli powder + garam masala + thyme + oregano + salt + pepper + minced garlic</strong>.',
+        'Mix well so the spices are evenly distributed throughout the flour.',
+        'Taste a pinch — it should be aromatic, slightly hot, smoky. Adjust if needed.',
+        'Also mix the <strong>dipping sauce</strong>: ketchup + sriracha + honey. Done.',
+      ]],
+      ['5 min','Coat the chicken',[
+        'Lift each piece of chicken from the marinade (let excess drip off) and press firmly into the coating mix.',
+        'Press and pat so the coating adheres properly — turn it over, press again. Don\'t be gentle.',
+        'Lay coated pieces on a plate or tray. Don\'t stack them.',
+        'Light spray of oil over the coated chicken (or brush with a small amount of vegetable oil).',
+      ]],
+      ['20 min','Air fry',[
+        'Air fryer at <strong>190°C</strong>. Single layer — don\'t crowd.',
+        'Cook 18–20 min, flipping carefully at the 10 min mark. Be gentle when flipping or the coating breaks.',
+        'Finished when deep golden and the coating is set and crisp. Internal temp 75°C+.',
+        'If you have more pieces than fit in one layer: first batch while second batch waits, then a 3 min re-crisp on the first batch at the end.',
+      ]],
+      ['10 min','Make the slaw — Oli\'s job',[
+        '<strong>Oli task</strong>: mix <strong>3 tbsp mayo + 1 tbsp red wine vinegar + 1 tsp sugar + pinch salt</strong>.',
+        'Combine with the shredded cabbage and grated carrot. Toss well.',
+        'Taste: should be creamy, slightly tangy, not sweet.',
+        'Let it sit 10 min — it gets better as the cabbage softens slightly.',
+      ]],
+      ['Serve','Plate up',[
+        'Chicken straight from the air fryer onto a rack or lined tray — not a plate, which traps steam and softens the crust.',
+        'Slaw in a bowl on the side. Dipping sauce in a small bowl.',
+        'Eat immediately while the coating is still crackling.',
+      ]],
+    ],
+    tip: 'The panko-flour blend is what makes this better than flour alone — panko gives a coarser, crunchier crust that stays crisp. The buttermilk marinade isn\'t optional: it tenderises the meat and creates a tacky surface the coating grips. If you\'re using the yogurt substitute, the lemon juice is the active ingredient — same principle. For maximum crunch, don\'t let the coated pieces sit too long before air-frying, and make sure the basket isn\'t crowded.',
+    sundayPrep: [
+      'Marinade the chicken in the morning for the best result — 4–6 hours beats 30 min significantly.',
+      'Oli can do the coating, slaw, and dipping sauce — this is genuinely a cook-together meal.',
     ],
   },
 ];
 
-// ── RENDER ──────────────────────────────────────────────────────────────────
+// ── Render ──────────────────────────────────────────────────────────────
 
-function buildTabs() {
-  const bar = document.getElementById('tabBar');
-  MEALS.forEach((m, i) => {
-    const tab = document.createElement('div');
-    tab.className = 'tab' + (i === 0 ? ' active' : '');
-    tab.style.setProperty('--tab-accent', m.accent);
-    tab.dataset.index = i;
-    tab.innerHTML = `<div class="tab-day">${m.shortDay}</div><div class="tab-name">${m.name.split(' ').slice(0,3).join(' ')}</div>`;
-    tab.addEventListener('click', () => activateTab(i));
-    bar.appendChild(tab);
-  });
-}
+const tabBar = document.getElementById('tabBar');
+const mainContent = document.getElementById('mainContent');
 
-function buildPanels() {
-  const main = document.getElementById('mainContent');
-  MEALS.forEach((m, i) => {
-    const panel = document.createElement('div');
-    panel.className = 'panel' + (i === 0 ? ' active' : '');
-    panel.dataset.index = i;
-    panel.style.setProperty('--meal-accent', m.accent);
-    panel.style.setProperty('--meal-accent-light', m.accentLight);
+MEALS.forEach((m, i) => {
+  // Tab
+  const tab = document.createElement('div');
+  tab.className = 'tab' + (i === 0 ? ' active' : '');
+  tab.style.setProperty('--tab-accent', m.accent);
+  tab.dataset.index = i;
+  tab.innerHTML = `<span class="tab-day">${m.shortDay} ${m.date}</span><span class="tab-name">${m.name}</span>`;
+  tabBar.appendChild(tab);
 
-    const ings = m.ingredients.map(([qty, name]) => {
-      if (!name) return `<div class="ingredient-row" style="background:#F7F6F3;"><span class="ing-qty" style="font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:#999;min-width:unset;width:100%">${qty}</span></div>`;
-      return `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`;
-    }).join('');
+  // Panel
+  const panel = document.createElement('div');
+  panel.className = 'panel' + (i === 0 ? ' active' : '');
+  panel.id = `panel-${i}`;
+  panel.style.setProperty('--meal-accent', m.accent);
+  panel.style.setProperty('--meal-accent-light', m.accentLight);
+  panel.style.setProperty('--hero-gradient', m.gradient);
 
-    const steps = m.steps.map(([time, head, body], idx) => {
-      const bodyHtml = Array.isArray(body)
-        ? `<ul class="step-bullets">${body.map(b => `<li>${b}</li>`).join('')}</ul>`
-        : `<p class="step-text">${body}</p>`;
-      return `<div class="step">
-        <div class="step-num">${idx + 1}</div>
+  const ingRows = m.ingredients.map(([qty, name]) =>
+    name === '' ? `<div class="ingredient-row" style="padding:6px 20px;"><span class="ing-qty" style="color:var(--meal-accent);font-size:10px;letter-spacing:0.5px;text-transform:uppercase;">${qty}</span></div>`
+    : `<div class="ingredient-row"><span class="ing-qty">${qty}</span><span class="ing-name">${name}</span></div>`
+  ).join('');
+
+  const stepItems = m.steps.map((s, si) => {
+    const bullets = Array.isArray(s[2])
+      ? `<ul class="step-bullets">${s[2].map(b => `<li>${b}</li>`).join('')}</ul>`
+      : `<p class="step-text">${s[2]}</p>`;
+    return `
+      <div class="step">
+        <div class="step-num">${si + 1}</div>
         <div class="step-body">
           <div class="step-head-row">
-            <span class="step-heading">${head}</span>
-            <span class="time-badge">${time}</span>
+            <span class="step-heading">${s[1]}</span>
+            <span class="time-badge">${s[0]}</span>
           </div>
-          ${bodyHtml}
+          ${bullets}
         </div>
       </div>`;
-    }).join('');
+  }).join('');
 
-    const prepItems = m.sundayPrep.map(p =>
-      `<div class="prep-item"><div class="prep-dot"></div><div>${p}</div></div>`
-    ).join('');
+  const prepItems = m.sundayPrep.map(p =>
+    `<div class="prep-item"><div class="prep-dot"></div><span>${p}</span></div>`
+  ).join('');
 
-    panel.innerHTML = `
-      <div class="hero" style="--hero-gradient: ${m.gradient}">
-        <div class="hero-bg"></div>
-        <div class="hero-emoji">${m.emoji}</div>
-        <div class="hero-content">
-          <div class="cuisine-pill">${m.cuisine}</div>
-          <div class="hero-title">${m.name}</div>
-          <div class="hero-subtitle">${m.subtitle}</div>
+  panel.innerHTML = `
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-emoji">${m.emoji}</div>
+      <div class="hero-content">
+        <div class="cuisine-pill">${m.cuisine}</div>
+        <div class="hero-title">${m.name}</div>
+        <div class="hero-subtitle">${m.subtitle}</div>
+      </div>
+    </div>
+    <div class="meta-strip">
+      <div class="meta-item"><span class="meta-label">Day</span><span class="meta-value">${m.day}</span></div>
+      <div class="meta-item"><span class="meta-label">Serves</span><span class="meta-value">${m.serves}</span></div>
+      <div class="meta-item"><span class="meta-label">Active Time</span><span class="meta-value">${m.time}</span></div>
+      <div class="meta-item"><span class="meta-label">Method</span><span class="meta-value">${m.method}</span></div>
+    </div>
+    <div class="content">
+      <div class="card" style="grid-row: 1 / 3;">
+        <div class="card-header">
+          <span class="card-header-title">Ingredients</span>
+          <div class="card-header-accent"></div>
+        </div>
+        <div class="ingredients-list">${ingRows}</div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-header-title">Method</span>
+          <div class="card-header-accent"></div>
+        </div>
+        <div class="steps-list">${stepItems}</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💡</div>
+        <div>
+          <div class="tip-label">Chef's Note</div>
+          <div class="tip-text">${m.tip}</div>
         </div>
       </div>
-      <div class="meta-strip">
-        <div class="meta-item"><div class="meta-label">Day</div><div class="meta-value">${m.day} · ${m.date}</div></div>
-        <div class="meta-item"><div class="meta-label">Serves</div><div class="meta-value">${m.serves}</div></div>
-        <div class="meta-item"><div class="meta-label">Active time</div><div class="meta-value">${m.time}</div></div>
-        <div class="meta-item"><div class="meta-label">Method</div><div class="meta-value">${m.method}</div></div>
+      <div class="prep-card">
+        <div class="prep-toggle" onclick="togglePrep(this)">
+          <div class="prep-toggle-left">
+            <span class="prep-tag">Notes</span>
+            <span class="prep-title">Prep tips & leftovers</span>
+          </div>
+          <svg class="prep-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="prep-body">${prepItems}</div>
       </div>
-      <div class="content">
-        <div class="card" style="align-self:start">
-          <div class="card-header">
-            <span class="card-header-title">Ingredients</span>
-            <div class="card-header-accent"></div>
-          </div>
-          <div class="ingredients-list">${ings}</div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <span class="card-header-title">Method</span>
-            <div class="card-header-accent"></div>
-          </div>
-          <div class="steps-list">${steps}</div>
-        </div>
-        <div class="tip-card">
-          <div class="tip-icon">💡</div>
-          <div>
-            <div class="tip-label">Chef's Tip</div>
-            <div class="tip-text">${m.tip}</div>
-          </div>
-        </div>
-        <div class="prep-card">
-          <div class="prep-toggle" onclick="togglePrep(this)">
-            <div class="prep-toggle-left">
-              <span class="prep-tag">Prep Ahead</span>
-              <span class="prep-title">What to prep ahead for this meal</span>
-            </div>
-            <svg class="prep-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-          <div class="prep-body">${prepItems}</div>
-        </div>
-      </div>
-    `;
-    main.appendChild(panel);
-  });
-}
+    </div>
+  `;
+  mainContent.appendChild(panel);
+});
 
-function activateTab(index) {
-  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === index));
-  document.querySelectorAll('.panel').forEach((p, i) => p.classList.toggle('active', i === index));
+// ── Tab switching ───────────────────────────────────────────────────────
+
+tabBar.addEventListener('click', e => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  const idx = tab.dataset.index;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById(`panel-${idx}`).classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+});
 
 function togglePrep(toggle) {
   const body = toggle.nextElementSibling;
+  toggle.classList.toggle('open');
+  body.classList.toggle('open');
   const chevron = toggle.querySelector('.prep-chevron');
-  const isOpen = body.classList.contains('open');
-  body.classList.toggle('open', !isOpen);
-  chevron.classList.toggle('open', !isOpen);
-  toggle.classList.toggle('open', !isOpen);
+  chevron.classList.toggle('open');
 }
-
-buildTabs();
-buildPanels();
 </script>
 </body>
 </html>
