@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chéz Gerrard — Sunday 20 September</title>
+<title>Chéz Gerrard — Thursday 1 October</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -349,111 +349,91 @@
 
 <header class="site-header">
   <div class="site-logo">Chéz Gerrard <span>/ Meal Plan</span></div>
-  <div class="site-meta">Sun 20 September 2026</div>
+  <div class="site-meta">Thu 1 October 2026</div>
 </header>
 
 <nav class="tab-bar" id="tabBar"></nav>
 <main id="mainContent"></main>
 
 <footer class="site-footer">
-  Chéz Gerrard &nbsp;·&nbsp; One dinner this week &nbsp;·&nbsp; Tikka masala &amp; tarka dal 🍛
+  Chéz Gerrard &nbsp;·&nbsp; Tonight &nbsp;·&nbsp; Garlic-pepper chicken noodles 🍜
 </footer>
 
 <script>
 const MEALS = [
   {
-    day: 'Sunday', shortDay: 'SUN', date: '20 Sep',
-    name: 'Air Fryer Chicken Tikka Masala',
-    subtitle: 'Tarka Dal with Spinach & Kachumber Salad',
-    cuisine: 'Indian', serves: '2–3', time: '35 min', method: 'Air fryer + Pan',
-    emoji: '🍛',
-    gradient: 'linear-gradient(135deg, #1A0500 0%, #5C1A00 45%, #A8430A 100%)',
-    accent: '#C2410C',
-    accentLight: '#FDF0E8',
+    day: 'Thursday', shortDay: 'THU', date: '1 Oct',
+    name: 'Velveted Garlic-Pepper Chicken Noodles',
+    subtitle: 'Silky wok-fried chicken breast, egg noodles, mushrooms & green beans',
+    cuisine: 'Chinese', serves: '2–3', time: '30 min', method: 'Wok',
+    emoji: '🍜',
+    gradient: 'linear-gradient(135deg, #0F0A05 0%, #3D2410 45%, #8A5A1E 100%)',
+    accent: '#B45309',
+    accentLight: '#FDF3E7',
     ingredients: [
-      ['CHICKEN',''],
-      ['600g','Boneless skinless chicken thighs, cut into 4–5cm chunks'],
-      ['150g','Greek yogurt (full fat)'],
-      ['2 tbsp','Tikka masala paste'],
-      ['1 tsp','Ginger paste'],
-      ['2 cloves','Garlic, grated'],
-      ['1 tsp','Kashmiri chilli blend'],
-      ['½ tsp','Garam masala'],
-      ['1 tsp','Sea salt'],
-      ['½','Lemon, juiced'],
-      ['1 tbsp','Vegetable oil'],
+      ['CHICKEN + VELVET',''],
+      ['450g','Chicken breast, sliced thin across the grain'],
+      ['1 tbsp','Light soy sauce'],
+      ['1 tbsp','Mirin (or Shaoxing wine)'],
+      ['2 tsp','Cornflour'],
+      ['¼ tsp','Bicarbonate of soda (or 1 egg white)'],
+      ['1 tsp','Vegetable oil'],
       ['SAUCE',''],
-      ['1','Brown onion, finely chopped'],
-      ['2 cloves','Garlic, grated'],
-      ['1 tsp','Ginger paste'],
-      ['1 tsp each','Ground coriander, ground cumin, Kashmiri chilli blend'],
-      ['½ tsp','Garam masala (+ a pinch to finish)'],
-      ['1 tbsp','Tomato purée'],
-      ['400g tin','Chopped tomatoes'],
-      ['½ tsp each','Sea salt, sugar'],
-      ['3 tbsp','Greek yogurt'],
-      ['1 tbsp','Vegetable oil'],
-      ['DAL',''],
-      ['200g','Red lentils (dried), rinsed'],
-      ['800ml','Water'],
-      ['½ tsp','Turmeric'],
-      ['1 tsp','Sea salt'],
-      ['100g','Baby spinach'],
-      ['2 tbsp','Vegetable oil or butter/ghee (tarka)'],
-      ['1 tsp each','Cumin seeds, mustard seeds'],
-      ['3 cloves','Garlic, thinly sliced'],
-      ['½ tsp','Chilli flakes'],
-      ['½ tsp','Kashmiri chilli blend'],
-      ['SALAD',''],
-      ['½','Cucumber, diced'],
-      ['2','Tomatoes, diced'],
-      ['½','Red onion, finely diced'],
-      ['1 tbsp','Lime juice'],
-      ['','Pinch of salt, pinch of ground cumin, fresh coriander'],
+      ['2 tbsp','Oyster sauce'],
+      ['1½ tbsp','Light soy sauce'],
+      ['1 tbsp','Dark soy sauce'],
+      ['1 tsp','Lime juice (or rice vinegar)'],
+      ['1 tsp','Black pepper, coarsely ground'],
+      ['1 tsp','Sesame oil'],
+      ['3 tbsp','Water'],
+      ['NOODLES + VEG',''],
+      ['125–150g','Dried egg noodles'],
+      ['2 tbsp','Vegetable oil'],
+      ['150g','Chestnut or shiitake mushrooms, sliced'],
+      ['150g','Green beans or sugar snaps, halved'],
+      ['1','Carrot, cut into thin matchsticks'],
+      ['4 cloves','Garlic, finely chopped'],
+      ['15g','Fresh ginger, finely chopped (or 1 tbsp ginger paste)'],
+      ['100g','Beansprouts'],
+      ['4','Spring onions, whites and greens separated'],
+      ['1 tsp','Chilli crisp or a little sriracha (optional)'],
     ],
     steps: [
-      ['20 min+','Marinate the chicken',[
-        'Mix <strong>150g yogurt + 2 tbsp tikka paste + 1 tsp ginger paste + 2 grated garlic cloves + 1 tsp Kashmiri + ½ tsp garam masala + 1 tsp salt + juice of ½ lemon + 1 tbsp oil</strong>.',
-        'Coat the <strong>600g chicken thigh chunks</strong> well. Leave at least 20 min — longer is better.',
+      ['10 min','Slice the chicken',[
+        'Freeze the <strong>450g chicken breast</strong> for 10 min to firm it up.',
+        'Slice <strong>across the grain</strong> into 5mm strips. Find the lines running along the breast and cut across them, not along them.',
       ]],
-      ['20 min','Start the dal',[
-        'Simmer <strong>200g rinsed red lentils + 800ml water + ½ tsp turmeric</strong>, skimming the foam and stirring now and then, until broken down and creamy.',
-        'Stir in <strong>1 tsp salt</strong>, then leave on the lowest heat. Loosen with a splash of water if it gets too thick.',
+      ['15–20 min','Velvet the chicken',[
+        'Toss the strips with <strong>1 tbsp light soy + 1 tbsp mirin + 2 tsp cornflour + ¼ tsp bicarb</strong> until coated and tacky, then stir in <strong>1 tsp oil</strong>.',
+        'Leave for 15–20 min while you prep. No bicarb? Use <strong>1 egg white</strong> with the cornflour instead.',
       ]],
-      ['10 min','Brown the onion',[
-        '<strong>1 tbsp oil</strong> in the HexClad pan, medium heat. Cook the <strong>finely chopped onion</strong> 8–10 min until deep golden — this is where the flavour comes from.',
-        'Add <strong>2 grated garlic cloves + 1 tsp ginger paste</strong>, 1 min.',
+      ['5 min','Sauce and prep',[
+        'Mix <strong>2 tbsp oyster sauce + 1½ tbsp light soy + 1 tbsp dark soy + 1 tsp lime juice + 1 tsp black pepper + 1 tsp sesame oil + 3 tbsp water</strong>. No sugar is needed because the mirin adds sweetness.',
+        'Slice <strong>150g mushrooms</strong>, halve <strong>150g beans</strong>, matchstick <strong>1 carrot</strong>, chop <strong>4 garlic cloves + 15g ginger</strong>, and split the <strong>4 spring onions</strong> into whites and greens.',
       ]],
-      ['12–14 min','Air fry the chicken',[
-        'Shake off excess marinade. Air fry at <strong>200°C for 12–14 min</strong> in a single layer, shaking halfway.',
-        'Add 2 min if you want more char. It should hit 75°C in the middle.',
+      ['3 min','Cook the noodles',[
+        'Boil <strong>125–150g egg noodles</strong> for 1 min less than the packet says. Drain, rinse cold and toss with a drop of oil.',
       ]],
-      ['15 min','Build the masala sauce',[
-        'Add <strong>1 tsp ground coriander + 1 tsp ground cumin + 1 tsp Kashmiri + ½ tsp garam masala</strong> to the onions. 30 sec, with a splash of water if it catches.',
-        'Add <strong>1 tbsp tomato purée</strong> and fry 1 min until it darkens.',
-        'Add the <strong>400g tin chopped tomatoes + ½ tsp salt + ½ tsp sugar</strong>. Simmer 10–12 min until reduced by a third and oil starts to separate at the edges. Blitz with a stick blender if you want it smooth.',
+      ['5 min','Sear the chicken in 2 batches',[
+        'Heat the wok on full gas until it smokes. Add <strong>1 tbsp oil</strong>, then <strong>half the chicken</strong> in one layer.',
+        'Leave it alone for <strong>60 sec</strong>, then toss for <strong>60–90 sec</strong> until just opaque. Remove it and repeat with the rest.',
+        'It should look very slightly underdone, because it finishes in the sauce. <strong>Overcooking is what makes breast chewy.</strong>',
       ]],
-      ['5 min','Kachumber salad',[
-        'Toss the <strong>diced cucumber, 2 tomatoes and ½ red onion</strong> with <strong>1 tbsp lime juice</strong>, a pinch of salt and a pinch of ground cumin.',
+      ['5 min','Stir-fry the veg',[
+        'Add the remaining <strong>1 tbsp oil</strong>. Fry the mushrooms for 2 min until coloured, then add the beans and carrot for 2 min.',
+        'Push everything to the side and fry the <strong>garlic, ginger and spring onion whites</strong> for 30 sec.',
       ]],
-      ['3 min','Finish the curry',[
-        'Take the sauce off the heat, stir in <strong>3 tbsp yogurt</strong>, then fold in the chicken and simmer 2 min.',
-        'Finish with a squeeze of lemon, a pinch of garam masala and coriander. Taste — more salt if flat, more lemon if heavy.',
-      ]],
-      ['3 min','Tarka the dal',[
-        'Stir <strong>100g spinach</strong> into the dal until wilted.',
-        '<strong>2 tbsp oil or butter</strong> in a small pan until hot. Add <strong>1 tsp cumin seeds + 1 tsp mustard seeds</strong> and wait until they pop.',
-        'Add <strong>3 sliced garlic cloves + ½ tsp chilli flakes</strong> and cook until the garlic is just golden. Off the heat, add <strong>½ tsp Kashmiri</strong>, then pour it sizzling over the dal. Squeeze over some lemon.',
-      ]],
-      ['Serve','Plate up',[
-        'Dal in bowls, tikka masala on top or alongside, kachumber on the side. Rice is optional — the dal does the job.',
+      ['2 min','Bring it together',[
+        'Add the noodles and the sauce and toss hard for 1 min.',
+        'Return the chicken and its juices with the <strong>100g beansprouts</strong> and toss for 1 min. Finish with the spring onion greens and <strong>1 tsp chilli crisp</strong> if you want it.',
       ]],
     ],
-    tip: 'Medium heat. To dial it back, halve the Kashmiri in the sauce and skip the chilli flakes in the tarka. Do not rush the onions or the tomato reduction — that is where the depth comes from.',
+    tip: 'Medium heat, all of it from the black pepper. For less heat, use ½ tsp pepper and skip the chilli crisp. Why breast goes chewy: it\'s sliced with the grain, it\'s overcooked, or the wok is crowded so it stews. Velveting, thin cross-grain slices and two hot batches fix all three.',
     prep: [
-      'Marinate the chicken in the morning if you can — the yogurt tenderises it and the flavour goes further in.',
-      'Make double the dal. It thickens overnight, so loosen it with a splash of water for tomorrow\'s lunch with any leftover chicken.',
-      'Turmeric and tikka paste run out with this meal — add both to the next shop.',
+      'Larder swaps used here: mirin instead of Shaoxing, lime juice instead of rice vinegar (you\'re out), and ginger paste works if you have no fresh ginger.',
+      'Only about 125g of egg noodles is left. That\'s fine for lower carb, or bulk it out with extra beansprouts.',
+      'Upgrade: fresh egg noodles and pak choi from your Thai/Asian supermarket.',
+      'Leftovers make a good next-day lunch, cold or reheated.',
     ],
   },
 ];
